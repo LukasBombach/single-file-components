@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "jsx": "react",
+    "lib": [
+      "dom",
+      "es2015"
+    ]
+  }
+}
