@@ -1,4 +1,4 @@
-import { HTMLParser } from './temporaryResigParser';
+import { ResigWalker } from './temporaryResigWalker';
 
 export interface ElementJson {
   tagName: string,
@@ -13,12 +13,22 @@ export default class TemplateParser {
 
   static getJson(source: string) {
 
-    HTMLParser(source, {
+    ResigWalker(source, {
       start: (tag, attrs, unary) => console.log(`start   <${tag}>`),
       end: (tag) =>                 console.log(`end     </${tag}>`),
       chars: (text) =>              console.log(`chars   ${/\S/.test(text) ? text : '(empty)'}`),
       comment: (text) =>            console.log(`comment // ${text}`),
-    })
+    });
+
+    const walker = new ResigWalker(source);
+    const templateJsonGenerator = new TemplateJsonGenerator();
+
+    while(!walker.done()) {
+      const next = walker.next();
+      if (next.type === 'start') templateJsonGenerator.addChildAndMoveIn(next);
+      if (next.type === 'chars') templateJsonGenerator.addTextToCurrent(next);
+      if (next.type === 'end') templateJsonGenerator.closeCurrentAndMoveUp();
+    }
 
     //const html = TemplateParser.getTemplateHtmlFromSource(source);
     //return TemplateParser.getJsonFromHtml(html)[0];

@@ -10,4 +10,4 @@ export interface HTMLParserOptions {
   comment: (text: string) => void;
 }
 
-export function HTMLParser(html: string, options: HTMLParserOptions): void;
+export function ResigWalker(html: string, options: HTMLParserOptions): void;
