@@ -20,6 +20,17 @@
   version "23.3.2"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/jest/-/jest-23.3.2.tgz#07b90f6adf75d42c34230c026a2529e56c249dbb"
 
+"@types/prop-types@*":
+  version "15.5.6"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/prop-types/-/prop-types-15.5.6.tgz#9c03d3fed70a8d517c191b7734da2879b50ca26c"
+
+"@types/react@16.4.14":
+  version "16.4.14"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/react/-/react-16.4.14.tgz#47c604c8e46ed674bbdf4aabf82b34b9041c6a04"
+  dependencies:
+    "@types/prop-types" "*"
+    csstype "^2.2.0"
+
 "@vue/component-compiler-utils@2.2.0", "@vue/component-compiler-utils@^2.1.0":
   version "2.2.0"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@vue/component-compiler-utils/-/component-compiler-utils-2.2.0.tgz#bbbb7ed38a9a8a7c93abe7ef2e54a90a04b631b4"
@@ -1374,6 +1385,10 @@ cssstyle@^1.0.0:
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/cssstyle/-/cssstyle-1.1.1.tgz#18b038a9c44d65f7a8e428a653b9f6fe42faf5fb"
   dependencies:
     cssom "0.3.x"
+
+csstype@^2.2.0:
+  version "2.5.7"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/csstype/-/csstype-2.5.7.tgz#bf9235d5872141eccfb2d16d82993c6b149179ff"
 
 cyclist@~0.2.2:
   version "0.2.2"
