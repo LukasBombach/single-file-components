@@ -26,3 +26,16 @@ test('mixed tags and text', async () => {
   const expectedJson = div(div("a"), "b", div("c"), "d");
   expect(TemplateParser.getJson(html)).toEqual(expectedJson)
 });
+
+test('deeply nested tags', async () => {
+  const html = `<template><div><div><div><div>a</div></div></div></div></template>`;
+  const expectedJson = div(div(div(div("a"))));
+  expect(TemplateParser.getJson(html)).toEqual(expectedJson)
+});
+
+test('deeply nested mixed tags', async () => {
+  const html = `<template><div><p><div><p>a</p></div></p></div></template>`;
+  const expectedJson = div(p(div(p("a"))));
+  expect(TemplateParser.getJson(html)).toEqual(expectedJson)
+});
+
