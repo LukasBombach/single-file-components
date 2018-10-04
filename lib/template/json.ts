@@ -15,7 +15,7 @@ export interface NodeDescriptor {
   props: Prop[]
 }
 
-export default class TemplateJsonGenerator {
+export default class Json {
 
   rootNode: ElementJson = { tagName: null, props:[], children: [], parent: null };
   currentNode: ElementJson = this.rootNode;
@@ -24,7 +24,7 @@ export default class TemplateJsonGenerator {
     return this.rootNode.children[0];
   }
 
-  addChildAndMoveIn({ tagName, props }: NodeDescriptor): TemplateJsonGenerator {
+  addChildAndMoveIn({ tagName, props }: NodeDescriptor): Json {
     const children = [];
     const parent = this.currentNode;
     const child = { tagName, props, children, parent };
@@ -33,12 +33,12 @@ export default class TemplateJsonGenerator {
     return this;
   }
 
-  addTextToCurrent(text: string): TemplateJsonGenerator {
+  addTextToCurrent(text: string): Json {
     this.currentNode.children.push(text);
     return this;
   }
 
-  closeCurrentAndMoveUp(): TemplateJsonGenerator {
+  closeCurrentAndMoveUp(): Json {
     this.currentNode = this.currentNode.parent;
     return this;
   }

@@ -1,12 +1,12 @@
-import { ResigWalker } from './temporaryResigWalker';
-import TemplateJsonGenerator from './template/templateJsonGenerator';
+import { ResigWalker } from './temporaryResigWalker;
+import Json from './json';
 
 export default class TemplateParser {
 
   static getJson(source: string) {
 
     const template = TemplateParser.getTemplate(source)
-    const templateJsonGenerator = new TemplateJsonGenerator();
+    const templateJsonGenerator = new Json();
 
     ResigWalker(template, {
       start: (tagName, attrs, unary) => {
