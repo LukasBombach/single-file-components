@@ -27,13 +27,20 @@ test.skip('mixed tags and text', async () => {
 
 test('dummy', async () => {
   const html = `
-  <div>a</div>
-  text
-  <div><div>b</div></div>
-  text
-  <div>c<div>d</div></div>
-  text
-  <div>e</div>
+  <div>
+    <div>a</div>
+    text
+    <div>
+      <div>b</div>
+    </div>
+    text
+    <div>
+      c
+      <div>d</div>
+    </div>
+    text
+    <div>e</div>
+  </div>
   `.replace(/\s/g, '');
   TemplateParser.getJson(html);
 });

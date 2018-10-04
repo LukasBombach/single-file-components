@@ -1,40 +1,52 @@
+import { inspect } from 'util';
 import { ResigWalker } from './temporaryResigWalker';
-
-export interface ElementJson {
-  tagName: string,
-  children: ElementJson[] | string | null,
-}
-
-export interface ElementProps {
-  [s: string]: string,
-}
+import TemplateJsonGenerator from './template/templateJsonGenerator';
 
 export default class TemplateParser {
 
   static getJson(source: string) {
 
-    ResigWalker(source, {
-      start: (tag, attrs, unary) => console.log(`start   <${tag}>`),
-      end: (tag) =>                 console.log(`end     </${tag}>`),
-      chars: (text) =>              console.log(`chars   ${/\S/.test(text) ? text : '(empty)'}`),
-      comment: (text) =>            console.log(`comment // ${text}`),
-    });
-
-    const walker = new ResigWalker(source);
     const templateJsonGenerator = new TemplateJsonGenerator();
 
-    while(!walker.done()) {
+    ResigWalker(source, {
+      start: (tagName, attrs, unary) => {
+        templateJsonGenerator.addChildAndMoveIn({ tagName });
+      },
+      end: (tag) => {
+        templateJsonGenerator.closeCurrentAndMoveUp();
+      },
+      chars: (text) => {
+        templateJsonGenerator.addTextToCurrent(text);
+      },
+      comment: (text) => {
+        console.log('Found comment in template, ignoring.')
+      },
+    });
+
+    console.log(inspect(templateJsonGenerator.getJson().children, { depth: 10 }))
+
+    /* ResigWalker(source, {
+      start: (tag, attrs, unary) => console.log(`start   <${tag}>`),
+      end: (tag) => console.log(`end     </${tag}>`),
+      chars: (text) => console.log(`chars   ${/\S/.test(text) ? text : '(empty)'}`),
+      comment: (text) => console.log(`comment // ${text}`),
+    }); */
+
+    /* const walker = new ResigWalker(source);
+    const templateJsonGenerator = new TemplateJsonGenerator();
+
+    while (!walker.done()) {
       const next = walker.next();
       if (next.type === 'start') templateJsonGenerator.addChildAndMoveIn(next);
       if (next.type === 'chars') templateJsonGenerator.addTextToCurrent(next);
       if (next.type === 'end') templateJsonGenerator.closeCurrentAndMoveUp();
-    }
+    } */
 
     //const html = TemplateParser.getTemplateHtmlFromSource(source);
     //return TemplateParser.getJsonFromHtml(html)[0];
   }
 
-  // [1] matches template tags and its contents: <template>anything</template>
+  /* // [1] matches template tags and its contents: <template>anything</template>
   private static getTemplateHtmlFromSource(source: string): string | null {
     const templateRegex = /<template>([\s\S]*?)<\/template>/i; // [1]
     const template = source.match(templateRegex);
@@ -65,6 +77,6 @@ export default class TemplateParser {
     const tagRegex = /<(\w+)>([\w\W]*)<\/\1>/; // [1]
     const [, tagName, innerHtml] = tagHtml.match(tagRegex);
     return { tagName, innerHtml };
-  }
+  } */
 
 }
