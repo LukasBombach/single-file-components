@@ -13,8 +13,8 @@ export default class TemplateJsonGenerator {
   rootNode: ElementJson = { tagName: null, children: [], parent: null };
   currentNode: ElementJson = this.rootNode;
 
-  getJson(): ElementJson {
-    return this.rootNode;
+  getJson(): ElementJson|string {
+    return this.rootNode.children[0];
   }
 
   addChildAndMoveIn({ tagName }: NodeDescriptor): TemplateJsonGenerator {
