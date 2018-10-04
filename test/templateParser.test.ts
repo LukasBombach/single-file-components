@@ -39,3 +39,9 @@ test('deeply nested mixed tags', async () => {
   expect(TemplateParser.getJson(html)).toEqual(expectedJson)
 });
 
+test('a single tag with attributes', async () => {
+  const html = `<template><div id="app" class="loaded">contents</div></template>`;
+  const props = [{ name: 'id', value: 'app' }, { name: 'class', value: 'loaded' }]
+  const expectedJson = expect.objectContaining({ tagName: "div", children: ["contents"], props })
+  expect(TemplateParser.getJson(html)).toEqual(expectedJson)
+});

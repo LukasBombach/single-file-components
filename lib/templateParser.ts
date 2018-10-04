@@ -1,4 +1,3 @@
-import { inspect } from 'util';
 import { ResigWalker } from './temporaryResigWalker';
 import TemplateJsonGenerator from './template/templateJsonGenerator';
 
@@ -11,7 +10,9 @@ export default class TemplateParser {
 
     ResigWalker(template, {
       start: (tagName, attrs, unary) => {
-        templateJsonGenerator.addChildAndMoveIn({ tagName });
+        if (attrs.length) console.log(attrs);
+        const props = attrs.map(({ name, value}) => ({ name, value}));
+        templateJsonGenerator.addChildAndMoveIn({ tagName, props });
       },
       end: (tag) => {
         templateJsonGenerator.closeCurrentAndMoveUp();
@@ -26,6 +27,7 @@ export default class TemplateParser {
 
     return templateJsonGenerator.getJson();
 
+    // const { inspect } = require('util');
     // console.log(inspect(templateJsonGenerator.getJson().children, { depth: 10 }))
 
     /* const walker = new ResigWalker(source);
