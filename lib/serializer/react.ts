@@ -12,7 +12,7 @@ export default class ReactSerializer {
     const { tagName, props, children } = json;
     const reactProps = ReactSerializer.serializeProps(props);
     if (options.asReact) return React.createElement(tagName, reactProps, children);
-    return `React.createElement(${tagName}, ${JSON.stringify(reactProps)}, [${children.map(c => ReactSerializer.serialize(c, options)).join(',')}])`;
+    return `React.createElement("${tagName}", ${JSON.stringify(reactProps)}, [${children.map(c => ReactSerializer.serialize(c, options)).join(',')}])`;
   }
 
   private static serializeProps(props: Prop[]): any {
