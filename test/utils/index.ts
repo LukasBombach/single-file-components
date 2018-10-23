@@ -6,11 +6,11 @@ export const p = (...children) => tag("p", ...children);
 export const a = (...children) => tag("a", ...children);
 
 export const evalReactString = code => eval(`const React = require('react');${code}`);
-export const getReactElFromJson = json => typeof json === 'string' ? json : React.createElement(json.tagName, {}, json.children.map(child => getReactElFromJson(child)));
+export const getReactElFromJson = json => typeof json === 'string' ? json : React.createElement(json.tagName, json.props, json.children.map(child => getReactElFromJson(child)));
 
 function tag(tagName: string, ..._children: (ElementJson | Prop)[]): ElementJson {
   const children = (hasProps(_children) ? _children.slice(0, -1) : _children) as ElementJson[];
-  const props = (hasProps(_children) ? _children.slice(-1)[0] : []) as Prop[];
+  const props = (hasProps(_children) ? _children.slice(-1)[0] : {}) as Prop[];
   const parent = null;
   return { tagName, props, children, parent };
 }

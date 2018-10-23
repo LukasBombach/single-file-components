@@ -10,7 +10,7 @@ test('an element', async () => {
 });
 
 test('an element with a prop', async () => {
-  const json = Parser.getJson(`<template><div foo="bar">contents</div></template>`);
+  const json = div("contents", { foo: "bar" });
   const codeAsString = ReactSerializer.serialize(json);
   expect(evalReactString(codeAsString)).toEqual(getReactElFromJson(json));
 });
