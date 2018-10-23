@@ -1,4 +1,4 @@
-import { ResigWalker } from "./temporaryResigWalker";
+/* import { ResigWalker } from "./temporaryResigWalker";
 import TemplateModel from "../../model/template";
 
 export default class TemplateParser {
@@ -16,3 +16,4 @@ export default class TemplateParser {
     return templateGenerator.getElements();
   }
 }
+ */

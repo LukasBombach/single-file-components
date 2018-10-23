@@ -1,31 +1,12 @@
-import * as React from "react";
-import { AbstractElement, Prop } from "../model/template";
-
-export interface SerializeOptions {
-  asReact?: boolean;
-}
+import { AbstractElement } from "../model/template";
 
 export default class ReactSerializer {
-  static serialize(
-    json: AbstractElement | string,
-    options: SerializeOptions = {}
-  ): string | any {
+  static template(json: AbstractElement | string): string | any {
     if (typeof json === "string") return `"${json}"`;
-    const { tagName, props, children } = json;
-    const reactProps = ReactSerializer.serializeProps(props);
-    if (options.asReact)
-      return React.createElement(tagName, reactProps, children);
-    return `React.createElement("${tagName}", ${JSON.stringify(
-      reactProps
-    )}, [${children
-      .map(c => ReactSerializer.serialize(c, options))
-      .join(",")}])`;
-  }
-
-  private static serializeProps(props: Prop[]): any {
-    return props.reduce(
-      (obj, { name, value }) => ({ ...obj, [name]: value }),
-      {}
-    );
+    const serializeChild = ReactSerializer.template;
+    const tagName = json.tagName;
+    const props = JSON.stringify(json.props);
+    const children = json.children.map(serializeChild).join(",");
+    return `React.createElement("${tagName}", ${props}, [${children}])`;
   }
 }

@@ -10,31 +10,42 @@ export default class TemplateParser {
 
   private static getTemplates(source): string[] {
     const templates = /<template>([\s\S]*?)<\/template>/g;
-    const content = /<template>([\s\S]*?)<\/template>/;
     const matches = source.match(templates);
-    return matches ? matches.map(m => m.match(content)[1]) : null;
+    return matches ? matches.map(TemplateParser.getContent) : null;
   }
 
-  static parseTemplate(content: string): AbstractElement | string {
+  private static getContent(template): string {
+    const content = /<template>([\s\S]*?)<\/template>/;
+    const match = template.match(content);
+    return match ? match[1] : null;
+  }
+
+  private static parseTemplate(content: string): AbstractElement | string {
     const generator = new Generator();
-
     ResigWalker(content, {
-      start: (tagName, attrs, unary) => {
-        const r = (props, { name, value }) => ({ ...props, [name]: value });
-        const props = attrs.reduce(r, {});
-        generator.addChildAndMoveIn({ tagName, props });
-      },
-      end: tag => {
-        generator.closeCurrentAndMoveUp();
-      },
-      chars: text => {
-        generator.addTextToCurrent(text);
-      },
-      comment: text => {
-        console.log("Found comment in template, ignoring.");
-      }
+      start: (t, a, u) => TemplateParser.handleStartTag(generator, t, a, u),
+      end: t => TemplateParser.handleEndag(generator, t),
+      chars: t => TemplateParser.handleChars(generator, t),
+      comment: t => TemplateParser.handleChars(generator, t)
     });
-
     return generator.getRoot();
+  }
+
+  private static handleStartTag(generator, tagName, attrs, unary): void {
+    const r = (props, { name, value }) => ({ ...props, [name]: value });
+    const props = attrs.reduce(r, {});
+    generator.addChildAndMoveIn({ tagName, props });
+  }
+
+  private static handleEndag(generator, tag): void {
+    generator.closeCurrentAndMoveUp();
+  }
+
+  private static handleChars(generator, text): void {
+    generator.addTextToCurrent(text);
+  }
+
+  private static handleComment(generator, text): void {
+    console.log("Found comment in template, ignoring.");
   }
 }
