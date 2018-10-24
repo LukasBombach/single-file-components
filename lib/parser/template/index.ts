@@ -1,5 +1,5 @@
 import { AbstractElement } from "../../model/template";
-import { ResigWalker } from "./temporaryResigWalker";
+import { ResigWalker } from "./walker";
 import Generator from "./generator";
 
 export default class TemplateParser {
