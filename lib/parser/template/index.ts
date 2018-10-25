@@ -3,49 +3,54 @@ import { ResigWalker } from "./walker";
 import Generator from "./generator";
 
 export default class TemplateParser {
-  static parse(source: string): (AbstractElement | string)[] {
-    const templates = TemplateParser.getTemplates(source);
-    return templates.map(TemplateParser.parseTemplate);
+  private generator: Generator;
+
+  constructor() {
+    this.generator = new Generator();
   }
 
-  private static getTemplates(source): string[] {
+  parse(source: string): (AbstractElement | string)[] {
+    const templates = this.getTemplates(source);
+    return templates.map(template => this.parseTemplate(template));
+  }
+
+  private getTemplates(source): string[] {
     const templates = /<template>([\s\S]*?)<\/template>/g;
     const matches = source.match(templates);
-    return matches ? matches.map(TemplateParser.getContent) : null;
+    return matches ? matches.map(this.getContent) : null;
   }
 
-  private static getContent(template): string {
+  private getContent(template): string {
     const content = /<template>([\s\S]*?)<\/template>/;
     const match = template.match(content);
     return match ? match[1] : null;
   }
 
-  private static parseTemplate(content: string): AbstractElement | string {
-    const generator = new Generator();
+  private parseTemplate(content: string): AbstractElement | string {
     ResigWalker(content, {
-      start: (t, a, u) => TemplateParser.handleStartTag(generator, t, a, u),
-      end: t => TemplateParser.handleEndag(generator, t),
-      chars: t => TemplateParser.handleChars(generator, t),
-      comment: t => TemplateParser.handleChars(generator, t)
+      start: (t, a, u) => this.handleStartTag(t, a, u),
+      end: t => this.handleEndag(t),
+      chars: t => this.handleChars(t),
+      comment: t => this.handleChars(t)
     });
-    return generator.getRoot();
+    return this.generator.getRoot();
   }
 
-  private static handleStartTag(generator, tagName, attrs, unary): void {
+  private handleStartTag(tagName, attrs, unary): void {
     const r = (props, { name, value }) => ({ ...props, [name]: value });
     const props = attrs.reduce(r, {});
-    generator.addChildAndMoveIn({ tagName, props });
+    this.generator.addChildAndMoveIn({ tagName, props });
   }
 
-  private static handleEndag(generator, tag): void {
-    generator.closeCurrentAndMoveUp();
+  private handleEndag(tag): void {
+    this.generator.closeCurrentAndMoveUp();
   }
 
-  private static handleChars(generator, text): void {
-    generator.addTextToCurrent(text);
+  private handleChars(text): void {
+    this.generator.addTextToCurrent(text);
   }
 
-  private static handleComment(generator, text): void {
+  private handleComment(text): void {
     console.log("Found comment in template, ignoring.");
   }
 }

@@ -1,7 +1,7 @@
 export interface Next {
   type: NextType;
-  tagName: string;
-  text: string;
+  tagName?: string;
+  text?: string;
 }
 
 export enum NextType {
@@ -35,9 +35,8 @@ export default class Walker {
     const textStart = this.pointer + 4;
     const textEnd = end - textStart;
     const type = NextType.comment;
-    const tagName = null;
     const text = this.source.substr(textStart, textEnd);
-    const next = { type, tagName, text };
+    const next = { type, text };
     this.pointer = end + 3;
     return next;
   }
@@ -48,18 +47,19 @@ export default class Walker {
     const tagEnd = end - tagStart;
     const type = NextType.end;
     const tagName = this.source.substr(tagStart, tagEnd);
-    const text = null;
-    const next = { type, tagName, text };
+    const next = { type, tagName };
     this.pointer = end + 1;
     return next;
   }
 
   private nextStart() {
     const startTag = /^<([-A-Za-z0-9_]+)((?:\s+\w+(?:\s*=\s*(?:(?:"[^"]*")|(?:'[^']*')|[^>\s]+))?)*)\s*(\/?)>/;
-    const match = this.source.match(startTag);
-    this.pointer += match[0].length;
+    const type = NextType.start;
+    const [match, tag, tagName, rest, unary] = this.source.match(startTag);
 
-    match[0].replace(startTag, parseStartTag);
+    const next = { type, tagName, text };
+    this.pointer += match.length;
+    return next;
   }
 
   private pointerIs(str) {

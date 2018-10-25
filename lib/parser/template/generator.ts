@@ -5,14 +5,18 @@ export interface ElementDescriptor {
   props: Props;
 }
 
-const tagName = null;
-const props = {};
-const children = [];
-const parent = null;
-
 export default class Generator {
-  rootNode: AbstractElement = { tagName, props, children, parent };
-  currentNode: AbstractElement = this.rootNode;
+  private rootNode: AbstractElement;
+  private currentNode: AbstractElement;
+
+  constructor() {
+    const tagName = null;
+    const props = {};
+    const children = [];
+    const parent = null;
+    this.rootNode = { tagName, props, children, parent };
+    this.currentNode = this.rootNode;
+  }
 
   getRoot(): AbstractElement | string {
     return this.rootNode.children[0];
