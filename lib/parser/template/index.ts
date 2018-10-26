@@ -1,3 +1,4 @@
+import FileParser from "../file";
 import { AbstractElement } from "../../model/template";
 import { ResigWalker } from "./walker";
 import Generator from "./generator";
@@ -10,29 +11,16 @@ export default class TemplateParser {
   }
 
   parse(source: string): (AbstractElement | string)[] {
-    const templates = this.getTemplates(source);
-    return templates.map(template => this.parseTemplate(template));
-  }
-
-  private getTemplates(source): string[] {
-    const templates = /<template>([\s\S]*?)<\/template>/g;
-    const matches = source.match(templates);
-    return matches ? matches.map(this.getContent) : null;
-  }
-
-  private getContent(template): string {
-    const content = /<template>([\s\S]*?)<\/template>/;
-    const match = template.match(content);
-    return match ? match[1] : null;
+    const templates = FileParser.templates(source);
+    return templates.map(contents => this.parseTemplate(contents));
   }
 
   private parseTemplate(content: string): AbstractElement | string {
-    ResigWalker(content, {
-      start: (t, a, u) => this.handleStartTag(t, a, u),
-      end: t => this.handleEndag(t),
-      chars: t => this.handleChars(t),
-      comment: t => this.handleChars(t)
-    });
+    const start = (tag, attrs, unary) => this.handleStartTag(tag, attrs, unary);
+    const end = tag => this.handleEndag(tag);
+    const chars = text => this.handleChars(text);
+    const comment = text => this.handleChars(text);
+    ResigWalker(content, { start, end, chars, comment });
     return this.generator.getRoot();
   }
 
