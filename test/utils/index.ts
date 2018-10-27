@@ -1,12 +1,17 @@
 import * as React from "react";
-import { AbstractElement, Props } from "../../lib/model/template";
+import { TemplateElement, Props } from "../../lib/model/template";
+import { requireFromString } from "./stringToReact";
 
 export const div = (...children) => tag("div", ...children);
 export const p = (...children) => tag("p", ...children);
 export const a = (...children) => tag("a", ...children);
 
-export const evalReactString = code =>
-  eval(`const React = require('react');${code}`);
+export const evalReactString = (className, code) =>
+  requireFromString(
+    `const React = require('react');module.exports = ${code}`,
+    "fooasd.js"
+  );
+
 export const getReactElFromJson = json =>
   typeof json === "string"
     ? json
@@ -16,26 +21,31 @@ export const getReactElFromJson = json =>
         json.children.map(child => getReactElFromJson(child))
       );
 
+export const getReactClass = _render =>
+  class Foo extends React.Component {
+    render = _render;
+  };
+
 function tag(
   tagName: string,
-  ..._children: (AbstractElement | Props)[]
-): AbstractElement {
+  ..._children: (TemplateElement | Props)[]
+): TemplateElement {
   const children = (hasProps(_children)
     ? _children.slice(0, -1)
-    : _children) as AbstractElement[];
+    : _children) as TemplateElement[];
   const props = {}; // (hasProps(_children) ? _children.slice(-1)[0] : {}) as Props[];
   const parent = null;
   return { tagName, props, children, parent };
 }
 
-function hasProps(children: (AbstractElement | Props)[]): boolean {
+function hasProps(children: (TemplateElement | Props)[]): boolean {
   return (
     !!children.length &&
-    !isElementJson(children.slice(-1)[0] as AbstractElement)
+    !isElementJson(children.slice(-1)[0] as TemplateElement)
   );
 }
 
-function isElementJson(obj: AbstractElement): boolean {
+function isElementJson(obj: TemplateElement): boolean {
   const keys = Object.keys(obj);
   return (
     typeof obj === "string" ||

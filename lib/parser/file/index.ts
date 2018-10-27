@@ -1,23 +1,14 @@
-import { FileDescriptor } from "../../model/file";
-
 export default class FileParser {
-  static templates(source: string): string[] {
-    return FileParser.getTags("template", source);
+  static template(source: string): string {
+    return FileParser.getTags("template", source)[0];
   }
 
-  static scripts(source: string): string[] {
-    return FileParser.getTags("script", source);
+  static script(source: string): string {
+    return FileParser.getTags("script", source)[0];
   }
 
-  static styles(source: string): string[] {
-    return FileParser.getTags("style", source);
-  }
-
-  static parse(source: string): FileDescriptor {
-    const templates = FileParser.getTags("template", source);
-    const scripts = FileParser.getTags("script", source);
-    const styles = FileParser.getTags("style", source);
-    return { templates, scripts, styles };
+  static style(source: string): string {
+    return FileParser.getTags("style", source)[0];
   }
 
   private static getTags(tagName: string, source: string): string[] {

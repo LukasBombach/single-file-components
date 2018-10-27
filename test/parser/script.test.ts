@@ -6,7 +6,7 @@ function setup() {
   const json = { data, props };
   const str = JSON.stringify(json);
   const file = `<script>module.exports = ${str};</script>`;
-  const parsed = new ScriptParser().parse(file)[0];
+  const parsed = new ScriptParser().parse(file);
   return { data, props, str, file, parsed };
 }
 

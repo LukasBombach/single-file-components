@@ -1,9 +1,9 @@
-import { AbstractElement } from "../../model/template";
+import { TemplateElement } from "../../model/template";
 import { ResigWalker } from "./walker";
 import Generator from "./generator";
 
 export default class TemplateParser {
-  static parse(source: string): (AbstractElement | string)[] {
+  static parse(source: string): (TemplateElement | string)[] {
     const templates = TemplateParser.getTemplates(source);
     return templates.map(TemplateParser.parseTemplate);
   }
@@ -15,7 +15,7 @@ export default class TemplateParser {
     return matches ? matches.map(m => m.match(content)[1]) : null;
   }
 
-  static parseTemplate(content: string): AbstractElement | string {
+  static parseTemplate(content: string): TemplateElement | string {
     const generator = new Generator();
     ResigWalker(content, {
       start: (tagName, attrs, unary) => {

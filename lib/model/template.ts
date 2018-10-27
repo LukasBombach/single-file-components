@@ -1,8 +1,8 @@
-export interface AbstractElement {
+export interface TemplateElement {
   tagName: string;
   props: Props;
-  children: (AbstractElement | string)[];
-  parent: AbstractElement;
+  children: (TemplateElement | string)[];
+  parent: TemplateElement;
 }
 
 export interface Props {

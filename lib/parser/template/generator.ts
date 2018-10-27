@@ -1,4 +1,4 @@
-import { AbstractElement, Props } from "../../model/template";
+import { TemplateElement, Props } from "../../model/template";
 
 export interface ElementDescriptor {
   tagName: string;
@@ -6,8 +6,8 @@ export interface ElementDescriptor {
 }
 
 export default class Generator {
-  private rootNode: AbstractElement;
-  private currentNode: AbstractElement;
+  private rootNode: TemplateElement;
+  private currentNode: TemplateElement;
 
   constructor() {
     const tagName = null;
@@ -18,7 +18,7 @@ export default class Generator {
     this.currentNode = this.rootNode;
   }
 
-  getRoot(): AbstractElement | string {
+  getRoot(): TemplateElement | string {
     return this.rootNode.children[0];
   }
 
