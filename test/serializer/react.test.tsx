@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as Enzyme from "enzyme";
 import ReactSerializer from "../../lib/serializer/react";
-import { stringToReact } from "../utils/stringToReact";
+import stringToReact from "../utils/stringToReact";
 
 async function mount(path) {
   const { fileDescriptor, ExpectedClass } = await import(path);
@@ -32,6 +32,4 @@ describe("ReactSerializer", () => {
     const { serialized, expected } = await mount("./fixtures/divWithChild");
     expect(serialized.html()).toBe(expected.html());
   });
-
-  test.skip("functional code", async () => {});
 });
