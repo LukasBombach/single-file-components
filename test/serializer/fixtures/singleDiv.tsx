@@ -1,7 +1,7 @@
 import * as React from "react";
 import { FileDescriptor } from "../../../lib/model/file";
 
-export const file: FileDescriptor = {
+export const fileDescriptor: FileDescriptor = {
   name: "ExpectedClass",
   template: {
     tagName: "div",
