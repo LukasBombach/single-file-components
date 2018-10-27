@@ -5,7 +5,7 @@ export const file: FileDescriptor = {
   name: "ExpectedClass",
   template: {
     tagName: "div",
-    children: [],
+    children: ["contents"],
     props: {},
     parent: null
   }
@@ -13,6 +13,6 @@ export const file: FileDescriptor = {
 
 export class ExpectedClass extends React.Component {
   render() {
-    return <div />;
+    return <div>contents</div>;
   }
 }

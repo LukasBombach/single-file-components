@@ -18,8 +18,13 @@ async function mount(path) {
 }
 
 describe("ReactSerializer", () => {
-  test("an element", async () => {
+  test("an sigle div", async () => {
     const { serialized, expected } = await mount("./components/singleDiv");
-    // expect(serialized).toEqual(expected);
+    expect(serialized.html()).toBe(expected.html());
+  });
+
+  test("a div with text", async () => {
+    const { serialized, expected } = await mount("./components/divWithText");
+    expect(serialized.html()).toBe(expected.html());
   });
 });
