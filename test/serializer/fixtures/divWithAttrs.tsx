@@ -6,7 +6,7 @@ export const fileDescriptor: FileDescriptor = {
   template: {
     tagName: "div",
     children: [],
-    props: {},
+    props: { id: "id", "data-test": "data test" },
     parent: null
   }
 };

@@ -18,10 +18,14 @@ export default class ReactSerializer {
 
   private template(json: TemplateElement | string): string | any {
     if (typeof json === "string") return `"${json}"`;
-    const serializeChild = child => this.template(child);
     const tagName = json.tagName;
     const props = JSON.stringify(json.props);
-    const children = json.children.map(serializeChild).join(",");
-    return `React.createElement("${tagName}", ${props}, [${children}])`;
+    const children = this.getChildren(json.children);
+    return `React.createElement("${tagName}", ${props}, ${children})`;
+  }
+
+  private getChildren(children) {
+    if (children.length === 1) return this.template(children[0]);
+    return `[${children.map(c => this.template(c)).join(",")}]`;
   }
 }

@@ -23,7 +23,7 @@ describe("ReactSerializer", () => {
     expect(serialized.html()).toBe(expected.html());
   });
 
-  test.skip("a div with attrs", async () => {
+  test("a div with attrs", async () => {
     const { serialized, expected } = await mount("./fixtures/divWithAttrs");
     expect(serialized.html()).toBe(expected.html());
   });
