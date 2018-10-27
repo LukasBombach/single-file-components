@@ -1,12 +1,7 @@
-import "raf/polyfill";
-import "jsdom-global/register";
 import * as React from "react";
 import * as Enzyme from "enzyme";
-import * as Adapter from "enzyme-adapter-react-16";
 import ReactSerializer from "../../lib/serializer/react";
 import { stringToReact } from "../utils/stringToReact";
-
-Enzyme.configure({ adapter: new Adapter() });
 
 async function mount(path) {
   const { fileDescriptor, ExpectedClass } = await import(path);
