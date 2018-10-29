@@ -32,4 +32,9 @@ describe("ReactSerializer", () => {
     const { serialized, expected } = await mount("./fixtures/divWithChild");
     expect(serialized.html()).toBe(expected.html());
   });
+
+  test("a div with a state variable", async () => {
+    const { serialized, expected } = await mount("./fixtures/divWithState");
+    expect(serialized.html()).toBe(expected.html());
+  });
 });

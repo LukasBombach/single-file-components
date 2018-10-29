@@ -1,8 +1,8 @@
-export interface TemplateElement {
+export interface TemplateDescriptor {
   tagName: string;
   props: Props;
-  children: (TemplateElement | string)[];
-  parent: TemplateElement;
+  children: (TemplateDescriptor | string)[];
+  parent: TemplateDescriptor;
 }
 
 export interface Props {

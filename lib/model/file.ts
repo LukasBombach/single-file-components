@@ -1,8 +1,9 @@
-import { TemplateElement } from "./template";
+import { TemplateDescriptor } from "./template";
+import { ScriptDescriptor } from "./script";
 
 export interface FileDescriptor {
   name: string;
-  template?: TemplateElement;
-  script?: string[];
+  template?: TemplateDescriptor;
+  script?: ScriptDescriptor;
   style?: string[];
 }

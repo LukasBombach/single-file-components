@@ -1,6 +1,6 @@
-export interface AbstractScript {
-  data?: Data;
-  props?: Props;
+export interface ScriptDescriptor {
+  data: Data;
+  props: Props;
 }
 
 export interface Data {

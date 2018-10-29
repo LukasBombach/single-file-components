@@ -1,0 +1,5 @@
+MyComponent.sfc
+
+sfc = single file component
+
+Sent from my iPhone

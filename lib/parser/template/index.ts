@@ -1,5 +1,5 @@
 import FileParser from "../file";
-import { TemplateElement } from "../../model/template";
+import { TemplateDescriptor } from "../../model/template";
 import { ResigWalker } from "./walker";
 import Generator from "./generator";
 
@@ -10,12 +10,12 @@ export default class TemplateParser {
     this.generator = new Generator();
   }
 
-  parse(source: string): TemplateElement | string {
+  parse(source: string): TemplateDescriptor | string {
     const template = FileParser.template(source);
     return this.parseTemplate(template);
   }
 
-  private parseTemplate(content: string): TemplateElement | string {
+  private parseTemplate(content: string): TemplateDescriptor | string {
     const start = (tag, attrs, unary) => this.handleStartTag(tag, attrs, unary);
     const end = tag => this.handleEndag(tag);
     const chars = text => this.handleChars(text);
