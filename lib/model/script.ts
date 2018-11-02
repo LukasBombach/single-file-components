@@ -15,20 +15,11 @@ export interface DataDescriptor {
 }
 
 export interface PropsDescriptor {
-  [key: string]: any;
+  [key: string]: PropDescriptor;
 }
 
-/* export interface PropDescriptor {
-  type: string; // TODO: wrong
+export interface PropDescriptor {
+  type: any;
   required?: boolean;
   default?: any;
-} */
-
-export type PropType<T> = { (): T } | { new (...args: any[]): T & object };
-
-export interface PropDescriptor<T = any> {
-  type?: PropType<T> | PropType<T>[];
-  required?: boolean;
-  default?: T | null | undefined | (() => T | null | undefined);
-  validator?(value: T): boolean;
 }

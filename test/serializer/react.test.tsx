@@ -44,9 +44,7 @@ describe("ReactSerializer", () => {
   });
 
   test("a div with a child component", async () => {
-    const { serialized, expected } = await mount(
-      "./fixtures/withChildComponent"
-    );
+    const { serialized, expected } = await mount("./fixtures/withChildComponent");
     expect(serialized.html()).toBe(expected.html());
   });
 });

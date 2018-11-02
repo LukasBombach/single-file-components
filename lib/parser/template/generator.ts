@@ -1,31 +1,26 @@
-import { TemplateDescriptor, Props } from "../../model/template";
-
-export interface ElementDescriptor {
-  tagName: string;
-  props: Props;
-}
+import { ElementDescriptor } from "../../model/template";
 
 export default class Generator {
-  private rootNode: TemplateDescriptor;
-  private currentNode: TemplateDescriptor;
+  private rootNode: ElementDescriptor;
+  private currentNode: ElementDescriptor;
 
   constructor() {
     const tagName = null;
-    const props = {};
+    const attrs = {};
     const children = [];
     const parent = null;
-    this.rootNode = { tagName, props, children, parent };
+    this.rootNode = { tagName, attrs, children, parent };
     this.currentNode = this.rootNode;
   }
 
-  getRoot(): TemplateDescriptor | string {
+  getRoot(): ElementDescriptor | string {
     return this.rootNode.children[0];
   }
 
-  addChildAndMoveIn({ tagName, props }: ElementDescriptor): Generator {
+  addChildAndMoveIn({ tagName, attrs }: ElementDescriptor): Generator {
     const children = [];
     const parent = this.currentNode;
-    const child = { tagName, props, children, parent };
+    const child = { tagName, attrs, children, parent };
     this.currentNode.children.push(child);
     this.currentNode = child;
     return this;

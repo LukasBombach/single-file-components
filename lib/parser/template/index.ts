@@ -1,5 +1,5 @@
-import FileParser from "../file";
-import { TemplateDescriptor } from "../../model/template";
+import ComponentParser from "../component";
+import { TemplateDescriptor, ElementDescriptor } from "../../model/template";
 import { ResigWalker } from "./walker";
 import Generator from "./generator";
 
@@ -11,23 +11,24 @@ export default class TemplateParser {
   }
 
   parse(source: string): TemplateDescriptor | string {
-    const template = FileParser.template(source);
-    return this.parseTemplate(template);
+    const template = ComponentParser.template(source);
+    const root = this.parseContents(template);
+    return { root };
   }
 
-  private parseTemplate(content: string): TemplateDescriptor | string {
+  private parseContents(content: string): ElementDescriptor | string {
     const start = (tag, attrs, unary) => this.handleStartTag(tag, attrs, unary);
     const end = tag => this.handleEndag(tag);
     const chars = text => this.handleChars(text);
-    const comment = text => this.handleChars(text);
+    const comment = text => this.handleComment(text);
     ResigWalker(content, { start, end, chars, comment });
     return this.generator.getRoot();
   }
 
-  private handleStartTag(tagName, attrs, unary): void {
-    const r = (props, { name, value }) => ({ ...props, [name]: value });
-    const props = attrs.reduce(r, {});
-    this.generator.addChildAndMoveIn({ tagName, props });
+  private handleStartTag(tagName, domAttrs, unary): void {
+    const attrs = domAttrs.reduce((props, { name, value }) => ({ ...props, [name]: value }), {});
+    const children = [];
+    this.generator.addChildAndMoveIn({ tagName, attrs, children });
   }
 
   private handleEndag(tag): void {

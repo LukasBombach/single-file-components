@@ -21,7 +21,7 @@ export default class TemplateParser {
       start: (tagName, attrs, unary) => {
         const r = (props, { name, value }) => ({ ...props, [name]: value });
         const props = attrs.reduce(r, {});
-        generator.addChildAndMoveIn({ tagName, props });
+        generator.addChildAndMoveIn({ tagName, attrs });
       },
       end: tag => {
         generator.closeCurrentAndMoveUp();

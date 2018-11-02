@@ -1,5 +1,6 @@
 export interface TemplateDescriptor {
-  root: ElementDescriptor;
+  root: ElementDescriptor | string;
+  lang?: string;
 }
 
 export interface ElementDescriptor {
