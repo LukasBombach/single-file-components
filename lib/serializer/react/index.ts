@@ -1,6 +1,6 @@
 import { ComponentDescriptor } from "../../model/component";
 import ReactTemplateSerializer from "./template";
-import reactClass from "./reactClass";
+import reactClass from "./reactClassString";
 
 export default class ReactSerializer {
   private template: ReactTemplateSerializer = new ReactTemplateSerializer();
