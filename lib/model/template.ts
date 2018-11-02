@@ -1,10 +1,14 @@
 export interface TemplateDescriptor {
-  tagName: string;
-  props: Props;
-  children: (TemplateDescriptor | string)[];
-  parent: TemplateDescriptor;
+  root: ElementDescriptor;
 }
 
-export interface Props {
+export interface ElementDescriptor {
+  tagName: string;
+  attrs: AttrsDescriptor;
+  children: (ElementDescriptor | string)[];
+  parent?: ElementDescriptor;
+}
+
+export interface AttrsDescriptor {
   [p: string]: string;
 }

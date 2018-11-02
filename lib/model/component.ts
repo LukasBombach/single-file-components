@@ -1,8 +1,8 @@
 import { TemplateDescriptor } from "./template";
 import { ScriptDescriptor } from "./script";
 
-export interface FileDescriptor {
-  name: string;
+export interface ComponentDescriptor {
+  fileName?: string;
   template?: TemplateDescriptor;
   script?: ScriptDescriptor;
   style?: string[];

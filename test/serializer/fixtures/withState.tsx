@@ -1,15 +1,18 @@
 import * as React from "react";
-import { FileDescriptor } from "../../../lib/model/file";
+import { ComponentDescriptor } from "../../../lib/model/component";
 
-export const fileDescriptor: FileDescriptor = {
-  name: "ExpectedClass",
+export const fileDescriptor: ComponentDescriptor = {
+  fileName: "ExpectedClass",
   template: {
-    tagName: "div",
-    children: ["Hello {{ greeting }}"],
-    props: {},
-    parent: null
+    root: {
+      name: "div",
+      children: ["Hello {{ greeting }}"],
+      attrs: {},
+      parent: null
+    }
   },
   script: {
+    components: {},
     data: {
       greeting: "World"
     },

@@ -1,5 +1,5 @@
 <template>
 <div>
-  <a href="http://google.de/">Hello World!</p>
+  <a href="http://google.de/">Hello World!</a>
 </div>
 </template>

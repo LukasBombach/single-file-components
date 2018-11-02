@@ -1,47 +1,49 @@
-import { TemplateDescriptor } from "../model/template";
-import { FileDescriptor } from "../model/file";
-
-const react = (name, initalState, template) => `
-class ${name} extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.state = ${initalState};
-  }
-
-  render() {
-    const template = Object.assign({}, this.state, this.props);
-    return ${template};
-  }
-}
-`;
+import { ElementDescriptor } from "../model/template";
+import { ComponentDescriptor } from "../model/component";
 
 export default class ReactSerializer {
   private template = new ReactTemplateSerializer();
 
-  serialize(file: FileDescriptor) {
-    const name = file.name;
-    const initalState = JSON.stringify(file.script ? file.script.data : {});
-    const template = this.template.serialize(file.template);
-    return react(name, initalState, template);
+  public serialize(comp: ComponentDescriptor) {
+    const name = comp.fileName;
+    const initalState = JSON.stringify(comp.script ? comp.script.data : {});
+    const template = this.template.serialize(comp.template.root);
+    return this.render(name, initalState, template);
+  }
+
+  private render(name, initalState, template) {
+    return `
+    class ${name} extends React.Component {
+
+      constructor(props) {
+        super(props);
+        this.state = ${initalState};
+      }
+
+      render() {
+        const template = Object.assign({}, this.state, this.props);
+        return ${template};
+      }
+    }
+    `;
   }
 }
 
 class ReactTemplateSerializer {
-  public serialize(json: TemplateDescriptor | string): string | any {
-    if (typeof json === "string") return this.serializeString(json as string);
-    return this.serializeTemplateDescriptor(json as TemplateDescriptor);
+  public serialize(el: ElementDescriptor | string): string {
+    if (typeof el === "string") return this.serializeString(el as string);
+    return this.serializeTemplateDescriptor(el as ElementDescriptor);
   }
 
-  private serializeString(str: string): string | any {
+  private serializeString(str: string): string {
     const variables = /\{\{\s*(\S+?)\s*\}\}/g;
     return `\`${str}\``.replace(variables, "${template.$1}");
   }
 
-  private serializeTemplateDescriptor(json: TemplateDescriptor): string | any {
-    const tagName = json.tagName;
-    const props = JSON.stringify(json.props);
-    const children = this.getChildren(json.children);
+  private serializeTemplateDescriptor(el: ElementDescriptor): string {
+    const tagName = el.name;
+    const props = JSON.stringify(el.attrs);
+    const children = this.getChildren(el.children);
     return `React.createElement("${tagName}", ${props}, ${children})`;
   }
 

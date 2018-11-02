@@ -3,7 +3,8 @@ import ScriptParser from "../../lib/parser/script";
 function setup() {
   const data = { data1: "data1", data2: "data2" };
   const props = { prop1: "prop1", prop2: "prop2" };
-  const json = { data, props };
+  const components = [];
+  const json = { data, props, components };
   const str = JSON.stringify(json);
   const file = `<script>module.exports = ${str};</script>`;
   const parsed = new ScriptParser().parse(file);

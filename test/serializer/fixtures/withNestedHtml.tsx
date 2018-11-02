@@ -1,11 +1,23 @@
 import * as React from "react";
-import { FileDescriptor } from "../../../lib/model/file";
+import { ComponentDescriptor } from "../../../lib/model/component";
 
 const childElement = {
-  tagName: "p",
+  name: "p",
   children: ["contents"],
-  props: {},
+  attrs: {},
   parent: null
+};
+
+export const fileDescriptor: ComponentDescriptor = {
+  fileName: "ExpectedClass",
+  template: {
+    root: {
+      name: "div",
+      children: [childElement],
+      attrs: {},
+      parent: null
+    }
+  }
 };
 
 class ChildElement extends React.Component {
@@ -13,16 +25,6 @@ class ChildElement extends React.Component {
     return <p>contents</p>;
   }
 }
-
-export const fileDescriptor: FileDescriptor = {
-  name: "ExpectedClass",
-  template: {
-    tagName: "div",
-    children: [childElement],
-    props: {},
-    parent: null
-  }
-};
 
 export class ExpectedClass extends React.Component {
   render() {
