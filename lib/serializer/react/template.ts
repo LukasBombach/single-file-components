@@ -1,9 +1,20 @@
 import { ElementDescriptor, AttrsDescriptor } from "../../model/template";
+import { ComponentDescriptor } from "../../model/component";
 
 export default class ReactTemplateSerializer {
-  public serialize(el: ElementDescriptor | string): string {
+  private comp: ComponentDescriptor;
+
+  constructor(comp: ComponentDescriptor) {
+    this.comp = comp;
+  }
+
+  public getReactElement(): string {
+    return this.serialize(this.comp.template.root);
+  }
+
+  private serialize(el: ElementDescriptor | string): string {
     if (typeof el === "string") return this.serializeString(el);
-    return this.serializeTemplateDescriptor(el);
+    return this.serializeElementDescriptor(el);
   }
 
   private serializeString(str: string): string {
@@ -11,7 +22,7 @@ export default class ReactTemplateSerializer {
     return `\`${str}\``.replace(variables, "${template.$1}");
   }
 
-  private serializeTemplateDescriptor(el: ElementDescriptor): string {
+  private serializeElementDescriptor(el: ElementDescriptor): string {
     const tagName = el.tagName;
     const props = this.getProps(el.attrs);
     const children = this.getChildren(el.children);

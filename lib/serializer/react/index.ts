@@ -1,10 +1,9 @@
 import { ComponentDescriptor } from "../../model/component";
 import ReactTemplateSerializer from "./template";
-import reactClass from "./reactClassString";
+import reactClass from "./reactClass";
+import ReactScriptSerializer from "./script";
 
 export default class ReactSerializer {
-  private template: ReactTemplateSerializer = new ReactTemplateSerializer();
-
   public serialize(comp: ComponentDescriptor): string {
     const className = this.getClassName(comp);
     const initalState = this.getInitalState(comp);
@@ -17,10 +16,10 @@ export default class ReactSerializer {
   }
 
   private getInitalState(comp: ComponentDescriptor): string {
-    return JSON.stringify(comp.script ? comp.script.data : {});
+    return new ReactScriptSerializer(comp).getData();
   }
 
   private getTemplate(comp: ComponentDescriptor): string {
-    return this.template.serialize(comp.template.root);
+    return new ReactTemplateSerializer(comp).getReactElement();
   }
 }
