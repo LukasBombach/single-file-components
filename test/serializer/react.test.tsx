@@ -28,7 +28,7 @@ describe("ReactSerializer", () => {
     expect(serialized.html()).toBe(expected.html());
   });
 
-  test("a div with a child element", async () => {
+  test("a div with nested HTML", async () => {
     const { serialized, expected } = await mount("./fixtures/withNestedHtml");
     expect(serialized.html()).toBe(expected.html());
   });
@@ -43,7 +43,7 @@ describe("ReactSerializer", () => {
     expect(serialized.html()).toBe(expected.html());
   });
 
-  test("a div with a child component", async () => {
+  test.skip("a div with a child component", async () => {
     const { serialized, expected } = await mount("./fixtures/withChildComponent");
     expect(serialized.html()).toBe(expected.html());
   });

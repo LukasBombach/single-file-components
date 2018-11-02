@@ -1,8 +1,9 @@
 import * as React from "react";
 import { ComponentDescriptor } from "../../../lib/model/component";
+import { ElementDescriptor } from "../../../lib/model/template";
 
-const childElement = {
-  name: "p",
+const childElement: ElementDescriptor = {
+  tagName: "p",
   children: ["contents"],
   attrs: {},
   parent: null
@@ -12,7 +13,7 @@ export const fileDescriptor: ComponentDescriptor = {
   fileName: "ExpectedClass",
   template: {
     root: {
-      name: "div",
+      tagName: "div",
       children: [childElement],
       attrs: {},
       parent: null
