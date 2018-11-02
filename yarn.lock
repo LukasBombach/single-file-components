@@ -28,6 +28,11 @@
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/node/-/node-10.12.0.tgz#ea6dcbddbc5b584c83f06c60e82736d8fbb0c235"
   integrity sha1-6m3L3bxbWEyD8Gxg6Cc22PuwwjU=
 
+"@types/node@10.12.2":
+  version "10.12.2"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/node/-/node-10.12.2.tgz#d77f9faa027cadad9c912cd47f4f8b07b0fb0864"
+  integrity sha1-13+fqgJ8ra2ckSzUf0+LB7D7CGQ=
+
 "@types/prop-types@*":
   version "15.5.6"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/prop-types/-/prop-types-15.5.6.tgz#9c03d3fed70a8d517c191b7734da2879b50ca26c"

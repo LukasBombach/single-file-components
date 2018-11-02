@@ -1,7 +1,6 @@
 import TemplateParser from "../../lib/parser/template";
 
-const div = (...children) =>
-  expect.objectContaining({ tagName: "div", children });
+const div = (...children) => expect.objectContaining({ tagName: "div", children });
 const p = (...children) => expect.objectContaining({ tagName: "p", children });
 
 describe("ScriptParser", () => {
@@ -46,7 +45,7 @@ describe("ScriptParser", () => {
     const expectedJson = expect.objectContaining({
       tagName: "div",
       children: ["contents"],
-      props: { id: "app", class: "loaded" }
+      attrs: { id: "app", class: "loaded" }
     });
     expect(new TemplateParser().parse(html)).toEqual(expectedJson);
   });
