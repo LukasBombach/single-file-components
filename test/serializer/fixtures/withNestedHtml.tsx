@@ -9,7 +9,7 @@ const childElement: ElementDescriptor = {
   parent: null
 };
 
-export const fileDescriptor: ComponentDescriptor = {
+export const compDescriptor: ComponentDescriptor = {
   fileName: "ExpectedClass",
   template: {
     root: {

@@ -34,6 +34,7 @@
   "dependencies": {
     "@vue/component-compiler": "3.6.0",
     "@vue/component-compiler-utils": "2.2.0",
+    "lodash": "4.17.11",
     "vue-template-compiler": "2.5.17"
   }
 }

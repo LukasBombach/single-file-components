@@ -4,8 +4,8 @@ import ReactSerializer from "../../lib/serializer/react";
 import stringToReact from "../utils/stringToReact";
 
 async function mount(path) {
-  const { fileDescriptor, ExpectedClass } = await import(path);
-  const serializedClassString = new ReactSerializer().serialize(fileDescriptor);
+  const { compDescriptor, ExpectedClass } = await import(path);
+  const serializedClassString = new ReactSerializer().serialize(compDescriptor);
   const SerializedClass = stringToReact(serializedClassString);
   const serialized = Enzyme.mount(<SerializedClass />);
   const expected = Enzyme.mount(<ExpectedClass />);
@@ -43,7 +43,7 @@ describe("ReactSerializer", () => {
     expect(serialized.html()).toBe(expected.html());
   });
 
-  test.skip("a div with a child component", async () => {
+  test("a div with a child component", async () => {
     const { serialized, expected } = await mount("./fixtures/withChildComponent");
     expect(serialized.html()).toBe(expected.html());
   });

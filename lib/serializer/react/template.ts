@@ -23,6 +23,11 @@ export default class ReactTemplateSerializer {
   }
 
   private serializeElementDescriptor(el: ElementDescriptor): string {
+    const comp = this.getComponentForTagName(el.tagName);
+    return comp ? this.serialize(comp.template.root) : this.serializeDomElement(el);
+  }
+
+  private serializeDomElement(el: ElementDescriptor): string {
     const tagName = el.tagName;
     const props = this.getProps(el.attrs);
     const children = this.getChildren(el.children);
@@ -36,5 +41,11 @@ export default class ReactTemplateSerializer {
   private getChildren(children: (string | ElementDescriptor)[]): string {
     if (children.length === 1) return this.serialize(children[0]);
     return `[${children.map(c => this.serialize(c)).join(",")}]`;
+  }
+
+  private getComponentForTagName(tagName): ComponentDescriptor {
+    if (!this.comp.script) return null;
+    if (!this.comp.script.components[tagName]) return null;
+    return this.comp.script.components[tagName];
   }
 }

@@ -12,7 +12,7 @@ const ChildComponent: ComponentDescriptor = {
   }
 };
 
-export const componentDescriptor: ComponentDescriptor = {
+export const compDescriptor: ComponentDescriptor = {
   fileName: "ExpectedClass",
   template: {
     root: {
@@ -20,7 +20,7 @@ export const componentDescriptor: ComponentDescriptor = {
       attrs: {},
       children: [
         {
-          tagName: "child-component",
+          tagName: "ChildComponent",
           attrs: {},
           children: []
         }
