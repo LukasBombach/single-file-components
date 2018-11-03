@@ -38,11 +38,6 @@ describe("ReactSerializer", () => {
     expect(serialized.html()).toBe(expected.html());
   });
 
-  test.skip("a div with a prop that is a string", async () => {
-    const { serialized, expected } = await mount("./fixtures/withPropString");
-    expect(serialized.html()).toBe(expected.html());
-  });
-
   test("a div with a child component", async () => {
     const { serialized, expected } = await mount("./fixtures/withChildComponent");
     expect(serialized.html()).toBe(expected.html());
