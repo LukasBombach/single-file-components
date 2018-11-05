@@ -2,7 +2,7 @@ import * as React from "react";
 import { ComponentDescriptor } from "../../../lib/model/component";
 
 const ChildComponent: ComponentDescriptor = {
-  fileName: "ChildElement",
+  fileName: "ChildComponent",
   template: {
     root: {
       tagName: "p",

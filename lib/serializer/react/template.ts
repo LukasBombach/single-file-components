@@ -1,11 +1,14 @@
 import { ElementDescriptor, AttrsDescriptor } from "../../model/template";
 import { ComponentDescriptor } from "../../model/component";
 import ReactSerializer from ".";
+// import ReactAttrsSerializer from "./attrs";
 
 export default class ReactTemplateSerializer {
   private comp: ComponentDescriptor;
+  // private attrsSerializer: ReactAttrsSerializer;
 
   constructor(comp: ComponentDescriptor) {
+    // this.attrsSerializer = new ReactAttrsSerializer(comp);
     this.comp = comp;
   }
 
@@ -33,7 +36,22 @@ export default class ReactTemplateSerializer {
   }
 
   private getProps(attrs: AttrsDescriptor): string {
-    return JSON.stringify(attrs);
+    const props = Object.entries(attrs)
+      .map(([key, val]) => {
+        if (key.charAt(0) === ":") {
+          const name = key.substring(1);
+          if (this.comp.script && this.comp.script.props[name]) return [name, this.comp.script.props[name]];
+          if (this.comp.script && this.comp.script.data[name]) return [name, this.comp.script.data[name]];
+          return [name, undefined];
+        }
+        return [key, val];
+      })
+      .reduce((accum, [k, v]) => {
+        accum[k] = v;
+        return accum;
+      }, {});
+
+    return JSON.stringify(props);
   }
 
   private getChildren(children: (string | ElementDescriptor)[]): string {
