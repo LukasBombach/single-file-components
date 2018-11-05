@@ -1,5 +1,6 @@
 import { ElementDescriptor, AttrsDescriptor } from "../../model/template";
 import { ComponentDescriptor } from "../../model/component";
+import ReactSerializer from ".";
 
 export default class ReactTemplateSerializer {
   private comp: ComponentDescriptor;
@@ -23,15 +24,12 @@ export default class ReactTemplateSerializer {
   }
 
   private serializeElementDescriptor(el: ElementDescriptor): string {
-    const comp = this.getComponentForTagName(el.tagName);
-    return comp ? this.serialize(comp.template.root) : this.serializeDomElement(el);
-  }
-
-  private serializeDomElement(el: ElementDescriptor): string {
     const tagName = el.tagName;
     const props = this.getProps(el.attrs);
     const children = this.getChildren(el.children);
-    return `React.createElement("${tagName}", ${props}, ${children})`;
+    const comp = this.getComponentForTagName(el.tagName);
+    const reactEl = comp ? new ReactSerializer().serialize(comp) : `"${tagName}"`;
+    return `React.createElement(${reactEl}, ${props}, ${children})`;
   }
 
   private getProps(attrs: AttrsDescriptor): string {

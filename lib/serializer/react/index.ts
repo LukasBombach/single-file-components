@@ -1,14 +1,15 @@
 import { ComponentDescriptor } from "../../model/component";
 import ReactTemplateSerializer from "./template";
-import reactClass from "./reactClass";
 import ReactScriptSerializer from "./script";
+import reactClass from "./reactClass";
 
 export default class ReactSerializer {
   public serialize(comp: ComponentDescriptor): string {
     const className = this.getClassName(comp);
     const initalState = this.getInitalState(comp);
     const template = this.getTemplate(comp);
-    return reactClass(className, initalState, template);
+    const serializedString = reactClass(className, initalState, template);
+    return serializedString;
   }
 
   private getClassName(comp: ComponentDescriptor): string {

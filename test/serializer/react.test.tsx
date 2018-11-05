@@ -19,27 +19,34 @@ describe("ReactSerializer", () => {
   });
 
   test("a div with text", async () => {
-    const { serialized, expected } = await mount("./fixtures/withText");
+    const { serialized, expected } = await mount("./fixtures/text");
     expect(serialized.html()).toBe(expected.html());
   });
 
   test("a div with attrs", async () => {
-    const { serialized, expected } = await mount("./fixtures/withAttrs");
+    const { serialized, expected } = await mount("./fixtures/attrs");
     expect(serialized.html()).toBe(expected.html());
   });
 
   test("a div with nested HTML", async () => {
-    const { serialized, expected } = await mount("./fixtures/withNestedHtml");
+    const { serialized, expected } = await mount("./fixtures/nestedHtml");
     expect(serialized.html()).toBe(expected.html());
   });
 
   test("a div with a state variable", async () => {
-    const { serialized, expected } = await mount("./fixtures/withState");
+    const { serialized, expected } = await mount("./fixtures/state");
     expect(serialized.html()).toBe(expected.html());
   });
 
   test("a div with a child component", async () => {
-    const { serialized, expected } = await mount("./fixtures/withChildComponent");
+    const { serialized, expected } = await mount("./fixtures/childComponent");
+    expect(serialized.html()).toBe(expected.html());
+  });
+
+  test("a child component with props", async () => {
+    const { serialized, expected } = await mount("./fixtures/props");
+    // console.log(serialized.html());
+    // console.log(expected.html());
     expect(serialized.html()).toBe(expected.html());
   });
 });
