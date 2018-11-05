@@ -1,14 +1,12 @@
 import { ElementDescriptor, AttrsDescriptor } from "../../model/template";
 import { ComponentDescriptor } from "../../model/component";
 import ReactSerializer from ".";
-// import ReactAttrsSerializer from "./attrs";
+import ReactAttrsSerializer from "./attrs";
 
 export default class ReactTemplateSerializer {
   private comp: ComponentDescriptor;
-  // private attrsSerializer: ReactAttrsSerializer;
 
   constructor(comp: ComponentDescriptor) {
-    // this.attrsSerializer = new ReactAttrsSerializer(comp);
     this.comp = comp;
   }
 
@@ -27,31 +25,19 @@ export default class ReactTemplateSerializer {
   }
 
   private serializeElementDescriptor(el: ElementDescriptor): string {
-    const tagName = el.tagName;
+    const reactEl = this.getElement(el.tagName);
     const props = this.getProps(el.attrs);
     const children = this.getChildren(el.children);
-    const comp = this.getComponentForTagName(el.tagName);
-    const reactEl = comp ? new ReactSerializer().serialize(comp) : `"${tagName}"`;
     return `React.createElement(${reactEl}, ${props}, ${children})`;
   }
 
-  private getProps(attrs: AttrsDescriptor): string {
-    const props = Object.entries(attrs)
-      .map(([key, val]) => {
-        if (key.charAt(0) === ":") {
-          const name = key.substring(1);
-          if (this.comp.script && this.comp.script.props[name]) return [name, this.comp.script.props[name]];
-          if (this.comp.script && this.comp.script.data[name]) return [name, this.comp.script.data[name]];
-          return [name, undefined];
-        }
-        return [key, val];
-      })
-      .reduce((accum, [k, v]) => {
-        accum[k] = v;
-        return accum;
-      }, {});
+  private getElement(tagName) {
+    const comp = this.getComponentForTagName(tagName);
+    return comp ? new ReactSerializer().serialize(comp) : `"${tagName}"`;
+  }
 
-    return JSON.stringify(props);
+  private getProps(attrs: AttrsDescriptor): string {
+    return ReactAttrsSerializer.getProps(this.comp, attrs);
   }
 
   private getChildren(children: (string | ElementDescriptor)[]): string {

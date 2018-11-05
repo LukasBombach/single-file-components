@@ -1,26 +1,42 @@
 import { ComponentDescriptor } from "../../model/component";
+import { AttrsDescriptor } from "../../model/template";
+
+interface Props {
+  [name: string]: any;
+}
 
 export default class ReactAttrsSerializer {
-  private comp: ComponentDescriptor;
-
-  constructor(comp: ComponentDescriptor) {
-    this.comp = comp;
+  static getProps(comp: ComponentDescriptor, attrs: AttrsDescriptor): string {
+    const attrsArray = ReactAttrsSerializer.getArray(attrs);
+    const transformedAttrs = ReactAttrsSerializer.transformAttrs(comp, attrsArray);
+    const props = ReactAttrsSerializer.getObject(transformedAttrs);
+    return JSON.stringify(props);
   }
 
-  public getTransformedAttrs(attrs) {
-    if (!this.comp.script) return {};
-    //this.comp.;
+  private static getArray(attrs: AttrsDescriptor): [string, string][] {
+    return Object.entries(attrs);
   }
 
-  private parseEntry(key: string, val: string): any {
-    if (key.charAt(0) === ":") return this.parseBind(key, val);
-    return val;
+  private static transformAttrs(comp: ComponentDescriptor, attrs: [string, string][]): [string, any][] {
+    return attrs.map(attr => ReactAttrsSerializer.transformAttr(comp, attr));
   }
 
-  parseBind(key: string, val: string): any {
+  private static transformAttr(comp: ComponentDescriptor, [key, val]: [string, string]): [string, any] {
+    if (key.charAt(0) === ":") return ReactAttrsSerializer.transformBind(comp, key, val);
+    return [key, val];
+  }
+
+  private static transformBind(comp, key, val): [string, any] {
     const name = key.substring(1);
-    if (this.comp.script && this.comp.script.props[name]) return this.comp.script.props[name];
-    if (this.comp.script && this.comp.script.data[name]) return this.comp.script.data[name];
-    return undefined;
+    if (comp.script && comp.script.props[name]) return [name, comp.script.props[name]];
+    if (comp.script && comp.script.data[name]) return [name, comp.script.data[name]];
+    return [name, undefined];
+  }
+
+  private static getObject(attrs: [string, any][]): Props {
+    return attrs.reduce((accum, [k, v]) => {
+      accum[k] = v;
+      return accum;
+    }, {});
   }
 }
