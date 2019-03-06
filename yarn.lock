@@ -18,6 +18,11 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
+"@types/events@*":
+  version "3.0.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
+  integrity sha1-KGLz9Yqaf3w+eNefEw3U1xwlwqc=
+
 "@types/jest@23.3.2":
   version "23.3.2"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/jest/-/jest-23.3.2.tgz#07b90f6adf75d42c34230c026a2529e56c249dbb"
@@ -45,6 +50,14 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
+
+"@types/xml2js@0.4.3":
+  version "0.4.3"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/xml2js/-/xml2js-0.4.3.tgz#2f41bfc74d5a4022511721f872ed395a210ad3b7"
+  integrity sha1-L0G/x01aQCJRFyH4cu05WiEK07c=
+  dependencies:
+    "@types/events" "*"
+    "@types/node" "*"
 
 "@vue/component-compiler-utils@2.2.0", "@vue/component-compiler-utils@^2.1.0":
   version "2.2.0"
@@ -6052,6 +6065,13 @@ ws@^6.1.0:
   integrity sha1-EZqdv5LFThkOwY0Q6HHVXJXPk3M=
   dependencies:
     async-limiter "~1.0.0"
+
+xml-js@1.6.11:
+  version "1.6.11"
+  resolved "https://registry.npmjs.org/xml-js/-/xml-js-1.6.11.tgz#927d2f6947f7f1c19a316dd8eea3614e8b18f8e9"
+  integrity sha512-7rVi2KMfwfWFl+GpPg6m80IVMWXLRjO+PxTq7V2CDhoGak0wzYzFgUY2m4XJ47OGdXd8eLE8EmwfAmdjw7lC1g==
+  dependencies:
+    sax "^1.2.4"
 
 xml-name-validator@^3.0.0:
   version "3.0.0"

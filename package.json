@@ -36,6 +36,7 @@
     "@vue/component-compiler-utils": "2.2.0",
     "create-react-class": "15.6.3",
     "lodash": "4.17.11",
-    "vue-template-compiler": "2.5.17"
+    "vue-template-compiler": "2.5.17",
+    "xml-js": "1.6.11"
   }
 }
