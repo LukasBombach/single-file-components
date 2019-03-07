@@ -1,9 +1,19 @@
 import TemplateParser from "../../lib/parser/template";
 
-const root = root => ({ root });
-const div = (...children) => expect.objectContaining({ type: "element", name: "div", children });
-const p = (...children) => expect.objectContaining({ type: "element", name: "p", children });
+const element = (name, ...args) => {
+  const lastArg = args[args.length - 1];
+  const hasAttrs = lastArg.toString() !== "ObjectContaining";
+  const children = hasAttrs ? args.slice(0, -1) : args;
+  const attrs = hasAttrs ? { attrs: expect.objectContaining(lastArg) } : undefined;
+  const type = "element";
+  const expectedObject = Object.assign({}, { type, name, children }, attrs);
+  return expect.objectContaining(expectedObject);
+};
+
+const div = (...args) => element("div", ...args);
+const p = (...args) => element("p", ...args);
 const text = text => expect.objectContaining({ type: "text", text });
+const root = root => ({ root });
 
 describe("ScriptParser", () => {
   test("a single tag", async () => {
@@ -13,7 +23,7 @@ describe("ScriptParser", () => {
   });
 
   test("a tag containing a tag", async () => {
-    const html = `<template><div id="div"><p id="p">contents</p></div></template>`;
+    const html = `<template><div><p>contents</p></div></template>`;
     const expectedJson = root(div(p(text("contents"))));
     expect(new TemplateParser().parse(html)).toEqual(expectedJson);
   });
@@ -44,13 +54,13 @@ describe("ScriptParser", () => {
 
   test("a single tag with attributes", async () => {
     const html = `<template><div id="app" class="loaded">contents</div></template>`;
-    const expectedJson = root(
-      expect.objectContaining({
-        name: "div",
-        children: [text("contents")],
-        attrs: { id: "app", class: "loaded" }
-      })
-    );
+    const expectedJson = root(div(text("contents"), { id: "app", class: "loaded" }));
+    expect(new TemplateParser().parse(html)).toEqual(expectedJson);
+  });
+
+  test("a tag containing a tag", async () => {
+    const html = `<template><div id="div"><p id="p">contents</p></div></template>`;
+    const expectedJson = root(div(p(text("contents"), { id: "p" }), { id: "div" }));
     expect(new TemplateParser().parse(html)).toEqual(expectedJson);
   });
 });

@@ -18,15 +18,15 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@types/events@*":
-  version "3.0.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
-  integrity sha1-KGLz9Yqaf3w+eNefEw3U1xwlwqc=
-
 "@types/jest@23.3.2":
   version "23.3.2"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/jest/-/jest-23.3.2.tgz#07b90f6adf75d42c34230c026a2529e56c249dbb"
   integrity sha1-B7kPat911Cw0IwwCaiUp5Wwknbs=
+
+"@types/lodash@4.14.122":
+  version "4.14.122"
+  resolved "https://registry.npmjs.org/@types/lodash/-/lodash-4.14.122.tgz#3e31394c38cf1e5949fb54c1192cbc406f152c6c"
+  integrity sha512-9IdED8wU93ty8gP06ninox+42SBSJHp2IAamsSYMUY76mshRTeUsid/gtbl8ovnOwy8im41ib4cxTiIYMXGKew==
 
 "@types/node@*":
   version "10.12.0"
@@ -50,14 +50,6 @@
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
-
-"@types/xml2js@0.4.3":
-  version "0.4.3"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/xml2js/-/xml2js-0.4.3.tgz#2f41bfc74d5a4022511721f872ed395a210ad3b7"
-  integrity sha1-L0G/x01aQCJRFyH4cu05WiEK07c=
-  dependencies:
-    "@types/events" "*"
-    "@types/node" "*"
 
 "@vue/component-compiler-utils@2.2.0", "@vue/component-compiler-utils@^2.1.0":
   version "2.2.0"
@@ -3746,8 +3738,8 @@ lodash.sortby@^4.7.0:
 
 lodash@4.17.11, lodash@^4.13.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.4:
   version "4.17.11"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
-  integrity sha1-s56mIp72B+zYniyN8SU2iRysm40=
+  resolved "https://registry.npmjs.org/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
+  integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
 
 loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1:
   version "1.4.0"
