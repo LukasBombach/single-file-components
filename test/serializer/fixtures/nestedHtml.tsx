@@ -3,20 +3,18 @@ import { ComponentDescriptor } from "../../../lib/model/component";
 import { ElementDescriptor } from "../../../lib/model/template";
 
 const childElement: ElementDescriptor = {
-  tagName: "p",
-  children: ["contents"],
-  attrs: {},
-  parent: null
+  name: "p",
+  children: [{ type: "text", text: "contents" }],
+  attrs: {}
 };
 
 export const compDescriptor: ComponentDescriptor = {
   fileName: "ExpectedClass",
   template: {
     root: {
-      tagName: "div",
+      name: "div",
       children: [childElement],
-      attrs: {},
-      parent: null
+      attrs: {}
     }
   }
 };

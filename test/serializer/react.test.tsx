@@ -45,8 +45,6 @@ describe("ReactSerializer", () => {
 
   test("a child component with props", async () => {
     const { serialized, expected } = await mount("./fixtures/props");
-    // console.log(serialized.html());
-    // console.log(expected.html());
     expect(serialized.html()).toBe(expected.html());
   });
 });

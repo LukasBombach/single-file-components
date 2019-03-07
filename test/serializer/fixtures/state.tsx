@@ -5,10 +5,9 @@ export const compDescriptor: ComponentDescriptor = {
   fileName: "ExpectedClass",
   template: {
     root: {
-      tagName: "div",
-      children: ["Hello {{ greeting }}"],
-      attrs: {},
-      parent: null
+      name: "div",
+      children: [{ type: "text", text: "Hello {{ greeting }}" }],
+      attrs: {}
     }
   },
   script: {

@@ -1,30 +1,19 @@
 export interface TemplateDescriptor {
-  root: ElementDescriptor | string;
+  root: ElementDescriptor;
   lang?: string;
 }
 
 export interface ElementDescriptor {
-  attributes?: AttrsDescriptor;
+  attrs?: AttrsDescriptor;
   cdata?: string;
   doctype?: string;
   comment?: string;
-  text?: string | number | boolean;
+  text?: string;
   type?: string;
   name?: string;
   children?: Array<ElementDescriptor>;
 }
 
 export interface AttrsDescriptor {
-  [key: string]: string | number | undefined;
+  [key: string]: string;
 }
-
-/* export interface ElementDescriptor {
-  tagName: string;
-  attrs: AttrsDescriptor;
-  children: (ElementDescriptor | string)[];
-  parent?: ElementDescriptor;
-} */
-
-/* export interface AttrsDescriptor {
-  [p: string]: string;
-} */

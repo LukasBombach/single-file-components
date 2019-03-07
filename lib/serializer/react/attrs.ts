@@ -7,7 +7,7 @@ interface Props {
 
 export default class ReactAttrsSerializer {
   static getProps(comp: ComponentDescriptor, attrs: AttrsDescriptor): string {
-    const attrsArray = ReactAttrsSerializer.getArray(attrs);
+    const attrsArray = attrs ? ReactAttrsSerializer.getArray(attrs) : [];
     const transformedAttrs = ReactAttrsSerializer.transformAttrs(comp, attrsArray);
     const props = ReactAttrsSerializer.getObject(transformedAttrs);
     return JSON.stringify(props);

@@ -5,9 +5,9 @@ const ChildComponent: ComponentDescriptor = {
   fileName: "ChildElement",
   template: {
     root: {
-      tagName: "p",
+      name: "p",
       attrs: {},
-      children: ["{{ greeting }}"]
+      children: [{ type: "text", text: "{{ greeting }}" }]
     }
   }
 };
@@ -16,11 +16,11 @@ export const compDescriptor: ComponentDescriptor = {
   fileName: "ExpectedClass",
   template: {
     root: {
-      tagName: "div",
+      name: "div",
       attrs: {},
       children: [
         {
-          tagName: "ChildComponent",
+          name: "ChildComponent",
           attrs: {
             ":greeting": "greeting"
           },
