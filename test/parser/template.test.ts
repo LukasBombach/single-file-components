@@ -12,6 +12,8 @@ const element = (name, ...args) => {
 
 const div = (...args) => element("div", ...args);
 const p = (...args) => element("p", ...args);
+const ul = (...args) => element("ul", ...args);
+const li = (...args) => element("li", ...args);
 const text = text => expect.objectContaining({ type: "text", text });
 const root = root => ({ root });
 
@@ -58,9 +60,21 @@ describe("ScriptParser", () => {
     expect(new TemplateParser().parse(html)).toEqual(expectedJson);
   });
 
-  test("a tag containing a tag", async () => {
+  test("a tag with attributes containing a tag with attributes", async () => {
     const html = `<template><div id="div"><p id="p">contents</p></div></template>`;
     const expectedJson = root(div(p(text("contents"), { id: "p" }), { id: "div" }));
+    expect(new TemplateParser().parse(html)).toEqual(expectedJson);
+  });
+
+  test("a for-loop", async () => {
+    const html = `<template><ul><li v-for="item in items">{{ item.message }}</li></ul></template>`;
+    const expectedJson = root(ul(li(text("{{ item.message }}"), { "v-for": "item in items" })));
+    expect(new TemplateParser().parse(html)).toEqual(expectedJson);
+  });
+
+  test("a for-loop with attreibute", async () => {
+    const html = `<template><ul id="example-1"><li v-for="item in items">{{ item.message }}</li></ul></template>`;
+    const expectedJson = root(ul(li(text("{{ item.message }}"), { "v-for": "item in items" }), { id: "example-1" }));
     expect(new TemplateParser().parse(html)).toEqual(expectedJson);
   });
 });
