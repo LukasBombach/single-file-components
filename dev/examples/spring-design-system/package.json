@@ -1,7 +1,0 @@
-{
-  "name": "spring-design-system",
-  "scripts": {
-    "build-react": "webpack --config webpack.react.config.js && npm publish spring-design-system-react",
-    "build-vue": "webpack --config webpack.vue.config.js && npm publish spring-design-system-vue"
-  }
-}
