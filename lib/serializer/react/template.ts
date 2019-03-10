@@ -1,54 +1,45 @@
 import { ElementDescriptor, AttrsDescriptor } from "../../model/template";
 import { ComponentDescriptor } from "../../model/component";
-import ReactSerializer from ".";
-import ReactAttrsSerializer from "./attrs";
+import text from "./template/text";
+import htmlElement from "./template/htmlElement";
+import component from "./template/component";
+//import vFor from "./template/v-for";
+
+export interface Handlers {
+  [key: string]: (...args: any[]) => string;
+}
 
 export default class ReactTemplateSerializer {
-  private comp: ComponentDescriptor;
+  private compDesc: ComponentDescriptor;
+  private handlers: Handlers = {
+    text,
+    htmlElement,
+    component
+  };
 
-  constructor(comp: ComponentDescriptor) {
-    this.comp = comp;
+  constructor(compDesc: ComponentDescriptor) {
+    this.compDesc = compDesc;
   }
 
   public getReactElement(): string {
-    return this.serialize(this.comp.template.root);
+    return this.serialize(this.compDesc.template.root);
   }
 
-  private serialize(el: ElementDescriptor): string {
-    if (el.type === "text") return this.serializeString(el.text);
-    return this.serializeElementDescriptor(el);
+  public serialize(el: ElementDescriptor): string {
+    if (this.isText(el)) return this.handler("text", el, "template");
+    if (this.isComponent(el)) return this.handler("component", el);
+    return this.handler("htmlElement", el);
   }
 
-  private serializeString(str: string): string {
-    const variables = /\{\{\s*(\S+?)\s*\}\}/g;
-    return `\`${str}\``.replace(variables, "${template.$1}");
+  private handler(name: string, ...args: any[]): string {
+    return this.handlers[name].call(this, ...args);
   }
 
-  private serializeElementDescriptor(el: ElementDescriptor): string {
-    const reactEl = this.getElement(el.name);
-    const props = this.getProps(el.attrs);
-    const children = this.getChildren(el.children);
-    return `React.createElement(${reactEl}, ${props}, ${children})`;
+  private isComponent(el: ElementDescriptor): boolean {
+    return !!this.compDesc.script && !!this.compDesc.script.components[el.name];
   }
 
-  private getElement(name) {
-    const comp = this.getComponentForTagName(name);
-    return comp ? new ReactSerializer().serialize(comp) : `"${name}"`;
-  }
-
-  private getProps(attrs: AttrsDescriptor): string {
-    return ReactAttrsSerializer.getProps(this.comp, attrs);
-  }
-
-  private getChildren(children: (ElementDescriptor)[]): string {
-    if (!children) return "undefined";
-    if (children.length === 1) return this.serialize(children[0]);
-    return `[${children.map(c => this.serialize(c)).join(",")}]`;
-  }
-
-  private getComponentForTagName(name): ComponentDescriptor {
-    if (!this.comp.script) return null;
-    if (!this.comp.script.components[name]) return null;
-    return this.comp.script.components[name];
+  private isText(el: ElementDescriptor): boolean {
+    return el.type === "text";
   }
 }

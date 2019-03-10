@@ -47,4 +47,9 @@ describe("ReactSerializer", () => {
     const { serialized, expected } = await mount("./fixtures/props");
     expect(serialized.html()).toBe(expected.html());
   });
+
+  test.skip("a v-for loop", async () => {
+    const { serialized, expected } = await mount("./fixtures/forLoop");
+    expect(serialized.html()).toBe(expected.html());
+  });
 });
