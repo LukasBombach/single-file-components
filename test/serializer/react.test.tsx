@@ -48,7 +48,7 @@ describe("ReactSerializer", () => {
     expect(serialized.html()).toBe(expected.html());
   });
 
-  test.skip("a v-for loop", async () => {
+  test("a v-for loop", async () => {
     const { serialized, expected } = await mount("./fixtures/forLoop");
     expect(serialized.html()).toBe(expected.html());
   });
