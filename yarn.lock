@@ -350,6 +350,11 @@ are-we-there-yet@~1.1.2:
     delegates "^1.0.0"
     readable-stream "^2.0.6"
 
+arg@^4.1.0:
+  version "4.1.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/arg/-/arg-4.1.0.tgz#583c518199419e0037abb74062c37f8519e575f0"
+  integrity sha1-WDxRgZlBngA3q7dAYsN/hRnldfA=
+
 argparse@^1.0.7:
   version "1.0.10"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/argparse/-/argparse-1.0.10.tgz#bcd6791ea5ae09725e17e5ad988134cd40b3d911"
@@ -1818,7 +1823,7 @@ detect-newline@^2.1.0:
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/detect-newline/-/detect-newline-2.1.0.tgz#f41f1c10be4b00e87b5f13da680759f2c5bfd3e2"
   integrity sha1-9B8cEL5LAOh7XxPaaAdZ8sW/0+I=
 
-diff@^3.2.0:
+diff@^3.1.0, diff@^3.2.0:
   version "3.5.0"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/diff/-/diff-3.5.0.tgz#800c0dd1e0a8bfbc95835c202ad220fe317e5a12"
   integrity sha1-gAwN0eCov7yVg1wgKtIg/jF+WhI=
@@ -3763,7 +3768,7 @@ make-dir@^1.0.0:
   dependencies:
     pify "^3.0.0"
 
-make-error@1.x:
+make-error@1.x, make-error@^1.1.1:
   version "1.3.5"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/make-error/-/make-error-1.3.5.tgz#efe4e81f6db28cadd605c70f29c831b58ef776c8"
   integrity sha1-7+ToH22yjK3WBccPKcgxtY73dsg=
@@ -5662,6 +5667,17 @@ ts-jest@23.10.3:
     semver "^5.5"
     yargs-parser "10.x"
 
+ts-node@8.0.3:
+  version "8.0.3"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/ts-node/-/ts-node-8.0.3.tgz#aa60b836a24dafd8bf21b54766841a232fdbc641"
+  integrity sha1-qmC4NqJNr9i/IbVHZoQaIy/bxkE=
+  dependencies:
+    arg "^4.1.0"
+    diff "^3.1.0"
+    make-error "^1.1.1"
+    source-map-support "^0.5.6"
+    yn "^3.0.0"
+
 tslib@^1.9.0:
   version "1.9.3"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/tslib/-/tslib-1.9.3.tgz#d7e4dd79245d85428c4d7e4822a79917954ca286"
@@ -6131,3 +6147,8 @@ yargs@^11.0.0:
     which-module "^2.0.0"
     y18n "^3.2.1"
     yargs-parser "^9.0.2"
+
+yn@^3.0.0:
+  version "3.0.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/yn/-/yn-3.0.0.tgz#0073c6b56e92aed652fbdfd62431f2d6b9a7a091"
+  integrity sha1-AHPGtW6SrtZS+9/WJDHy1rmnoJE=

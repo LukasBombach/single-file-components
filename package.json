@@ -26,11 +26,13 @@
     "react-dom": "16.6.0",
     "require-from-string": "2.0.2",
     "ts-jest": "23.10.3",
+    "ts-node": "8.0.3",
     "typescript": "3.1.1",
     "webpack": "4.20.2"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "ts": "ts-node"
   },
   "dependencies": {
     "@vue/component-compiler": "3.6.0",
