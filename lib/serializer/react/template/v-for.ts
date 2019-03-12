@@ -11,12 +11,14 @@ export default function vFor(el: ElementDescriptor): string {
 
 function vForWithKey(el: ElementDescriptor): string {
   const [, item, key, items] = el.attrs["v-for"].match(regexWithIndex);
-  return `template.${items}.map((${item}, ${key}) => ${htmlElementWithoutVFor.call(this, el, [item, key])})`;
+  // return `template.${items}.map((${item}, ${key}) => ${htmlElementWithoutVFor.call(this, el, [item, key])})`;
+  return `${items}.map((${item}, ${key}) => ${htmlElementWithoutVFor.call(this, el, [item, key])})`;
 }
 
 function vForWithoutKey(el: ElementDescriptor): string {
   const [, item, items] = el.attrs["v-for"].match(regexWithoutIndex);
-  return `template.${items}.map((${item}) => ${htmlElementWithoutVFor.call(this, el, [item])})`;
+  // return `template.${items}.map((${item}) => ${htmlElementWithoutVFor.call(this, el, [item])})`;
+  return `${items}.map((${item}) => ${htmlElementWithoutVFor.call(this, el, [item])})`;
 }
 
 function htmlElementWithoutVFor(el: ElementDescriptor, locals: string[] = []): string {

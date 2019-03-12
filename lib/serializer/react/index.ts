@@ -8,7 +8,8 @@ export default class ReactSerializer {
     const className = this.getClassName(comp);
     const initalState = this.getInitalState(comp);
     const template = this.getTemplate(comp);
-    const serializedString = reactClass(className, initalState, template);
+    const templateVars = this.getTemplateVars(comp);
+    const serializedString = reactClass(className, initalState, template, templateVars);
     // console.log(serializedString);
     return serializedString;
   }
@@ -23,5 +24,12 @@ export default class ReactSerializer {
 
   private getTemplate(comp: ComponentDescriptor): string {
     return new ReactTemplateSerializer(comp).getReactElement();
+  }
+
+  private getTemplateVars(comp: ComponentDescriptor): string[] {
+    if (!comp.script) return [];
+    const dataVars = Object.keys(comp.script.data);
+    const propsVars = Object.keys(comp.script.props);
+    return Array.from(new Set<string>([...dataVars, ...propsVars]));
   }
 }

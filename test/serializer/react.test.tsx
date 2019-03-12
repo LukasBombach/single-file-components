@@ -49,8 +49,11 @@ describe("ReactSerializer", () => {
   });
 
   test("a v-for loop", async () => {
+    const spyError = jest.spyOn(console, "error").mockImplementation(() => {});
     const { serialized, expected } = await mount("./fixtures/forLoop");
     expect(serialized.html()).toBe(expected.html());
+    expect(spyError).toHaveBeenCalledTimes(1);
+    spyError.mockRestore();
   });
 
   test("a v-for loop with index and child and attrs", async () => {

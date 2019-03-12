@@ -15,8 +15,8 @@ export default class ReactAttrsSerializer {
     const serializedAttrs = Object.entries(attrs)
       .map(([key, val]) => {
         if (key.charAt(0) === ":") {
-          const valVar = locals.includes(key) ? val : `template.${val}`;
-          return `"${key.substring(1)}": ${valVar}`;
+          //const valVar = locals.includes(key) ? val : `template.${val}`;
+          return `"${key.substring(1)}": ${val}`;
         } else return `"${key}": "${val}"`;
       })
       .join(",");
