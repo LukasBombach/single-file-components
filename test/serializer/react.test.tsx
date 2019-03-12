@@ -43,7 +43,7 @@ describe("ReactSerializer", () => {
     expect(serialized.html()).toBe(expected.html());
   });
 
-  test.only("a child component with props", async () => {
+  test("a child component with props", async () => {
     const { serialized, expected } = await mount("./fixtures/props");
     expect(serialized.html()).toBe(expected.html());
   });
@@ -53,7 +53,7 @@ describe("ReactSerializer", () => {
     expect(serialized.html()).toBe(expected.html());
   });
 
-  test("a v-for loop with index and child and attrs", async () => {
+  test.only("a v-for loop with index and child and attrs", async () => {
     const { serialized, expected } = await mount("./fixtures/forLoopWithIndexAndChildAndAttrs");
     expect(serialized.html()).toBe(expected.html());
   });

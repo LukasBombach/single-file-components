@@ -12,8 +12,14 @@ export default class ReactAttrsSerializer {
     const props = ReactAttrsSerializer.getObject(transformedAttrs);
     return JSON.stringify(props); */
     if (!attrs) return "{}";
+    console.log(locals);
     const serializedAttrs = Object.entries(attrs)
-      .map(([key, val]) => (key.charAt(0) === ":" ? `"${key.substring(1)}": ${val}` : `"${key}": "${val}"`))
+      .map(([key, val]) => {
+        if (key.charAt(0) === ":") {
+          const valVar = locals.includes(key) ? val : `template.${val}`;
+          return `"${key.substring(1)}": ${valVar}`;
+        } else return `"${key}": "${val}"`;
+      })
       .join(",");
     return `{ ${serializedAttrs} }`;
   }
