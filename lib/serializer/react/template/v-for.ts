@@ -11,7 +11,7 @@ export default function vFor(el: ElementDescriptor): string {
 
 function vForWithKey(el: ElementDescriptor): string {
   const [, item, key, items] = el.attrs["v-for"].match(regexWithIndex);
-  return `template.${items}.map((${item}, ${key}) => React.createElement("${name}", { ${key} }, ${item}))`;
+  return `template.${items}.map((${item}, ${key}) => ${htmlElementWithoutVFor.call(this, el, [item, key])})`;
 }
 
 function vForWithoutKey(el: ElementDescriptor): string {
@@ -23,7 +23,7 @@ function htmlElementWithoutVFor(el: ElementDescriptor, locals: string[] = []): s
   const reactEl = `"${el.name}"`;
   const attrs = Object.assign({}, el.attrs);
   delete attrs["v-for"];
-  const props = ReactAttrsSerializer.getProps(this.compDesc, attrs);
+  const props = ReactAttrsSerializer.getProps(this.compDesc, attrs, locals);
   const children = !el.children ? "undefined" : `[${el.children.map(c => this.serialize(c, locals)).join(",")}]`;
   return `React.createElement(${reactEl}, ${props}, ${children})`;
 }

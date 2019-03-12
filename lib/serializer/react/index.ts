@@ -9,7 +9,7 @@ export default class ReactSerializer {
     const initalState = this.getInitalState(comp);
     const template = this.getTemplate(comp);
     const serializedString = reactClass(className, initalState, template);
-    // console.log(serializedString);
+    console.log(serializedString);
     return serializedString;
   }
 

@@ -43,12 +43,12 @@ describe("ReactSerializer", () => {
     expect(serialized.html()).toBe(expected.html());
   });
 
-  test("a child component with props", async () => {
+  test.only("a child component with props", async () => {
     const { serialized, expected } = await mount("./fixtures/props");
     expect(serialized.html()).toBe(expected.html());
   });
 
-  test.only("a v-for loop", async () => {
+  test("a v-for loop", async () => {
     const { serialized, expected } = await mount("./fixtures/forLoop");
     expect(serialized.html()).toBe(expected.html());
   });

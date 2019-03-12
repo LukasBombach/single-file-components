@@ -6,24 +6,35 @@ interface Props {
 }
 
 export default class ReactAttrsSerializer {
-  static getProps(comp: ComponentDescriptor, attrs: AttrsDescriptor): string {
-    const attrsArray = attrs ? ReactAttrsSerializer.getArray(attrs) : [];
-    const transformedAttrs = ReactAttrsSerializer.transformAttrs(comp, attrsArray);
+  static getProps(comp: ComponentDescriptor, attrs: AttrsDescriptor, locals: string[] = []): string {
+    /* const attrsArray = attrs ? ReactAttrsSerializer.getArray(attrs) : [];
+    const transformedAttrs = ReactAttrsSerializer.transformAttrs(comp, attrsArray, locals);
     const props = ReactAttrsSerializer.getObject(transformedAttrs);
-    return JSON.stringify(props);
+    return JSON.stringify(props); */
+    if (!attrs) return "{}";
+    const serializedAttrs = Object.entries(attrs)
+      .map(([key, val]) => (key.charAt(0) === ":" ? `"${key.substring(1)}": ${val}` : `"${key}": "${val}"`))
+      .join(",");
+    return `{ ${serializedAttrs} }`;
   }
 
-  private static getArray(attrs: AttrsDescriptor): [string, string][] {
+  /* private static getArray(attrs: AttrsDescriptor): [string, string][] {
     return Object.entries(attrs);
   }
 
-  private static transformAttrs(comp: ComponentDescriptor, attrs: [string, string][]): [string, any][] {
-    return attrs.map(attr => ReactAttrsSerializer.transformAttr(comp, attr));
-  }
+  private static transformAttrs(comp: ComponentDescriptor, attrs: [string, string][], locals: string[]): [string, any][] {
+    return attrs.map(attr => ReactAttrsSerializer.transformAttr(comp, attr, locals));
+  } */
 
-  private static transformAttr(comp: ComponentDescriptor, [key, val]: [string, string]): [string, any] {
+  /* private static transformAttr(comp: ComponentDescriptor, [key, val]: [string, string], locals: string[]): [string, any] {
+    if (key.charAt(0) === ":" && locals.includes(val)) return ReactAttrsSerializer.transformLocal(comp, key, val);
     if (key.charAt(0) === ":") return ReactAttrsSerializer.transformBind(comp, key, val);
     return [key, val];
+  } */
+
+  /* private static transformLocal(comp, key, val): [string, any] {
+    const name = key.substring(1);
+    return [name, val];
   }
 
   private static transformBind(comp, key, val): [string, any] {
@@ -38,5 +49,5 @@ export default class ReactAttrsSerializer {
       accum[k] = v;
       return accum;
     }, {});
-  }
+  } */
 }
