@@ -12,7 +12,6 @@ export default class ReactAttrsSerializer {
     const props = ReactAttrsSerializer.getObject(transformedAttrs);
     return JSON.stringify(props); */
     if (!attrs) return "{}";
-    console.log(locals);
     const serializedAttrs = Object.entries(attrs)
       .map(([key, val]) => {
         if (key.charAt(0) === ":") {
