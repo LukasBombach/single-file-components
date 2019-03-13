@@ -1,4 +1,4 @@
-import { ElementDescriptor, AttrsDescriptor } from "../../model/template";
+import { ElementDescriptor } from "../../model/template";
 import { ComponentDescriptor } from "../../model/component";
 import text from "./template/text";
 import htmlElement from "./template/htmlElement";
@@ -26,8 +26,8 @@ export default class ReactTemplateSerializer {
     return this.serialize(this.compDesc.template.root);
   }
 
-  public serialize(el: ElementDescriptor, locals: string[] = []): string {
-    if (this.isText(el)) return this.handler("text", el, locals);
+  public serialize(el: ElementDescriptor): string {
+    if (this.isText(el)) return this.handler("text", el);
     if (this.isComponent(el)) return this.handler("component", el);
     if (this.hasVFor(el)) return this.handler("vFor", el);
     return this.handler("htmlElement", el);

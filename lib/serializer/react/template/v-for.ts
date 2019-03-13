@@ -21,11 +21,11 @@ function vForWithoutKey(el: ElementDescriptor): string {
   return `${items}.map((${item}) => ${htmlElementWithoutVFor.call(this, el, [item])})`;
 }
 
-function htmlElementWithoutVFor(el: ElementDescriptor, locals: string[] = []): string {
+function htmlElementWithoutVFor(el: ElementDescriptor): string {
   const reactEl = `"${el.name}"`;
   const attrs = Object.assign({}, el.attrs);
   delete attrs["v-for"];
-  const props = ReactAttrsSerializer.getProps(this.compDesc, attrs, locals);
-  const children = !el.children ? "undefined" : `[${el.children.map(c => this.serialize(c, locals)).join(",")}]`;
+  const props = ReactAttrsSerializer.getProps(attrs);
+  const children = !el.children ? "undefined" : `[${el.children.map(c => this.serialize(c)).join(",")}]`;
   return `React.createElement(${reactEl}, ${props}, ${children})`;
 }

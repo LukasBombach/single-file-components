@@ -1,14 +1,6 @@
 import TemplateParser from "../../lib/parser/template";
 
-const template = `
-  <template>
-    <ul>
-      <li v-for="(image, index) in images" :key="index">
-        <img :src="image.src" :alt="image.name" />
-      </li>
-    </ul>
-  </template>
-`;
+const template = `<template><hr v-if="config && config.var === 'val'" /></template>`;
 
 const json = new TemplateParser().parse(template);
 
