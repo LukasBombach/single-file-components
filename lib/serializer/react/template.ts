@@ -10,7 +10,7 @@ export interface Handlers {
 }
 
 export default class ReactTemplateSerializer {
-  private compDesc: ComponentDescriptor;
+  public compDesc: ComponentDescriptor;
   private handlers: Handlers = {
     text,
     htmlElement,
@@ -34,7 +34,7 @@ export default class ReactTemplateSerializer {
   }
 
   private handler(name: string, ...args: any[]): string {
-    return this.handlers[name].call(this, ...args);
+    return this.handlers[name](...args, this);
   }
 
   private isComponent(el: ElementDescriptor): boolean {
