@@ -1,9 +1,9 @@
-import { ComponentDescriptor } from "../../model/component";
+import { Component } from "../../model/component";
 
-export default class ReactScriptSerializer {
-  private comp: ComponentDescriptor;
+export default class Script {
+  private comp: Component;
 
-  constructor(comp: ComponentDescriptor) {
+  constructor(comp: Component) {
     this.comp = comp;
   }
 

@@ -1,5 +1,5 @@
-import { ElementDescriptor } from "../../model/template";
-import { ComponentDescriptor } from "../../model/component";
+import { Element } from "../../model/template";
+import { Component } from "../../model/component";
 import text from "./template/text";
 import htmlElement from "./template/htmlElement";
 import component from "./template/component";
@@ -9,8 +9,8 @@ export interface Handlers {
   [key: string]: (...args: any[]) => string;
 }
 
-export default class ReactTemplateSerializer {
-  public compDesc: ComponentDescriptor;
+export default class Template {
+  public compDesc: Component;
   private handlers: Handlers = {
     text,
     htmlElement,
@@ -18,7 +18,7 @@ export default class ReactTemplateSerializer {
     vFor
   };
 
-  constructor(compDesc: ComponentDescriptor) {
+  constructor(compDesc: Component) {
     this.compDesc = compDesc;
   }
 
@@ -26,7 +26,7 @@ export default class ReactTemplateSerializer {
     return this.serialize(this.compDesc.template.root);
   }
 
-  public serialize(el: ElementDescriptor): string {
+  public serialize(el: Element): string {
     if (this.isText(el)) return this.handler("text", el);
     if (this.isComponent(el)) return this.handler("component", el);
     if (this.hasVFor(el)) return this.handler("vFor", el);
@@ -37,15 +37,15 @@ export default class ReactTemplateSerializer {
     return this.handlers[name](...args, this);
   }
 
-  private isComponent(el: ElementDescriptor): boolean {
+  private isComponent(el: Element): boolean {
     return !!this.compDesc.script && !!this.compDesc.script.components[el.name];
   }
 
-  private isText(el: ElementDescriptor): boolean {
+  private isText(el: Element): boolean {
     return el.type === "text";
   }
 
-  private hasVFor(el: ElementDescriptor): boolean {
+  private hasVFor(el: Element): boolean {
     return el.attrs && "v-for" in el.attrs;
   }
 }

@@ -1,7 +1,7 @@
 import * as React from "react";
-import { ComponentDescriptor } from "../../../lib/model/component";
+import { Component } from "../../../lib/model/component";
 
-export const compDescriptor: ComponentDescriptor = {
+export const compDescriptor: Component = {
   fileName: "ExpectedClass",
   template: {
     root: {
@@ -29,6 +29,12 @@ export class ExpectedClass extends React.Component {
   state = { items: ["Foo", "Bar"] };
 
   render() {
-    return <ul>{this.state.items.map((item, i) => <li key={i}>{item}</li>)}</ul>;
+    return (
+      <ul>
+        {this.state.items.map((item, i) => (
+          <li key={i}>{item}</li>
+        ))}
+      </ul>
+    );
   }
 }

@@ -1,7 +1,7 @@
 import * as React from "react";
-import { ComponentDescriptor } from "../../../lib/model/component";
+import { Component } from "../../../lib/model/component";
 
-const ChildComponent: ComponentDescriptor = {
+const ChildComponent: Component = {
   fileName: "ChildElement",
   template: {
     root: {
@@ -12,7 +12,7 @@ const ChildComponent: ComponentDescriptor = {
   }
 };
 
-export const compDescriptor: ComponentDescriptor = {
+export const compDescriptor: Component = {
   fileName: "ExpectedClass",
   template: {
     root: {

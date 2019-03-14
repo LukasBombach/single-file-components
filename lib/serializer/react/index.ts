@@ -1,10 +1,10 @@
-import { ComponentDescriptor } from "../../model/component";
-import ReactTemplateSerializer from "./template";
-import ReactScriptSerializer from "./script";
+import { Component } from "../../model/component";
+import Template from "./template";
+import Script from "./script";
 import reactClass from "./reactClass";
 
 export default class ReactSerializer {
-  public serialize(comp: ComponentDescriptor): string {
+  public serialize(comp: Component): string {
     const className = this.getClassName(comp);
     const initalState = this.getInitalState(comp);
     const template = this.getTemplate(comp);
@@ -14,19 +14,19 @@ export default class ReactSerializer {
     return serializedString;
   }
 
-  private getClassName(comp: ComponentDescriptor): string {
+  private getClassName(comp: Component): string {
     return comp.fileName;
   }
 
-  private getInitalState(comp: ComponentDescriptor): string {
-    return new ReactScriptSerializer(comp).getData();
+  private getInitalState(comp: Component): string {
+    return new Script(comp).getData();
   }
 
-  private getTemplate(comp: ComponentDescriptor): string {
-    return new ReactTemplateSerializer(comp).getReactElement();
+  private getTemplate(comp: Component): string {
+    return new Template(comp).getReactElement();
   }
 
-  private getTemplateVars(comp: ComponentDescriptor): string[] {
+  private getTemplateVars(comp: Component): string[] {
     if (!comp.script) return [];
     const dataVars = Object.keys(comp.script.data);
     const propsVars = Object.keys(comp.script.props);

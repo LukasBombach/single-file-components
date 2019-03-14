@@ -1,13 +1,13 @@
-import { AttrsDescriptor } from "../../model/template";
+import { Attrs } from "../../model/template";
 
-export default class ReactAttrsSerializer {
-  static getProps(attrs: AttrsDescriptor): string {
-    return !attrs ? "{}" : `{ ${ReactAttrsSerializer.serializedAttrs(attrs)} }`;
+export default class Attrs {
+  static getProps(attrs: Attrs): string {
+    return !attrs ? "{}" : `{ ${Attrs.serializedAttrs(attrs)} }`;
   }
 
-  private static serializedAttrs(attrs: AttrsDescriptor): string {
+  private static serializedAttrs(attrs: Attrs): string {
     return Object.entries(attrs)
-      .map(([key, val]) => ReactAttrsSerializer.serializePair(key, val))
+      .map(([key, val]) => Attrs.serializePair(key, val))
       .join(", ");
   }
 

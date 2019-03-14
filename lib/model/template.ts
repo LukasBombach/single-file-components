@@ -1,19 +1,21 @@
-export interface TemplateDescriptor {
-  root: ElementDescriptor;
+export enum ElementType {
+  Element = "element",
+  Text = "text"
+}
+
+export interface Template {
+  root: Element;
   lang?: string;
 }
 
-export interface ElementDescriptor {
-  attrs?: AttrsDescriptor;
-  cdata?: string;
-  doctype?: string;
-  comment?: string;
+export interface Element {
+  type: ElementType;
+  name: string;
+  attrs?: Attrs;
+  children?: Element[];
   text?: string;
-  type?: string;
-  name?: string;
-  children?: Array<ElementDescriptor>;
 }
 
-export interface AttrsDescriptor {
+export interface Attrs {
   [key: string]: string;
 }

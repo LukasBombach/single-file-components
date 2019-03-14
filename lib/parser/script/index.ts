@@ -1,14 +1,14 @@
 import * as requireFromString from "require-from-string";
-import { ScriptDescriptor } from "../../model/script";
+import { Script } from "../../model/script";
 import ComponentParser from "../component";
 
 export default class ScriptParser {
-  public parse(source: string): ScriptDescriptor {
+  public parse(source: string): Script {
     const script = ComponentParser.script(source);
     return ScriptParser.parseContents(script);
   }
 
-  private static parseContents(contents: string): ScriptDescriptor {
+  private static parseContents(contents: string): Script {
     const exports = ScriptParser.requireFromString(contents);
     const { components, data, props } = exports;
     return { components, data, props };

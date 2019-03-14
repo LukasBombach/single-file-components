@@ -1,7 +1,7 @@
 import * as React from "react";
-import { ComponentDescriptor } from "../../../lib/model/component";
+import { Component } from "../../../lib/model/component";
 
-export const compDescriptor: ComponentDescriptor = {
+export const compDescriptor: Component = {
   fileName: "ExpectedClass",
   template: {
     root: {

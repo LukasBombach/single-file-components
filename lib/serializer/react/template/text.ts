@@ -1,6 +1,6 @@
-import { ElementDescriptor } from "../../../model/template";
+import { Element } from "../../../model/template";
 
-export default function text(el: ElementDescriptor): string {
+export default function text(el: Element): string {
   const variables = /\{\{\s*(\S+?)\s*\}\}/g;
   return `\`${el.text.replace(variables, "${$1}")}\``;
 }

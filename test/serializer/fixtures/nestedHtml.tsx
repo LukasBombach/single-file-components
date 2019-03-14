@@ -1,14 +1,14 @@
 import * as React from "react";
-import { ComponentDescriptor } from "../../../lib/model/component";
-import { ElementDescriptor } from "../../../lib/model/template";
+import { Component } from "../../../lib/model/component";
+import { Element } from "../../../lib/model/template";
 
-const childElement: ElementDescriptor = {
+const childElement: Element = {
   name: "p",
   children: [{ type: "text", text: "contents" }],
   attrs: {}
 };
 
-export const compDescriptor: ComponentDescriptor = {
+export const compDescriptor: Component = {
   fileName: "ExpectedClass",
   template: {
     root: {

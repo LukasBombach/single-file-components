@@ -1,9 +1,9 @@
-import { TemplateDescriptor } from "./template";
-import { ScriptDescriptor } from "./script";
+import { Template } from "./template";
+import { Script } from "./script";
 
-export interface ComponentDescriptor {
+export interface Component {
   fileName?: string;
-  template?: TemplateDescriptor;
-  script?: ScriptDescriptor;
+  template?: Template;
+  script?: Script;
   style?: string[];
 }

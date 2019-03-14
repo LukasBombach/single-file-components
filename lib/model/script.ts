@@ -1,24 +1,24 @@
-import { ComponentDescriptor } from "./component";
+import { Component } from "./component";
 
-export interface ScriptDescriptor {
-  components: ComponentsDescriptor;
-  data: DataDescriptor;
-  props: PropsDescriptor;
+export interface Script {
+  components: Components;
+  data: Data;
+  props: Props;
 }
 
-export interface ComponentsDescriptor {
-  [key: string]: ComponentDescriptor;
+export interface Components {
+  [key: string]: Component;
 }
 
-export interface DataDescriptor {
+export interface Data {
   [key: string]: any;
 }
 
-export interface PropsDescriptor {
-  [key: string]: PropDescriptor;
+export interface Props {
+  [key: string]: Prop;
 }
 
-export interface PropDescriptor {
+export interface Prop {
   type: any;
   required?: boolean;
   default?: any;
