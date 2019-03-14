@@ -1,6 +1,6 @@
 import { xml2js } from "xml-js";
-import ComponentParser from "../component";
-import { Template, Element } from "../../model/template";
+import ComponentParser from "./component";
+import { Template, Element } from "../model/template";
 
 export default class TemplateParser {
   parse(source: string): Template | string {

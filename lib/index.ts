@@ -1,3 +1,3 @@
-export default function vueReactLoader(source: string): string {
+export default function sfcLoader(source: string): string {
   return source;
 }

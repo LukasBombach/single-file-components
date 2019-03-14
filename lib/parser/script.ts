@@ -1,6 +1,6 @@
 import * as requireFromString from "require-from-string";
-import { Script } from "../../model/script";
-import ComponentParser from "../component";
+import { Script } from "../model/script";
+import ComponentParser from "./component";
 
 export default class ScriptParser {
   public parse(source: string): Script {
