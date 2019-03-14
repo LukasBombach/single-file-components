@@ -25,7 +25,8 @@ Why should the way we write them not be a choice and something we can actively t
 and design for ourselves.
 
 So I am trying to write a Webpack loader that is mostly compatible to Vue.js single file
-components and that transpiles to other frameworks like React or Stencil.
+components and that transpiles to other frameworks like React or Stencil. I'd call those
+`.sfc` files.
 
 ## Design Systems
 
