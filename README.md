@@ -1,3 +1,5 @@
+![](./docs/tmp_header.svg)
+
 # Single File Component Loader
 
 Abitious project that lets you read `.vue` files and transpile them to `React`, `Vue` and `WebComponents`.
