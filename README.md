@@ -4,14 +4,10 @@
 
 Abitious project that lets you read `.vue` files and transpile them to `React`, `Vue` and `WebComponents`.
 
-# WHY??
-
-For 2 reasons:
+WHY? For 2 reasons:
 
 1. Philosophy
 2. Design Systems
-
-In short:
 
 ## Philosophy
 
