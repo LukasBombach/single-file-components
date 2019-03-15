@@ -3,7 +3,7 @@ export enum ElementType {
   Text = "text"
 }
 
-export interface Template {
+export default interface Template {
   root: Element;
   lang?: string;
 }

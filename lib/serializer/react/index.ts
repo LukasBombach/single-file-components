@@ -1,35 +1,48 @@
-import { Component } from "../../model/component";
+import Component from "../../model/component";
 import Template from "./template";
-import Script from "./script";
-import reactClass from "./reactClass";
+
+interface State {
+  [key: string]: any;
+}
 
 export default class ReactSerializer {
-  public serialize(comp: Component): string {
-    const className = this.getClassName(comp);
-    const initalState = this.getInitalState(comp);
-    const template = this.getTemplate(comp);
-    const templateVars = this.getTemplateVars(comp);
-    const serializedString = reactClass(className, initalState, template, templateVars);
-    // console.log(serializedString);
-    return serializedString;
+  private comp: Component;
+  private state: State;
+  private props: string[];
+
+  constructor(comp: Component) {
+    this.comp = comp;
   }
 
-  private getClassName(comp: Component): string {
-    return comp.fileName;
+  toString(): string {
+    const name = this.getName();
+    const props = this.getPropsAsParams();
+    const stateHooks = this.getStateHooks();
+    const template = this.getTemplate();
+
+    return `
+    function ${name} (${props}) {
+      ${stateHooks}
+      return ${template};
+    }
+    `;
   }
 
-  private getInitalState(comp: Component): string {
-    return new Script(comp).getData();
+  private getName(): string {
+    return this.comp.fileName;
   }
 
-  private getTemplate(comp: Component): string {
-    return new Template(comp).getReactElement();
+  private getPropsAsParams(): string {
+    return this.props.join(", ");
   }
 
-  private getTemplateVars(comp: Component): string[] {
-    if (!comp.script) return [];
-    const dataVars = Object.keys(comp.script.data);
-    const propsVars = Object.keys(comp.script.props);
-    return Array.from(new Set<string>([...dataVars, ...propsVars]));
+  private getStateHooks(): string {
+    const entries = Object.entries(this.state);
+    const stateHooks = entries.map(([v, i]) => `const [${v}, set${v}] = useState(${i});`);
+    return stateHooks.join("\n");
+  }
+
+  private getTemplate(): string {
+    return new Template(this.comp).getReactElement();
   }
 }

@@ -1,4 +1,4 @@
-import ScriptParser from "../../lib/parser/script";
+import Script from "../../lib/parser/script";
 
 function setup() {
   const data = { data1: "data1", data2: "data2" };
@@ -7,7 +7,7 @@ function setup() {
   const json = { data, props, components };
   const str = JSON.stringify(json);
   const file = `<script>module.exports = ${str};</script>`;
-  const parsed = new ScriptParser().parse(file);
+  const parsed = new Script().parse(file);
   return { data, props, components, str, file, parsed };
 }
 

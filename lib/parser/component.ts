@@ -1,14 +1,14 @@
-export default class ComponentParser {
+export default class Component {
   static template(source: string): string {
-    return ComponentParser.getTags("template", source)[0];
+    return Component.getTags("template", source)[0];
   }
 
   static script(source: string): string {
-    return ComponentParser.getTags("script", source)[0];
+    return Component.getTags("script", source)[0];
   }
 
   static style(source: string): string {
-    return ComponentParser.getTags("style", source)[0];
+    return Component.getTags("style", source)[0];
   }
 
   private static getTags(tagName: string, source: string): string[] {

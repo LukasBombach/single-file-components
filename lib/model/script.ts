@@ -1,6 +1,6 @@
-import { Component } from "./component";
+import Component from "./component";
 
-export interface Script {
+export default interface Script {
   components: Components;
   data: Data;
   props: Props;

@@ -1,7 +1,7 @@
-import { Template } from "./template";
-import { Script } from "./script";
+import Template from "./template";
+import Script from "./script";
 
-export interface Component {
+export default interface Component {
   fileName: string;
   template?: Template;
   script?: Script;
