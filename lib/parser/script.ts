@@ -1,5 +1,5 @@
 import * as requireFromString from "require-from-string";
-import { Script as ScriptModel } from "../model/script";
+import ScriptModel from "../model/script";
 import Component from "./component";
 
 export default class Script {

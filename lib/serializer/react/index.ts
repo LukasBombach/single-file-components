@@ -5,6 +5,20 @@ interface State {
   [key: string]: any;
 }
 
+interface TemplateVars {
+  name: string;
+  props: string;
+  stateHooks: string;
+  template: string;
+}
+
+const render = ({ name, props, stateHooks, template }: TemplateVars): string => `
+function ${name} (${props}) {
+  ${stateHooks}
+  return ${template};
+}
+`;
+
 export default class ReactSerializer {
   private comp: Component;
   private state: State;
@@ -15,17 +29,15 @@ export default class ReactSerializer {
   }
 
   toString(): string {
+    return render(this.getTemplateVars());
+  }
+
+  private getTemplateVars(): TemplateVars {
     const name = this.getName();
     const props = this.getPropsAsParams();
     const stateHooks = this.getStateHooks();
     const template = this.getTemplate();
-
-    return `
-    function ${name} (${props}) {
-      ${stateHooks}
-      return ${template};
-    }
-    `;
+    return { name, props, stateHooks, template };
   }
 
   private getName(): string {

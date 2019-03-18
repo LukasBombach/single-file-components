@@ -1,13 +1,13 @@
 import { Attrs as AttrsModel } from "../../model/template";
 
-export default class Attrs {
+export default class Props {
   static getProps(attrs: AttrsModel): string {
-    return !attrs ? "{}" : `{ ${Attrs.serializedAttrs(attrs)} }`;
+    return !attrs ? "{}" : `{ ${Props.serializedAttrs(attrs)} }`;
   }
 
   private static serializedAttrs(attrs: AttrsModel): string {
     return Object.entries(attrs)
-      .map(([key, val]) => Attrs.serializePair(key, val))
+      .map(([key, val]) => Props.serializePair(key, val))
       .join(", ");
   }
 

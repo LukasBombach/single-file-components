@@ -1,5 +1,5 @@
 import { Element } from "../../model/template";
-import { Component } from "../../model/component";
+import Component from "../../model/component";
 import text from "./template/text";
 import htmlElement from "./template/htmlElement";
 import component from "./template/component";
@@ -46,6 +46,6 @@ export default class Template {
   }
 
   private hasVFor(el: Element): boolean {
-    return el.attrs && "v-for" in el.attrs;
+    return el.props && "v-for" in el.props;
   }
 }

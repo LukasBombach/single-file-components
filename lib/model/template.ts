@@ -11,11 +11,11 @@ export default interface Template {
 export interface Element {
   type: ElementType;
   name: string;
-  attrs?: Attrs;
+  props?: Props;
   children?: Element[];
   text?: string;
 }
 
-export interface Attrs {
+export interface Props {
   [key: string]: string;
 }

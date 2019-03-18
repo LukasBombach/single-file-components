@@ -5,7 +5,7 @@ import { Element } from "../../../lib/model/template";
 const childElement: Element = {
   name: "p",
   children: [{ type: "text", text: "contents" }],
-  attrs: {}
+  props: {}
 };
 
 export const compDescriptor: Component = {
