@@ -2,7 +2,7 @@ import Component from "./component";
 
 export default interface Script {
   components: Components;
-  data: Data;
+  data: () => Data;
   props: Props;
 }
 

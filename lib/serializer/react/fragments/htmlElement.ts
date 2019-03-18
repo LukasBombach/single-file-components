@@ -1,6 +1,6 @@
 import { Element } from "../../../model/template";
 import Props from "../props";
-import Template from "../template";
+import Template from ".";
 
 export default function htmlElement(el: Element, t: Template): string {
   const reactEl = `"${el.name}"`;

@@ -1,6 +1,6 @@
 import { Element } from "../../../model/template";
 import Props from "../props";
-import Template from "../template";
+import Template from ".";
 
 const regexWithIndex = /\(\W*(\w+)\W*,\W*(\w+)\W*\)\W*in\W*(\w+)/; // matches "(item, index) in items"
 const regexWithoutIndex = /(\w+)\W*in\W*(\w+)/; // matches "item in items"
