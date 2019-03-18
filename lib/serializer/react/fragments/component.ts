@@ -1,7 +1,7 @@
 import { Element } from "../../../model/template";
-import ReactSerializer from "../";
-import Props from "../props";
-import Template from ".";
+// import ReactSerializer from "../";
+// import Props from "../props";
+// import Template from ".";
 
 export default function component(el: Element, { comp, serialize }): string {
   return serialize(comp);
