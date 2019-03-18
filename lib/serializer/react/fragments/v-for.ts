@@ -10,19 +10,16 @@ export default function vFor(el: Element, { serialize }): string {
 
 function vForWithKey(el: Element, serialize: Function): string {
   const [, item, key, items] = el.props["v-for"].match(regexWithIndex);
-  return `${items}.map((${item}, ${key}) => ${htmlElementWithoutVFor(el, serialize)})`;
+  return `${items}.map((${item}, ${key}) => ${serialize(elWithoutVFor(el))})`;
 }
 
 function vForWithoutKey(el: Element, serialize: Function): string {
   const [, item, items] = el.props["v-for"].match(regexWithoutIndex);
-  return `${items}.map((${item}) => ${htmlElementWithoutVFor(el, serialize)})`;
+  return `${items}.map((${item}) => ${serialize(elWithoutVFor(el))})`;
 }
 
-function htmlElementWithoutVFor(el: Element, serialize: Function): string {
-  const reactEl = `"${el.name}"`;
-  const attrs = Object.assign({}, el.props);
-  delete attrs["v-for"];
-  const props = Props.getProps(attrs);
-  const children = !el.children ? "undefined" : `[${el.children.map(c => serialize(c)).join(",")}]`;
-  return `React.createElement(${reactEl}, ${props}, ${children})`;
+function elWithoutVFor(el: Element): Element {
+  const props = Object.assign({}, el.props);
+  delete props["v-for"];
+  return Object.assign({}, el, { props });
 }
