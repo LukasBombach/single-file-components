@@ -149,32 +149,32 @@
     chalk "^2.0.1"
     slash "^2.0.0"
 
-"@jest/core@^24.4.0":
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/core/-/core-24.4.0.tgz#ec53510f19dde5aaf4e9e28a3c3426fc0f2a41d6"
-  integrity sha1-7FNRDxnd5ar06eKKPDQm/A8qQdY=
+"@jest/core@^24.5.0":
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/core/-/core-24.5.0.tgz#2cefc6a69e9ebcae1da8f7c75f8a257152ba1ec0"
+  integrity sha1-LO/Gpp6evK4dqPfHX4olcVK6HsA=
   dependencies:
     "@jest/console" "^24.3.0"
-    "@jest/reporters" "^24.4.0"
-    "@jest/test-result" "^24.3.0"
-    "@jest/transform" "^24.4.0"
-    "@jest/types" "^24.3.0"
+    "@jest/reporters" "^24.5.0"
+    "@jest/test-result" "^24.5.0"
+    "@jest/transform" "^24.5.0"
+    "@jest/types" "^24.5.0"
     ansi-escapes "^3.0.0"
     chalk "^2.0.1"
     exit "^0.1.2"
     graceful-fs "^4.1.15"
-    jest-changed-files "^24.3.0"
-    jest-config "^24.4.0"
-    jest-haste-map "^24.4.0"
-    jest-message-util "^24.3.0"
+    jest-changed-files "^24.5.0"
+    jest-config "^24.5.0"
+    jest-haste-map "^24.5.0"
+    jest-message-util "^24.5.0"
     jest-regex-util "^24.3.0"
-    jest-resolve-dependencies "^24.4.0"
-    jest-runner "^24.4.0"
-    jest-runtime "^24.4.0"
-    jest-snapshot "^24.4.0"
-    jest-util "^24.3.0"
-    jest-validate "^24.4.0"
-    jest-watcher "^24.3.0"
+    jest-resolve-dependencies "^24.5.0"
+    jest-runner "^24.5.0"
+    jest-runtime "^24.5.0"
+    jest-snapshot "^24.5.0"
+    jest-util "^24.5.0"
+    jest-validate "^24.5.0"
+    jest-watcher "^24.5.0"
     micromatch "^3.1.10"
     p-each-series "^1.0.0"
     pirates "^4.0.1"
@@ -182,36 +182,36 @@
     rimraf "^2.5.4"
     strip-ansi "^5.0.0"
 
-"@jest/environment@^24.4.0":
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/environment/-/environment-24.4.0.tgz#552f0629a9cc2bd015f370b3af77222f069f158f"
-  integrity sha1-VS8GKanMK9AV83Czr3ciLwafFY8=
+"@jest/environment@^24.5.0":
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/environment/-/environment-24.5.0.tgz#a2557f7808767abea3f9e4cc43a172122a63aca8"
+  integrity sha1-olV/eAh2er6j+eTMQ6FyEipjrKg=
   dependencies:
-    "@jest/fake-timers" "^24.3.0"
-    "@jest/transform" "^24.4.0"
-    "@jest/types" "^24.3.0"
+    "@jest/fake-timers" "^24.5.0"
+    "@jest/transform" "^24.5.0"
+    "@jest/types" "^24.5.0"
     "@types/node" "*"
-    jest-mock "^24.3.0"
+    jest-mock "^24.5.0"
 
-"@jest/fake-timers@^24.3.0":
-  version "24.3.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/fake-timers/-/fake-timers-24.3.0.tgz#0a7f8b877b78780c3fa5c3f8683cc0aaf9488331"
-  integrity sha1-Cn+Lh3t4eAw/pcP4aDzAqvlIgzE=
+"@jest/fake-timers@^24.5.0":
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/fake-timers/-/fake-timers-24.5.0.tgz#4a29678b91fd0876144a58f8d46e6c62de0266f0"
+  integrity sha1-Silni5H9CHYUSlj41G5sYt4CZvA=
   dependencies:
-    "@jest/types" "^24.3.0"
+    "@jest/types" "^24.5.0"
     "@types/node" "*"
-    jest-message-util "^24.3.0"
-    jest-mock "^24.3.0"
+    jest-message-util "^24.5.0"
+    jest-mock "^24.5.0"
 
-"@jest/reporters@^24.4.0":
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/reporters/-/reporters-24.4.0.tgz#e1e6ca29593f36088db76a380f04e93e71f09607"
-  integrity sha1-4ebKKVk/NgiNt2o4DwTpPnHwlgc=
+"@jest/reporters@^24.5.0":
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/reporters/-/reporters-24.5.0.tgz#9363a210d0daa74696886d9cb294eb8b3ad9b4d9"
+  integrity sha1-k2OiENDap0aWiG2cspTrizrZtNk=
   dependencies:
-    "@jest/environment" "^24.4.0"
-    "@jest/test-result" "^24.3.0"
-    "@jest/transform" "^24.4.0"
-    "@jest/types" "^24.3.0"
+    "@jest/environment" "^24.5.0"
+    "@jest/test-result" "^24.5.0"
+    "@jest/transform" "^24.5.0"
+    "@jest/types" "^24.5.0"
     chalk "^2.0.1"
     exit "^0.1.2"
     glob "^7.1.2"
@@ -219,10 +219,10 @@
     istanbul-lib-coverage "^2.0.2"
     istanbul-lib-instrument "^3.0.1"
     istanbul-lib-source-maps "^3.0.1"
-    jest-haste-map "^24.4.0"
-    jest-resolve "^24.4.0"
-    jest-runtime "^24.4.0"
-    jest-util "^24.3.0"
+    jest-haste-map "^24.5.0"
+    jest-resolve "^24.5.0"
+    jest-runtime "^24.5.0"
+    jest-util "^24.5.0"
     jest-worker "^24.4.0"
     node-notifier "^5.2.1"
     slash "^2.0.0"
@@ -238,40 +238,40 @@
     graceful-fs "^4.1.15"
     source-map "^0.6.0"
 
-"@jest/test-result@^24.3.0":
-  version "24.3.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/test-result/-/test-result-24.3.0.tgz#4c0b1c9716212111920f7cf8c4329c69bc81924a"
-  integrity sha1-TAsclxYhIRGSD3z4xDKcabyBkko=
+"@jest/test-result@^24.5.0":
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/test-result/-/test-result-24.5.0.tgz#ab66fb7741a04af3363443084e72ea84861a53f2"
+  integrity sha1-q2b7d0GgSvM2NEMITnLqhIYaU/I=
   dependencies:
     "@jest/console" "^24.3.0"
-    "@jest/types" "^24.3.0"
+    "@jest/types" "^24.5.0"
     "@types/istanbul-lib-coverage" "^1.1.0"
 
-"@jest/transform@^24.4.0":
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/transform/-/transform-24.4.0.tgz#2f6b4b5dc7f7673d8fec8bf1040d4236c58c7a60"
-  integrity sha1-L2tLXcf3Zz2P7IvxBA1CNsWMemA=
+"@jest/transform@^24.5.0":
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/transform/-/transform-24.5.0.tgz#6709fc26db918e6af63a985f2cc3c464b4cf99d9"
+  integrity sha1-Zwn8JtuRjmr2OphfLMPEZLTPmdk=
   dependencies:
     "@babel/core" "^7.1.0"
-    "@jest/types" "^24.3.0"
+    "@jest/types" "^24.5.0"
     babel-plugin-istanbul "^5.1.0"
     chalk "^2.0.1"
     convert-source-map "^1.4.0"
     fast-json-stable-stringify "^2.0.0"
     graceful-fs "^4.1.15"
-    jest-haste-map "^24.4.0"
+    jest-haste-map "^24.5.0"
     jest-regex-util "^24.3.0"
-    jest-util "^24.3.0"
+    jest-util "^24.5.0"
     micromatch "^3.1.10"
     realpath-native "^1.1.0"
     slash "^2.0.0"
     source-map "^0.6.1"
     write-file-atomic "2.4.1"
 
-"@jest/types@^24.3.0":
-  version "24.3.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/types/-/types-24.3.0.tgz#3f6e117e47248a9a6b5f1357ec645bd364f7ad23"
-  integrity sha1-P24RfkckipprXxNX7GRb02T3rSM=
+"@jest/types@^24.5.0":
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@jest/types/-/types-24.5.0.tgz#feee214a4d0167b0ca447284e95a57aa10b3ee95"
+  integrity sha1-/u4hSk0BZ7DKRHKE6VpXqhCz7pU=
   dependencies:
     "@types/istanbul-lib-coverage" "^1.1.0"
     "@types/yargs" "^12.0.9"
@@ -331,20 +331,20 @@
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/lodash/-/lodash-4.14.123.tgz#39be5d211478c8dd3bdae98ee75bb7efe4abfe4d"
   integrity sha1-Ob5dIRR4yN072umO51u37+Sr/k0=
 
-"@types/node@*", "@types/node@11.11.1":
-  version "11.11.1"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/node/-/node-11.11.1.tgz#9ee55ffce20f72e141863b0036a6e51c6fc09a1f"
-  integrity sha1-nuVf/OIPcuFBhjsANqblHG/Amh8=
+"@types/node@*", "@types/node@11.11.3":
+  version "11.11.3"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/node/-/node-11.11.3.tgz#7c6b0f8eaf16ae530795de2ad1b85d34bf2f5c58"
+  integrity sha1-fGsPjq8WrlMHld4q0bhdNL8vXFg=
 
 "@types/prop-types@*":
   version "15.7.0"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/prop-types/-/prop-types-15.7.0.tgz#4c48fed958d6dcf9487195a0ef6456d5f6e0163a"
   integrity sha1-TEj+2VjW3PlIcZWg72RW1fbgFjo=
 
-"@types/react@16.8.7":
-  version "16.8.7"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/react/-/react-16.8.7.tgz#7b1c0223dd5494f9b4501ad2a69aa6acb350a29b"
-  integrity sha1-exwCI91UlPm0UBrSppqmrLNQops=
+"@types/react@16.8.8":
+  version "16.8.8"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/react/-/react-16.8.8.tgz#4b60a469fd2469f7aa6eaa0f8cfbc51f6d76e662"
+  integrity sha1-S2Ckaf0kafeqbqoPjPvFH2125mI=
   dependencies:
     "@types/prop-types" "*"
     csstype "^2.2.0"
@@ -355,9 +355,9 @@
   integrity sha1-CoUdO9lkmPolwzq3J47TvWXwbD4=
 
 "@types/yargs@^12.0.2", "@types/yargs@^12.0.9":
-  version "12.0.9"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/yargs/-/yargs-12.0.9.tgz#693e76a52f61a2f1e7fb48c0eef167b95ea4ffd0"
-  integrity sha1-aT52pS9hovHn+0jA7vFnuV6k/9A=
+  version "12.0.10"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/@types/yargs/-/yargs-12.0.10.tgz#17a8ec65cd8e88f51b418ceb271af18d3137df67"
+  integrity sha1-F6jsZc2OiPUbQYzrJxrxjTE332c=
 
 "@vue/component-compiler-utils@2.6.0", "@vue/component-compiler-utils@^2.1.0":
   version "2.6.0"
@@ -759,16 +759,16 @@ astral-regex@^1.0.0:
   integrity sha1-bIw/uCfdQ+45GPJ7gngqt2WKb9k=
 
 async-each@^1.0.1:
-  version "1.0.1"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/async-each/-/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
-  integrity sha1-GdOGodntxufByF04iu28xW0zYC0=
+  version "1.0.2"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/async-each/-/async-each-1.0.2.tgz#8b8a7ca2a658f927e9f307d6d1a42f4199f0f735"
+  integrity sha1-i4p8oqZY+Sfp8wfW0aQvQZnw9zU=
 
 async-limiter@~1.0.0:
   version "1.0.0"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/async-limiter/-/async-limiter-1.0.0.tgz#78faed8c3d074ab81f22b4e985d79e8738f720f8"
   integrity sha1-ePrtjD0HSrgfIrTphdeehzj3IPg=
 
-async@^2.5.0, async@^2.6.1:
+async@^2.6.1:
   version "2.6.2"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/async/-/async-2.6.2.tgz#18330ea7e6e313887f5d2f2a904bac6fe4dd5381"
   integrity sha1-GDMOp+bjE4h/XS8qkEusb+TdU4E=
@@ -956,13 +956,13 @@ babel-helpers@^6.24.1:
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-jest@24.4.0, babel-jest@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/babel-jest/-/babel-jest-24.4.0.tgz#6c4029f52175d4f8f138cdad42d2a02fe34ddb03"
-  integrity sha1-bEAp9SF11PjxOM2tQtKgL+NN2wM=
+babel-jest@24.5.0, babel-jest@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/babel-jest/-/babel-jest-24.5.0.tgz#0ea042789810c2bec9065f7c8ab4dc18e1d28559"
+  integrity sha1-DqBCeJgQwr7JBl98irTcGOHShVk=
   dependencies:
-    "@jest/transform" "^24.4.0"
-    "@jest/types" "^24.3.0"
+    "@jest/transform" "^24.5.0"
+    "@jest/types" "^24.5.0"
     "@types/babel__core" "^7.1.0"
     babel-plugin-istanbul "^5.1.0"
     babel-preset-jest "^24.3.0"
@@ -1600,16 +1600,16 @@ camelcase@^5.0.0:
   integrity sha1-51IqvaXtlMwEieG4RmYQ6IQEz0U=
 
 caniuse-lite@^1.0.30000844:
-  version "1.0.30000945"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/caniuse-lite/-/caniuse-lite-1.0.30000945.tgz#d51e3750416dd05126d5ac94a9c57d1c26c6fd21"
-  integrity sha1-1R43UEFt0FEm1ayUqcV9HCbG/SE=
+  version "1.0.30000950"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/caniuse-lite/-/caniuse-lite-1.0.30000950.tgz#8c559d66e332b34e919d1086cc6d29c1948856ae"
+  integrity sha1-jFWdZuMys06RnRCGzG0pwZSIVq4=
 
-capture-exit@^1.2.0:
-  version "1.2.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/capture-exit/-/capture-exit-1.2.0.tgz#1c5fcc489fd0ab00d4f1ac7ae1072e3173fbab6f"
-  integrity sha1-HF/MSJ/QqwDU8ax64QcuMXP7q28=
+capture-exit@^2.0.0:
+  version "2.0.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/capture-exit/-/capture-exit-2.0.0.tgz#fb953bfaebeb781f62898239dabb426d08a509a4"
+  integrity sha1-+5U7+uvreB9iiYI52rtCbQilCaQ=
   dependencies:
-    rsvp "^3.3.3"
+    rsvp "^4.8.4"
 
 caseless@~0.12.0:
   version "0.12.0"
@@ -1755,15 +1755,10 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@^2.19.0:
+commander@^2.19.0, commander@~2.19.0:
   version "2.19.0"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/commander/-/commander-2.19.0.tgz#f6198aa84e5b83c46054b94ddedbfed5ee9ff12a"
   integrity sha1-9hmKqE5bg8RgVLlN3tv+1e6f8So=
-
-commander@~2.17.1:
-  version "2.17.1"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
-  integrity sha1-vXerfebelCBc6sxy8XFtKfIKd78=
 
 commondir@^1.0.1:
   version "1.0.1"
@@ -2204,9 +2199,9 @@ ecc-jsbn@~0.1.1:
     safer-buffer "^2.1.0"
 
 electron-to-chromium@^1.3.47:
-  version "1.3.115"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/electron-to-chromium/-/electron-to-chromium-1.3.115.tgz#fdaa56c19b9f7386dbf29abc1cc632ff5468ff3b"
-  integrity sha1-/apWwZufc4bb8pq8HMYy/1Ro/zs=
+  version "1.3.116"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/electron-to-chromium/-/electron-to-chromium-1.3.116.tgz#1dbfee6a592a0c14ade77dbdfe54fef86387d702"
+  integrity sha1-Hb/ualkqDBSt5329/lT++GOH1wI=
 
 elliptic@^6.0.0:
   version "6.4.1"
@@ -2254,19 +2249,20 @@ entities@^1.1.1, entities@~1.1.1:
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/entities/-/entities-1.1.2.tgz#bdfa735299664dfafd34529ed4f8522a275fea56"
   integrity sha1-vfpzUplmTfr9NFKe1PhSKidf6lY=
 
-enzyme-adapter-react-16@1.10.0:
-  version "1.10.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.10.0.tgz#12e5b6f4be84f9a2ef374acc2555f829f351fc6e"
-  integrity sha1-EuW29L6E+aLvN0rMJVX4KfNR/G4=
+enzyme-adapter-react-16@1.11.2:
+  version "1.11.2"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/enzyme-adapter-react-16/-/enzyme-adapter-react-16-1.11.2.tgz#8efeafb27e96873a5492fdef3f423693182eb9d4"
+  integrity sha1-jv6vsn6WhzpUkv3vP0I2kxguudQ=
   dependencies:
-    enzyme-adapter-utils "^1.10.0"
+    enzyme-adapter-utils "^1.10.1"
     object.assign "^4.1.0"
     object.values "^1.1.0"
-    prop-types "^15.6.2"
-    react-is "^16.7.0"
+    prop-types "^15.7.2"
+    react-is "^16.8.4"
     react-test-renderer "^16.0.0-0"
+    semver "^5.6.0"
 
-enzyme-adapter-utils@^1.10.0:
+enzyme-adapter-utils@^1.10.1:
   version "1.10.1"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/enzyme-adapter-utils/-/enzyme-adapter-utils-1.10.1.tgz#58264efa19a7befdbf964fb7981a108a5452ac96"
   integrity sha1-WCZO+hmnvv2/lk+3mBoQilRSrJY=
@@ -2357,9 +2353,9 @@ escodegen@^1.11.0, escodegen@^1.9.1:
     source-map "~0.6.1"
 
 eslint-scope@^4.0.0:
-  version "4.0.2"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/eslint-scope/-/eslint-scope-4.0.2.tgz#5f10cd6cabb1965bf479fa65745673439e21cb0e"
-  integrity sha1-XxDNbKuxllv0efpldFZzQ54hyw4=
+  version "4.0.3"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/eslint-scope/-/eslint-scope-4.0.3.tgz#ca03833310f6889a3264781aa82e63eb9cfe7848"
+  integrity sha1-ygODMxD2iJoyZHgaqC5j65z+eEg=
   dependencies:
     esrecurse "^4.1.0"
     estraverse "^4.1.1"
@@ -2440,16 +2436,16 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-expect@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/expect/-/expect-24.4.0.tgz#df52da212bc06831c38fb51a53106ae7a0e7aaf2"
-  integrity sha1-31LaISvAaDHDj7UaUxBq56DnqvI=
+expect@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/expect/-/expect-24.5.0.tgz#492fb0df8378d8474cc84b827776b069f46294ed"
+  integrity sha1-SS+w34N42EdMyEuCd3awafRilO0=
   dependencies:
-    "@jest/types" "^24.3.0"
+    "@jest/types" "^24.5.0"
     ansi-styles "^3.2.0"
     jest-get-type "^24.3.0"
-    jest-matcher-utils "^24.4.0"
-    jest-message-util "^24.3.0"
+    jest-matcher-utils "^24.5.0"
+    jest-message-util "^24.5.0"
     jest-regex-util "^24.3.0"
 
 extend-shallow@^2.0.1:
@@ -2747,11 +2743,11 @@ growly@^1.3.0:
   integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
 
 handlebars@^4.1.0:
-  version "4.1.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/handlebars/-/handlebars-4.1.0.tgz#0d6a6f34ff1f63cecec8423aa4169827bf787c3a"
-  integrity sha1-DWpvNP8fY87OyEI6pBaYJ794fDo=
+  version "4.1.1"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/handlebars/-/handlebars-4.1.1.tgz#6e4e41c18ebe7719ae4d38e5aca3d32fa3dd23d3"
+  integrity sha1-bk5BwY6+dxmuTTjlrKPTL6PdI9M=
   dependencies:
-    async "^2.5.0"
+    neo-async "^2.6.0"
     optimist "^0.6.1"
     source-map "^0.6.1"
   optionalDependencies:
@@ -3319,65 +3315,65 @@ istanbul-reports@^2.1.1:
   dependencies:
     handlebars "^4.1.0"
 
-jest-changed-files@^24.3.0:
-  version "24.3.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-changed-files/-/jest-changed-files-24.3.0.tgz#7050ae29aaf1d59437c80f21d5b3cd354e88a499"
-  integrity sha1-cFCuKarx1ZQ3yA8h1bPNNU6IpJk=
+jest-changed-files@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-changed-files/-/jest-changed-files-24.5.0.tgz#4075269ee115d87194fd5822e642af22133cf705"
+  integrity sha1-QHUmnuEV2HGU/Vgi5kKvIhM89wU=
   dependencies:
-    "@jest/types" "^24.3.0"
+    "@jest/types" "^24.5.0"
     execa "^1.0.0"
     throat "^4.0.0"
 
-jest-cli@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-cli/-/jest-cli-24.4.0.tgz#3297c2f817611b86ce1250fb5703a28bca201034"
-  integrity sha1-MpfC+BdhG4bOElD7VwOii8ogEDQ=
+jest-cli@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-cli/-/jest-cli-24.5.0.tgz#598139d3446d1942fb7dc93944b9ba766d756d4b"
+  integrity sha1-WYE500RtGUL7fck5RLm6dm11bUs=
   dependencies:
-    "@jest/core" "^24.4.0"
-    "@jest/test-result" "^24.3.0"
-    "@jest/types" "^24.3.0"
+    "@jest/core" "^24.5.0"
+    "@jest/test-result" "^24.5.0"
+    "@jest/types" "^24.5.0"
     chalk "^2.0.1"
     exit "^0.1.2"
     import-local "^2.0.0"
     is-ci "^2.0.0"
-    jest-config "^24.4.0"
-    jest-util "^24.3.0"
-    jest-validate "^24.4.0"
+    jest-config "^24.5.0"
+    jest-util "^24.5.0"
+    jest-validate "^24.5.0"
     prompts "^2.0.1"
     realpath-native "^1.1.0"
     yargs "^12.0.2"
 
-jest-config@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-config/-/jest-config-24.4.0.tgz#07bf14d43c02aec3bd384121a165a6ee9d8c5ed1"
-  integrity sha1-B78U1DwCrsO9OEEhoWWm7p2MXtE=
+jest-config@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-config/-/jest-config-24.5.0.tgz#404d1bc6bb81aed6bd1890d07e2dca9fbba2e121"
+  integrity sha1-QE0bxruBrta9GJDQfi3Kn7ui4SE=
   dependencies:
     "@babel/core" "^7.1.0"
-    "@jest/types" "^24.3.0"
-    babel-jest "^24.4.0"
+    "@jest/types" "^24.5.0"
+    babel-jest "^24.5.0"
     chalk "^2.0.1"
     glob "^7.1.1"
-    jest-environment-jsdom "^24.4.0"
-    jest-environment-node "^24.4.0"
+    jest-environment-jsdom "^24.5.0"
+    jest-environment-node "^24.5.0"
     jest-get-type "^24.3.0"
-    jest-jasmine2 "^24.4.0"
+    jest-jasmine2 "^24.5.0"
     jest-regex-util "^24.3.0"
-    jest-resolve "^24.4.0"
-    jest-util "^24.3.0"
-    jest-validate "^24.4.0"
+    jest-resolve "^24.5.0"
+    jest-util "^24.5.0"
+    jest-validate "^24.5.0"
     micromatch "^3.1.10"
-    pretty-format "^24.4.0"
+    pretty-format "^24.5.0"
     realpath-native "^1.1.0"
 
-jest-diff@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-diff/-/jest-diff-24.4.0.tgz#106cd0491cb32da31debbea3e21f094d358dc7d9"
-  integrity sha1-EGzQSRyzLaMd676j4h8JTTWNx9k=
+jest-diff@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-diff/-/jest-diff-24.5.0.tgz#a2d8627964bb06a91893c0fbcb28ab228c257652"
+  integrity sha1-othieWS7BqkYk8D7yyirIowldlI=
   dependencies:
     chalk "^2.0.1"
     diff-sequences "^24.3.0"
     jest-get-type "^24.3.0"
-    pretty-format "^24.4.0"
+    pretty-format "^24.5.0"
 
 jest-docblock@^24.3.0:
   version "24.3.0"
@@ -3386,119 +3382,119 @@ jest-docblock@^24.3.0:
   dependencies:
     detect-newline "^2.1.0"
 
-jest-each@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-each/-/jest-each-24.4.0.tgz#2a0e06d957b31ec9ca4679ed9d4a15ac48299d6b"
-  integrity sha1-Kg4G2VezHsnKRnntnUoVrEgpnWs=
+jest-each@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-each/-/jest-each-24.5.0.tgz#da14d017a1b7d0f01fb458d338314cafe7f72318"
+  integrity sha1-2hTQF6G30PAftFjTODFMr+f3Ixg=
   dependencies:
-    "@jest/types" "^24.3.0"
+    "@jest/types" "^24.5.0"
     chalk "^2.0.1"
     jest-get-type "^24.3.0"
-    jest-util "^24.3.0"
-    pretty-format "^24.4.0"
+    jest-util "^24.5.0"
+    pretty-format "^24.5.0"
 
-jest-environment-jsdom@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-environment-jsdom/-/jest-environment-jsdom-24.4.0.tgz#86e1c494abb1ab58b7aa5791bdb4fa96d709b57b"
-  integrity sha1-huHElKuxq1i3qleRvbT6ltcJtXs=
+jest-environment-jsdom@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-environment-jsdom/-/jest-environment-jsdom-24.5.0.tgz#1c3143063e1374100f8c2723a8b6aad23b6db7eb"
+  integrity sha1-HDFDBj4TdBAPjCcjqLaq0jttt+s=
   dependencies:
-    "@jest/environment" "^24.4.0"
-    "@jest/fake-timers" "^24.3.0"
-    "@jest/types" "^24.3.0"
-    jest-mock "^24.3.0"
-    jest-util "^24.3.0"
+    "@jest/environment" "^24.5.0"
+    "@jest/fake-timers" "^24.5.0"
+    "@jest/types" "^24.5.0"
+    jest-mock "^24.5.0"
+    jest-util "^24.5.0"
     jsdom "^11.5.1"
 
-jest-environment-node@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-environment-node/-/jest-environment-node-24.4.0.tgz#c10cd617ccc73c1936d46a925e9dcade8709d044"
-  integrity sha1-wQzWF8zHPBk21GqSXp3K3ocJ0EQ=
+jest-environment-node@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-environment-node/-/jest-environment-node-24.5.0.tgz#763eebdf529f75b60aa600c6cf8cb09873caa6ab"
+  integrity sha1-dj7r31KfdbYKpgDGz4ywmHPKpqs=
   dependencies:
-    "@jest/environment" "^24.4.0"
-    "@jest/fake-timers" "^24.3.0"
-    "@jest/types" "^24.3.0"
-    jest-mock "^24.3.0"
-    jest-util "^24.3.0"
+    "@jest/environment" "^24.5.0"
+    "@jest/fake-timers" "^24.5.0"
+    "@jest/types" "^24.5.0"
+    jest-mock "^24.5.0"
+    jest-util "^24.5.0"
 
 jest-get-type@^24.3.0:
   version "24.3.0"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-get-type/-/jest-get-type-24.3.0.tgz#582cfd1a4f91b5cdad1d43d2932f816d543c65da"
   integrity sha1-WCz9Gk+Rtc2tHUPSky+BbVQ8Zdo=
 
-jest-haste-map@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-haste-map/-/jest-haste-map-24.4.0.tgz#a969ecab8a9521115c5fecec82366d66433c851b"
-  integrity sha1-qWnsq4qVIRFcX+zsgjZtZkM8hRs=
+jest-haste-map@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-haste-map/-/jest-haste-map-24.5.0.tgz#3f17d0c548b99c0c96ed2893f9c0ccecb2eb9066"
+  integrity sha1-PxfQxUi5nAyW7SiT+cDM7LLrkGY=
   dependencies:
-    "@jest/types" "^24.3.0"
+    "@jest/types" "^24.5.0"
     fb-watchman "^2.0.0"
     graceful-fs "^4.1.15"
     invariant "^2.2.4"
     jest-serializer "^24.4.0"
-    jest-util "^24.3.0"
+    jest-util "^24.5.0"
     jest-worker "^24.4.0"
     micromatch "^3.1.10"
     sane "^4.0.3"
 
-jest-jasmine2@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-jasmine2/-/jest-jasmine2-24.4.0.tgz#f1d3749b1fc4a90cbdca1480f0ce932d135b69e5"
-  integrity sha1-8dN0mx/EqQy9yhSA8M6TLRNbaeU=
+jest-jasmine2@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-jasmine2/-/jest-jasmine2-24.5.0.tgz#e6af4d7f73dc527d007cca5a5b177c0bcc29d111"
+  integrity sha1-5q9Nf3PcUn0AfMpaWxd8C8wp0RE=
   dependencies:
     "@babel/traverse" "^7.1.0"
-    "@jest/environment" "^24.4.0"
-    "@jest/test-result" "^24.3.0"
-    "@jest/types" "^24.3.0"
+    "@jest/environment" "^24.5.0"
+    "@jest/test-result" "^24.5.0"
+    "@jest/types" "^24.5.0"
     chalk "^2.0.1"
     co "^4.6.0"
-    expect "^24.4.0"
+    expect "^24.5.0"
     is-generator-fn "^2.0.0"
-    jest-each "^24.4.0"
-    jest-matcher-utils "^24.4.0"
-    jest-message-util "^24.3.0"
-    jest-runtime "^24.4.0"
-    jest-snapshot "^24.4.0"
-    jest-util "^24.3.0"
-    pretty-format "^24.4.0"
+    jest-each "^24.5.0"
+    jest-matcher-utils "^24.5.0"
+    jest-message-util "^24.5.0"
+    jest-runtime "^24.5.0"
+    jest-snapshot "^24.5.0"
+    jest-util "^24.5.0"
+    pretty-format "^24.5.0"
     throat "^4.0.0"
 
-jest-leak-detector@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-leak-detector/-/jest-leak-detector-24.4.0.tgz#f255d2f582b8dda7b960e04a42f7239b7ec6520b"
-  integrity sha1-8lXS9YK43ae5YOBKQvcjm37GUgs=
+jest-leak-detector@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-leak-detector/-/jest-leak-detector-24.5.0.tgz#21ae2b3b0da252c1171cd494f75696d65fb6fa89"
+  integrity sha1-Ia4rOw2iUsEXHNSU91aW1l+2+ok=
   dependencies:
-    pretty-format "^24.4.0"
+    pretty-format "^24.5.0"
 
-jest-matcher-utils@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-matcher-utils/-/jest-matcher-utils-24.4.0.tgz#285a2a5c8414d2f4a62d89ddc4b381730e2b717d"
-  integrity sha1-KFoqXIQU0vSmLYndxLOBcw4rcX0=
+jest-matcher-utils@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-matcher-utils/-/jest-matcher-utils-24.5.0.tgz#5995549dcf09fa94406e89526e877b094dad8770"
+  integrity sha1-WZVUnc8J+pRAbolSbod7CU2th3A=
   dependencies:
     chalk "^2.0.1"
-    jest-diff "^24.4.0"
+    jest-diff "^24.5.0"
     jest-get-type "^24.3.0"
-    pretty-format "^24.4.0"
+    pretty-format "^24.5.0"
 
-jest-message-util@^24.3.0:
-  version "24.3.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-message-util/-/jest-message-util-24.3.0.tgz#e8f64b63ebc75b1a9c67ee35553752596e70d4a9"
-  integrity sha1-6PZLY+vHWxqcZ+41VTdSWW5w1Kk=
+jest-message-util@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-message-util/-/jest-message-util-24.5.0.tgz#181420a65a7ef2e8b5c2f8e14882c453c6d41d07"
+  integrity sha1-GBQgplp+8ui1wvjhSILEU8bUHQc=
   dependencies:
     "@babel/code-frame" "^7.0.0"
-    "@jest/test-result" "^24.3.0"
-    "@jest/types" "^24.3.0"
+    "@jest/test-result" "^24.5.0"
+    "@jest/types" "^24.5.0"
     "@types/stack-utils" "^1.0.1"
     chalk "^2.0.1"
     micromatch "^3.1.10"
     slash "^2.0.0"
     stack-utils "^1.0.1"
 
-jest-mock@^24.3.0:
-  version "24.3.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-mock/-/jest-mock-24.3.0.tgz#95a86b6ad474e3e33227e6dd7c4ff6b07e18d3cb"
-  integrity sha1-lahratR04+MyJ+bdfE/2sH4Y08s=
+jest-mock@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-mock/-/jest-mock-24.5.0.tgz#976912c99a93f2a1c67497a9414aa4d9da4c7b76"
+  integrity sha1-l2kSyZqT8qHGdJepQUqk2dpMe3Y=
   dependencies:
-    "@jest/types" "^24.3.0"
+    "@jest/types" "^24.5.0"
 
 jest-pnp-resolver@^1.2.1:
   version "1.2.1"
@@ -3510,75 +3506,75 @@ jest-regex-util@^24.3.0:
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-regex-util/-/jest-regex-util-24.3.0.tgz#d5a65f60be1ae3e310d5214a0307581995227b36"
   integrity sha1-1aZfYL4a4+MQ1SFKAwdYGZUiezY=
 
-jest-resolve-dependencies@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-resolve-dependencies/-/jest-resolve-dependencies-24.4.0.tgz#296420c04211d2697dfe3141744e7071028ea9b0"
-  integrity sha1-KWQgwEIR0ml9/jFBdE5wcQKOqbA=
+jest-resolve-dependencies@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-resolve-dependencies/-/jest-resolve-dependencies-24.5.0.tgz#1a0dae9cdd41349ca4a84148b3e78da2ba33fd4b"
+  integrity sha1-Gg2unN1BNJykqEFIs+eNoroz/Us=
   dependencies:
-    "@jest/types" "^24.3.0"
+    "@jest/types" "^24.5.0"
     jest-regex-util "^24.3.0"
-    jest-snapshot "^24.4.0"
+    jest-snapshot "^24.5.0"
 
-jest-resolve@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-resolve/-/jest-resolve-24.4.0.tgz#5314af3cc9abc8d2de55c6e78edac4253c2f46f3"
-  integrity sha1-UxSvPMmryNLeVcbnjtrEJTwvRvM=
+jest-resolve@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-resolve/-/jest-resolve-24.5.0.tgz#8c16ba08f60a1616c3b1cd7afb24574f50a24d04"
+  integrity sha1-jBa6CPYKFhbDsc16+yRXT1CiTQQ=
   dependencies:
-    "@jest/types" "^24.3.0"
+    "@jest/types" "^24.5.0"
     browser-resolve "^1.11.3"
     chalk "^2.0.1"
     jest-pnp-resolver "^1.2.1"
     realpath-native "^1.1.0"
 
-jest-runner@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-runner/-/jest-runner-24.4.0.tgz#71ad09858be897cc37da1bf88bf67baaa0219fdb"
-  integrity sha1-ca0JhYvol8w32hv4i/Z7qqAhn9s=
+jest-runner@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-runner/-/jest-runner-24.5.0.tgz#9be26ece4fd4ab3dfb528b887523144b7c5ffca8"
+  integrity sha1-m+Juzk/Uqz37UouIdSMUS3xf/Kg=
   dependencies:
     "@jest/console" "^24.3.0"
-    "@jest/environment" "^24.4.0"
-    "@jest/test-result" "^24.3.0"
-    "@jest/types" "^24.3.0"
+    "@jest/environment" "^24.5.0"
+    "@jest/test-result" "^24.5.0"
+    "@jest/types" "^24.5.0"
     chalk "^2.4.2"
     exit "^0.1.2"
     graceful-fs "^4.1.15"
-    jest-config "^24.4.0"
+    jest-config "^24.5.0"
     jest-docblock "^24.3.0"
-    jest-haste-map "^24.4.0"
-    jest-jasmine2 "^24.4.0"
-    jest-leak-detector "^24.4.0"
-    jest-message-util "^24.3.0"
-    jest-resolve "^24.4.0"
-    jest-runtime "^24.4.0"
-    jest-util "^24.3.0"
+    jest-haste-map "^24.5.0"
+    jest-jasmine2 "^24.5.0"
+    jest-leak-detector "^24.5.0"
+    jest-message-util "^24.5.0"
+    jest-resolve "^24.5.0"
+    jest-runtime "^24.5.0"
+    jest-util "^24.5.0"
     jest-worker "^24.4.0"
     source-map-support "^0.5.6"
     throat "^4.0.0"
 
-jest-runtime@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-runtime/-/jest-runtime-24.4.0.tgz#77df2137d1cb78a30f8b7c52cc06427272e06334"
-  integrity sha1-d98hN9HLeKMPi3xSzAZCcnLgYzQ=
+jest-runtime@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-runtime/-/jest-runtime-24.5.0.tgz#3a76e0bfef4db3896d5116e9e518be47ba771aa2"
+  integrity sha1-Onbgv+9Ns4ltURbp5Ri+R7p3GqI=
   dependencies:
     "@jest/console" "^24.3.0"
-    "@jest/environment" "^24.4.0"
+    "@jest/environment" "^24.5.0"
     "@jest/source-map" "^24.3.0"
-    "@jest/transform" "^24.4.0"
-    "@jest/types" "^24.3.0"
+    "@jest/transform" "^24.5.0"
+    "@jest/types" "^24.5.0"
     "@types/yargs" "^12.0.2"
     chalk "^2.0.1"
     exit "^0.1.2"
     glob "^7.1.3"
     graceful-fs "^4.1.15"
-    jest-config "^24.4.0"
-    jest-haste-map "^24.4.0"
-    jest-message-util "^24.3.0"
-    jest-mock "^24.3.0"
+    jest-config "^24.5.0"
+    jest-haste-map "^24.5.0"
+    jest-message-util "^24.5.0"
+    jest-mock "^24.5.0"
     jest-regex-util "^24.3.0"
-    jest-resolve "^24.4.0"
-    jest-snapshot "^24.4.0"
-    jest-util "^24.3.0"
-    jest-validate "^24.4.0"
+    jest-resolve "^24.5.0"
+    jest-snapshot "^24.5.0"
+    jest-util "^24.5.0"
+    jest-validate "^24.5.0"
     realpath-native "^1.1.0"
     slash "^2.0.0"
     strip-bom "^3.0.0"
@@ -3589,34 +3585,34 @@ jest-serializer@^24.4.0:
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-serializer/-/jest-serializer-24.4.0.tgz#f70c5918c8ea9235ccb1276d232e459080588db3"
   integrity sha1-9wxZGMjqkjXMsSdtIy5FkIBYjbM=
 
-jest-snapshot@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-snapshot/-/jest-snapshot-24.4.0.tgz#7e76ff377cf84af65e37b46c48bbda555e7545da"
-  integrity sha1-fnb/N3z4SvZeN7RsSLvaVV51Rdo=
+jest-snapshot@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-snapshot/-/jest-snapshot-24.5.0.tgz#e5d224468a759fd19e36f01217aac912f500f779"
+  integrity sha1-5dIkRop1n9GeNvASF6rJEvUA93k=
   dependencies:
     "@babel/types" "^7.0.0"
-    "@jest/types" "^24.3.0"
+    "@jest/types" "^24.5.0"
     chalk "^2.0.1"
-    expect "^24.4.0"
-    jest-diff "^24.4.0"
-    jest-matcher-utils "^24.4.0"
-    jest-message-util "^24.3.0"
-    jest-resolve "^24.4.0"
+    expect "^24.5.0"
+    jest-diff "^24.5.0"
+    jest-matcher-utils "^24.5.0"
+    jest-message-util "^24.5.0"
+    jest-resolve "^24.5.0"
     mkdirp "^0.5.1"
     natural-compare "^1.4.0"
-    pretty-format "^24.4.0"
+    pretty-format "^24.5.0"
     semver "^5.5.0"
 
-jest-util@^24.3.0:
-  version "24.3.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-util/-/jest-util-24.3.0.tgz#a549ae9910fedbd4c5912b204bb1bcc122ea0057"
-  integrity sha1-pUmumRD+29TFkSsgS7G8wSLqAFc=
+jest-util@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-util/-/jest-util-24.5.0.tgz#9d9cb06d9dcccc8e7cc76df91b1635025d7baa84"
+  integrity sha1-nZywbZ3MzI58x235GxY1Al17qoQ=
   dependencies:
     "@jest/console" "^24.3.0"
-    "@jest/fake-timers" "^24.3.0"
+    "@jest/fake-timers" "^24.5.0"
     "@jest/source-map" "^24.3.0"
-    "@jest/test-result" "^24.3.0"
-    "@jest/types" "^24.3.0"
+    "@jest/test-result" "^24.5.0"
+    "@jest/types" "^24.5.0"
     "@types/node" "*"
     callsites "^3.0.0"
     chalk "^2.0.1"
@@ -3626,30 +3622,30 @@ jest-util@^24.3.0:
     slash "^2.0.0"
     source-map "^0.6.0"
 
-jest-validate@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-validate/-/jest-validate-24.4.0.tgz#4f19c7d738a6bb700620c766428c7738d6985555"
-  integrity sha1-TxnH1zimu3AGIMdmQox3ONaYVVU=
+jest-validate@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-validate/-/jest-validate-24.5.0.tgz#62fd93d81214c070bb2d7a55f329a79d8057c7de"
+  integrity sha1-Yv2T2BIUwHC7LXpV8ymnnYBXx94=
   dependencies:
-    "@jest/types" "^24.3.0"
+    "@jest/types" "^24.5.0"
     camelcase "^5.0.0"
     chalk "^2.0.1"
     jest-get-type "^24.3.0"
     leven "^2.1.0"
-    pretty-format "^24.4.0"
+    pretty-format "^24.5.0"
 
-jest-watcher@^24.3.0:
-  version "24.3.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-watcher/-/jest-watcher-24.3.0.tgz#ee51c6afbe4b35a12fcf1107556db6756d7b9290"
-  integrity sha1-7lHGr75LNaEvzxEHVW22dW17kpA=
+jest-watcher@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest-watcher/-/jest-watcher-24.5.0.tgz#da7bd9cb5967e274889b42078c8f501ae1c47761"
+  integrity sha1-2nvZy1ln4nSIm0IHjI9QGuHEd2E=
   dependencies:
-    "@jest/test-result" "^24.3.0"
-    "@jest/types" "^24.3.0"
+    "@jest/test-result" "^24.5.0"
+    "@jest/types" "^24.5.0"
     "@types/node" "*"
     "@types/yargs" "^12.0.9"
     ansi-escapes "^3.0.0"
     chalk "^2.0.1"
-    jest-util "^24.3.0"
+    jest-util "^24.5.0"
     string-length "^2.0.0"
 
 jest-worker@^24.4.0:
@@ -3661,13 +3657,13 @@ jest-worker@^24.4.0:
     merge-stream "^1.0.1"
     supports-color "^6.1.0"
 
-jest@24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest/-/jest-24.4.0.tgz#688b71a2dadd41e26d0cfc04e1ddcacf30a1efbb"
-  integrity sha1-aItxotrdQeJtDPwE4d3KzzCh77s=
+jest@24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/jest/-/jest-24.5.0.tgz#38f11ae2c2baa2f86c2bc4d8a91d2b51612cd19a"
+  integrity sha1-OPEa4sK6ovhsK8TYqR0rUWEs0Zo=
   dependencies:
     import-local "^2.0.0"
-    jest-cli "^24.4.0"
+    jest-cli "^24.5.0"
 
 js-base64@^2.1.9:
   version "2.5.1"
@@ -4034,12 +4030,12 @@ md5.js@^1.3.4:
     safe-buffer "^5.1.2"
 
 mem@^4.0.0:
-  version "4.1.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/mem/-/mem-4.1.0.tgz#aeb9be2d21f47e78af29e4ac5978e8afa2ca5b8a"
-  integrity sha1-rrm+LSH0fnivKeSsWXjor6LKW4o=
+  version "4.2.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/mem/-/mem-4.2.0.tgz#5ee057680ed9cb8dad8a78d820f9a8897a102025"
+  integrity sha1-XuBXaA7Zy42tinjYIPmoiXoQICU=
   dependencies:
     map-age-cleaner "^0.1.1"
-    mimic-fn "^1.0.0"
+    mimic-fn "^2.0.0"
     p-is-promise "^2.0.0"
 
 memory-fs@0.4.1, memory-fs@^0.4.0, memory-fs@~0.4.1:
@@ -4103,10 +4099,10 @@ mime-types@^2.1.12, mime-types@~2.1.19:
   dependencies:
     mime-db "~1.38.0"
 
-mimic-fn@^1.0.0:
-  version "1.2.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/mimic-fn/-/mimic-fn-1.2.0.tgz#820c86a39334640e99516928bd03fca88057d022"
-  integrity sha1-ggyGo5M0ZA6ZUWkovQP8qIBX0CI=
+mimic-fn@^2.0.0:
+  version "2.0.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/mimic-fn/-/mimic-fn-2.0.0.tgz#0913ff0b121db44ef5848242c38bbb35d44cabde"
+  integrity sha1-CRP/CxIdtE71hIJCw4u7NdRMq94=
 
 minimalistic-assert@^1.0.0, minimalistic-assert@^1.0.1:
   version "1.0.1"
@@ -4214,9 +4210,9 @@ ms@^2.1.1:
   integrity sha1-MKWGTrPrsKZvLr5tcnrwagnYbgo=
 
 nan@^2.9.2:
-  version "2.12.1"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/nan/-/nan-2.12.1.tgz#7b1aa193e9aa86057e3c7bbd0ac448e770925552"
-  integrity sha1-exqhk+mqhgV+PHu9CsRI53CSVVI=
+  version "2.13.1"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/nan/-/nan-2.13.1.tgz#a15bee3790bde247e8f38f1d446edcdaeb05f2dd"
+  integrity sha1-oVvuN5C94kfo848dRG7c2usF8t0=
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -4260,7 +4256,7 @@ needle@^2.2.1:
     iconv-lite "^0.4.4"
     sax "^1.2.4"
 
-neo-async@^2.5.0:
+neo-async@^2.5.0, neo-async@^2.6.0:
   version "2.6.0"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/neo-async/-/neo-async-2.6.0.tgz#b9d15e4d71c6762908654b5183ed38b753340835"
   integrity sha1-udFeTXHGdikIZUtRg+04t1M0CDU=
@@ -4618,9 +4614,9 @@ p-reduce@^1.0.0:
   integrity sha1-GMKw3ZNqRpClKfgjH1ig/bakffo=
 
 p-try@^2.0.0:
-  version "2.0.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/p-try/-/p-try-2.0.0.tgz#85080bb87c64688fa47996fe8f7dfbe8211760b1"
-  integrity sha1-hQgLuHxkaI+keZb+j3376CEXYLE=
+  version "2.1.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/p-try/-/p-try-2.1.0.tgz#c1a0f1030e97de018bb2c718929d2af59463e505"
+  integrity sha1-waDxAw6X3gGLsscYkp0q9ZRj5QU=
 
 pako@~1.0.5:
   version "1.0.10"
@@ -4840,12 +4836,12 @@ prettier@1.16.3:
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/prettier/-/prettier-1.16.3.tgz#8c62168453badef702f34b45b6ee899574a6a65d"
   integrity sha1-jGIWhFO63vcC80tFtu6JlXSmpl0=
 
-pretty-format@^24.4.0:
-  version "24.4.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/pretty-format/-/pretty-format-24.4.0.tgz#48db91969eb89f272c1bf3514bc5d5b228b3e722"
-  integrity sha1-SNuRlp64nycsG/NRS8XVsiiz5yI=
+pretty-format@^24.5.0:
+  version "24.5.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/pretty-format/-/pretty-format-24.5.0.tgz#cc69a0281a62cd7242633fc135d6930cd889822d"
+  integrity sha1-zGmgKBpizXJCYz/BNdaTDNiJgi0=
   dependencies:
-    "@jest/types" "^24.3.0"
+    "@jest/types" "^24.5.0"
     ansi-regex "^4.0.0"
     ansi-styles "^3.2.0"
     react-is "^16.8.4"
@@ -4878,9 +4874,9 @@ promise@^7.1.1:
     asap "~2.0.3"
 
 prompts@^2.0.1:
-  version "2.0.3"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/prompts/-/prompts-2.0.3.tgz#c5ccb324010b2e8f74752aadceeb57134c1d2522"
-  integrity sha1-xcyzJAELLo90dSqtzutXE0wdJSI=
+  version "2.0.4"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/prompts/-/prompts-2.0.4.tgz#179f9d4db3128b9933aa35f93a800d8fce76a682"
+  integrity sha1-F5+dTbMSi5kzqjX5OoANj852poI=
   dependencies:
     kleur "^3.0.2"
     sisteransi "^1.0.0"
@@ -5031,7 +5027,7 @@ react-dom@16.8.4:
     prop-types "^15.6.2"
     scheduler "^0.13.4"
 
-react-is@^16.7.0, react-is@^16.8.1, react-is@^16.8.4:
+react-is@^16.8.1, react-is@^16.8.4:
   version "16.8.4"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
   integrity sha1-kPM2pow6KaCWo9ZIq4DofsYUgqI=
@@ -5304,10 +5300,10 @@ rst-selector-parser@^2.2.3:
     lodash.flattendeep "^4.4.0"
     nearley "^2.7.10"
 
-rsvp@^3.3.3:
-  version "3.6.2"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/rsvp/-/rsvp-3.6.2.tgz#2e96491599a96cde1b515d5674a8f7a91452926a"
-  integrity sha1-LpZJFZmpbN4bUV1WdKj3qRRSkmo=
+rsvp@^4.8.4:
+  version "4.8.4"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/rsvp/-/rsvp-4.8.4.tgz#b50e6b34583f3dd89329a2f23a8a2be072845911"
+  integrity sha1-tQ5rNFg/PdiTKaLyOoor4HKEWRE=
 
 run-queue@^1.0.0, run-queue@^1.0.3:
   version "1.0.3"
@@ -5334,13 +5330,13 @@ safe-regex@^1.1.0:
   integrity sha1-RPoWGwGHuVSd2Eu5GAL5vYOFzWo=
 
 sane@^4.0.3:
-  version "4.0.3"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/sane/-/sane-4.0.3.tgz#e878c3f19e25cc57fbb734602f48f8a97818b181"
-  integrity sha1-6HjD8Z4lzFf7tzRgL0j4qXgYsYE=
+  version "4.1.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/sane/-/sane-4.1.0.tgz#ed881fd922733a6c461bc189dc2b6c006f3ffded"
+  integrity sha1-7Ygf2SJzOmxGG8GJ3CtsAG8//e0=
   dependencies:
     "@cnakazawa/watch" "^1.0.3"
     anymatch "^2.0.0"
-    capture-exit "^1.2.0"
+    capture-exit "^2.0.0"
     exec-sh "^0.3.2"
     execa "^1.0.0"
     fb-watchman "^2.0.0"
@@ -5716,9 +5712,9 @@ strip-ansi@^4.0.0:
     ansi-regex "^3.0.0"
 
 strip-ansi@^5.0.0:
-  version "5.1.0"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/strip-ansi/-/strip-ansi-5.1.0.tgz#55aaa54e33b4c0649a7338a43437b1887d153ec4"
-  integrity sha1-VaqlTjO0wGSaczikNDexiH0VPsQ=
+  version "5.2.0"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/strip-ansi/-/strip-ansi-5.2.0.tgz#8c9a536feb6afc962bdfa5b104a5091c1ad9c0ae"
+  integrity sha1-jJpTb+tq/JYr36WxBKUJHBrZwK4=
   dependencies:
     ansi-regex "^4.1.0"
 
@@ -5983,11 +5979,11 @@ ua-parser-js@^0.7.18:
   integrity sha1-lBUb5MCn+x0AGvcCL9rKRkJlnks=
 
 uglify-js@^3.1.4:
-  version "3.4.9"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/uglify-js/-/uglify-js-3.4.9.tgz#af02f180c1207d76432e473ed24a28f4a782bae3"
-  integrity sha1-rwLxgMEgfXZDLkc+0koo9KeCuuM=
+  version "3.4.10"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/uglify-js/-/uglify-js-3.4.10.tgz#9ad9563d8eb3acdfb8d38597d2af1d815f6a755f"
+  integrity sha1-mtlWPY6zrN+404WX0q8dgV9qdV8=
   dependencies:
-    commander "~2.17.1"
+    commander "~2.19.0"
     source-map "~0.6.1"
 
 union-value@^1.0.0:
@@ -6113,10 +6109,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-template-compiler@2.6.8:
-  version "2.6.8"
-  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/vue-template-compiler/-/vue-template-compiler-2.6.8.tgz#750802604595134775b9c53141b9850b35255e1c"
-  integrity sha1-dQgCYEWVE0d1ucUxQbmFCzUlXhw=
+vue-template-compiler@2.6.9:
+  version "2.6.9"
+  resolved "https://spring.jfrog.io/spring/api/npm/npm-red/vue-template-compiler/-/vue-template-compiler-2.6.9.tgz#26600415ff81a7a241aebc2d4e0abaa0f1a07915"
+  integrity sha1-JmAEFf+Bp6JBrrwtTgq6oPGgeRU=
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"

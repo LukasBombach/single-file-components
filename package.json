@@ -9,14 +9,14 @@
   "devDependencies": {
     "@types/jest": "24.0.11",
     "@types/lodash": "4.14.123",
-    "@types/node": "11.11.1",
-    "@types/react": "16.8.7",
+    "@types/node": "11.11.3",
+    "@types/react": "16.8.8",
     "babel-core": "6.26.3",
-    "babel-jest": "24.4.0",
+    "babel-jest": "24.5.0",
     "babel-preset-env": "1.7.0",
     "enzyme": "3.9.0",
-    "enzyme-adapter-react-16": "1.10.0",
-    "jest": "24.4.0",
+    "enzyme-adapter-react-16": "1.11.2",
+    "jest": "24.5.0",
     "jsdom": "14.0.0",
     "jsdom-global": "3.0.2",
     "memory-fs": "0.4.1",
@@ -39,7 +39,7 @@
     "@vue/component-compiler-utils": "2.6.0",
     "create-react-class": "15.6.3",
     "lodash": "4.17.11",
-    "vue-template-compiler": "2.6.8",
+    "vue-template-compiler": "2.6.9",
     "xml-js": "1.6.11"
   }
 }
