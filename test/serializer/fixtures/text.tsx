@@ -1,13 +1,15 @@
 import * as React from "react";
-import { Component } from "../../../lib/model/component";
+import Component from "../../../lib/model/component";
+import { ElementType } from "../../../lib/model/template";
 
 export const compDescriptor: Component = {
   fileName: "ExpectedClass",
   template: {
     root: {
       name: "div",
-      children: [{ type: "text", text: "contents" }],
-      attrs: {}
+      type: ElementType.Element,
+      children: [{ type: ElementType.Text, text: "contents" }],
+      props: {}
     }
   }
 };

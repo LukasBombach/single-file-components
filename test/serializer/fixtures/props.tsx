@@ -1,13 +1,15 @@
 import * as React from "react";
-import { Component } from "../../../lib/model/component";
+import Component from "../../../lib/model/component";
+import { ElementType } from "../../../lib/model/template";
 
 const ChildComponent: Component = {
   fileName: "ChildElement",
   template: {
     root: {
       name: "p",
-      attrs: {},
-      children: [{ type: "text", text: "{{ greeting }}" }]
+      type: ElementType.Element,
+      props: {},
+      children: [{ type: ElementType.Text, text: "{{ greeting }}" }]
     }
   }
 };
@@ -17,11 +19,13 @@ export const compDescriptor: Component = {
   template: {
     root: {
       name: "div",
-      attrs: {},
+      type: ElementType.Element,
+      props: {},
       children: [
         {
           name: "ChildComponent",
-          attrs: {
+          type: ElementType.Element,
+          props: {
             ":greeting": "greeting"
           },
           children: []
@@ -33,8 +37,10 @@ export const compDescriptor: Component = {
     components: {
       ChildComponent
     },
-    data: {
-      greeting: "hello world"
+    data() {
+      return {
+        greeting: "hello world"
+      };
     },
     props: {}
   }

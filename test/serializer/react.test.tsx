@@ -5,7 +5,7 @@ import stringToReact from "../utils/stringToReact";
 
 async function mount(path) {
   const { compDescriptor, ExpectedClass } = await import(path);
-  const serializedClassString = new ReactSerializer().serialize(compDescriptor);
+  const serializedClassString = new ReactSerializer(compDescriptor).toString();
   const SerializedClass = stringToReact(serializedClassString);
   const serialized = Enzyme.mount(<SerializedClass />);
   const expected = Enzyme.mount(<ExpectedClass />);
@@ -33,7 +33,7 @@ describe("ReactSerializer", () => {
     expect(serialized.html()).toBe(expected.html());
   });
 
-  test("a div with a state variable", async () => {
+  test.only("a div with a state variable", async () => {
     const { serialized, expected } = await mount("./fixtures/state");
     expect(serialized.html()).toBe(expected.html());
   });

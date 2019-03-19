@@ -1,10 +1,12 @@
 import * as React from "react";
-import { Component } from "../../../lib/model/component";
+import Component from "../../../lib/model/component";
+import { ElementType } from "../../../lib/model/template";
 import { Element } from "../../../lib/model/template";
 
 const childElement: Element = {
   name: "p",
-  children: [{ type: "text", text: "contents" }],
+  type: ElementType.Element,
+  children: [{ type: ElementType.Text, text: "contents" }],
   props: {}
 };
 
@@ -13,8 +15,9 @@ export const compDescriptor: Component = {
   template: {
     root: {
       name: "div",
+      type: ElementType.Element,
       children: [childElement],
-      attrs: {}
+      props: {}
     }
   }
 };

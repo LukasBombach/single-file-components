@@ -1,21 +1,23 @@
 import * as React from "react";
-import { Component } from "../../../lib/model/component";
+import Component from "../../../lib/model/component";
+import { ElementType } from "../../../lib/model/template";
 
 export const compDescriptor: Component = {
   fileName: "ExpectedClass",
   template: {
     root: {
       name: "div",
-      children: [{ type: "text", text: "Hello {{ greeting }}" }],
-      attrs: {}
+      type: ElementType.Element,
+      children: [{ type: ElementType.Text, text: "Hello {{ greeting }}" }],
+      props: {}
     }
   },
   script: {
-    components: {},
-    data: {
-      greeting: "World"
-    },
-    props: {}
+    data() {
+      return {
+        greeting: "World"
+      };
+    }
   }
 };
 

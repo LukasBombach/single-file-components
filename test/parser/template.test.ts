@@ -4,9 +4,9 @@ const element = (name, ...args) => {
   const lastArg = args[args.length - 1];
   const hasAttrs = lastArg.toString() !== "ObjectContaining";
   const children = hasAttrs ? args.slice(0, -1) : args;
-  const attrs = hasAttrs ? { attrs: expect.objectContaining(lastArg) } : undefined;
+  const props = hasAttrs ? { props: expect.objectContaining(lastArg) } : undefined;
   const type = "element";
-  const expectedObject = Object.assign({}, { type, name, children }, attrs);
+  const expectedObject = Object.assign({}, { type, name, children }, props);
   return expect.objectContaining(expectedObject);
 };
 

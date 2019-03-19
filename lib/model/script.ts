@@ -1,9 +1,9 @@
 import Component from "./component";
 
 export default interface Script {
-  components: Components;
-  data: () => Data;
-  props: Props;
+  components?: Components;
+  data?: () => Data;
+  props?: Props;
 }
 
 export interface Components {

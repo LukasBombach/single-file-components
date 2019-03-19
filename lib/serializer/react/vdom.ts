@@ -50,7 +50,7 @@ export default class VDom {
   }
 
   private isComponent(el: Element): boolean {
-    return !!this.comp.script && !!this.comp.script.components[el.name];
+    return !!this.comp.script && this.comp.script.components && !!this.comp.script.components[el.name];
   }
 
   private hasVFor(el: Element): boolean {

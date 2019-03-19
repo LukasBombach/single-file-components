@@ -10,7 +10,7 @@ export default interface Template {
 
 export interface Element {
   type: ElementType;
-  name: string;
+  name?: string;
   props?: Props;
   children?: Element[];
   text?: string;

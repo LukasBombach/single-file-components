@@ -7,9 +7,10 @@ export default function htmlElement(el: Element, { serialize }): string {
 }
 
 function serializeProps(props: Props): string {
-  return Object.entries(props)
+  const propsAsStr = Object.entries(props)
     .map(([key, val]) => serializePair(key, val))
     .join(", ");
+  return `{ ${propsAsStr} }`;
 }
 
 function serializePair(key: string, val: string): string {

@@ -17,8 +17,7 @@ export default class ReactSerializer {
 
   public toString(): string {
     const { name, props, stateHooks, vdom } = this.getTemplateVars();
-    return `
-    function ${name} (${props}) {
+    return `function ${name} (${props}) {
       ${stateHooks}
       return ${vdom};
     }
@@ -46,7 +45,7 @@ export default class ReactSerializer {
   private getStateHooks(): string {
     if (!this.comp.script || !this.comp.script.data) return "";
     const entries = Object.entries(this.comp.script.data());
-    const stateHooks = entries.map(([key, val]) => `const [${key}, set${key}] = useState(${val});`);
+    const stateHooks = entries.map(([key, val]) => `const [${key}, set${key}] = React.useState(${JSON.stringify(val)});`);
     return stateHooks.join("\n");
   }
 
