@@ -5032,7 +5032,7 @@ react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/react-is/-/react-is-16.8.4.tgz#90f336a68c3a29a096a3d648ab80e87ec61482a2"
   integrity sha1-kPM2pow6KaCWo9ZIq4DofsYUgqI=
 
-react-test-renderer@^16.0.0-0:
+react-test-renderer@16.8.4, react-test-renderer@^16.0.0-0:
   version "16.8.4"
   resolved "https://spring.jfrog.io/spring/api/npm/npm-red/react-test-renderer/-/react-test-renderer-16.8.4.tgz#abee4c2c3bf967a8892a7b37f77370c5570d5329"
   integrity sha1-q+5MLDv5Z6iJKns393NwxVcNUyk=
