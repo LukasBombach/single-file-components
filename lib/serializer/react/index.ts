@@ -38,11 +38,13 @@ export default class ReactSerializer {
   }
 
   private getProps(): string {
+    if (!this.comp.script || !this.comp.script.props) return "";
     const keys = Object.keys(this.comp.script.props);
     return `{ ${keys.join(", ")} }`;
   }
 
   private getStateHooks(): string {
+    if (!this.comp.script || !this.comp.script.data) return "";
     const entries = Object.entries(this.comp.script.data());
     const stateHooks = entries.map(([key, val]) => `const [${key}, set${key}] = useState(${val});`);
     return stateHooks.join("\n");

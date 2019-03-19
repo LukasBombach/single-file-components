@@ -1,9 +1,9 @@
 import { Element, Props } from "../../model/template";
 import Component from "../../model/component";
 import text from "./fragments/text";
-import htmlElement from "./fragments/htmlElement";
 import component from "./fragments/component";
 import vFor from "./fragments/v-for";
+import htmlElement from "./fragments/htmlElement";
 
 export interface Fragments {
   [key: string]: (...args: any[]) => string;
@@ -19,9 +19,9 @@ export default class VDom {
   public api: FragmentApi;
   private fragments: Fragments = {
     text,
-    htmlElement,
     component,
-    vFor
+    vFor,
+    htmlElement
   };
 
   constructor(comp: Component) {
