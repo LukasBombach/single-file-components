@@ -1,25 +1,29 @@
 import * as React from "react";
-import { Component } from "../../../lib/model/component";
+import Component from "../../../lib/model/component";
+import { ElementType } from "../../../lib/model/template";
 
 export const compDescriptor: Component = {
   fileName: "ExpectedClass",
   template: {
     root: {
-      type: "element",
+      type: ElementType.Element,
+
       name: "ul",
       children: [
         {
-          type: "element",
+          type: ElementType.Element,
+
           name: "li",
-          attrs: {
+          props: {
             "v-for": "(image, index) in images",
             ":key": "index"
           },
           children: [
             {
-              type: "element",
+              type: ElementType.Element,
+
               name: "img",
-              attrs: {
+              props: {
                 ":src": "image.src",
                 ":alt": "image.name"
               }
@@ -31,8 +35,10 @@ export const compDescriptor: Component = {
   },
   script: {
     components: {},
-    data: {
-      images: [{ src: "foo.jpg", name: "foo" }, { src: "bar.jpg", name: "bar" }]
+    data() {
+      return {
+        images: [{ src: "foo.jpg", name: "foo" }, { src: "bar.jpg", name: "bar" }]
+      };
     },
     props: {}
   }

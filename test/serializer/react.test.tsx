@@ -29,8 +29,11 @@ describe("ReactSerializer", () => {
   });
 
   test("a div with nested HTML", async () => {
+    const spyError = jest.spyOn(console, "error").mockImplementation(() => {});
     const { serialized, expected } = await mount("./fixtures/nestedHtml");
     expect(serialized.html()).toBe(expected.html());
+    expect(spyError).toHaveBeenCalledTimes(1);
+    spyError.mockRestore();
   });
 
   test("a div with a state variable", async () => {

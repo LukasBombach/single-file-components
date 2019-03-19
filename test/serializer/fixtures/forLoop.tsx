@@ -1,25 +1,29 @@
 import * as React from "react";
-import { Component } from "../../../lib/model/component";
+import Component from "../../../lib/model/component";
+import { ElementType } from "../../../lib/model/template";
 
 export const compDescriptor: Component = {
   fileName: "ExpectedClass",
   template: {
     root: {
       name: "ul",
+      type: ElementType.Element,
       children: [
         {
           name: "li",
-          attrs: { "v-for": "item in items" },
-          children: [{ type: "text", text: "{{item}}" }]
+          type: ElementType.Element,
+          props: { "v-for": "item in items" },
+          children: [{ type: ElementType.Text, text: "{{item}}" }]
         }
-      ],
-      attrs: {}
+      ]
     }
   },
   script: {
     components: {},
-    data: {
-      items: ["Foo", "Bar"]
+    data() {
+      return {
+        items: ["Foo", "Bar"]
+      };
     },
     props: {}
   }
