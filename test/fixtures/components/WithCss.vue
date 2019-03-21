@@ -1,7 +1,7 @@
 <template>
-<div>
-  <p>Hello World!</p>
-</div>
+  <div>
+    <p>Hello World!</p>
+  </div>
 </template>
 
 <style scoped>
