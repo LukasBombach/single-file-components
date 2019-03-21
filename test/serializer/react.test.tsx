@@ -13,7 +13,7 @@ async function getSerializedReact(fixture: string) {
   const vueFileAsString = await promises.readFile(`../fixtures/components/${fixture}`, "utf8");
   const component = new Parser(vueFileAsString).getComponent();
   const serializedClassString = new ReactSerializer(component).toString();
-  const SerializedClass = eval(`(() => {return ${serializedClassString};})()`);
+  const SerializedClass = eval(serializedClassString); // const SerializedClass = eval(`(() => ${serializedClassString})()`);
   return Enzyme.mount(<SerializedClass />);
 }
 
