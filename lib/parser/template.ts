@@ -14,8 +14,6 @@ export default class TemplateParser {
   parse(source: string): Template {
     const template = ComponentParser.template(source).trim();
     const root = this.parseContents(template);
-    // console.log("template", template);
-    // console.log("root", root);
     return { root };
   }
 
@@ -31,7 +29,6 @@ export default class TemplateParser {
   private handleStartTag(name: string, domAttrs, unary): void {
     const props = domAttrs.reduce((props, { name, value }) => ({ ...props, [name]: value }), {}) as Props;
     const type = ElementType.Element;
-    // console.log("tag", { name, type, props });
     this.generator.addChildAndMoveIn({ name, type, props });
   }
 
@@ -40,7 +37,6 @@ export default class TemplateParser {
   }
 
   private handleChars(text): void {
-    // console.log("text", text);
     this.generator.addTextToCurrent(text);
   }
 

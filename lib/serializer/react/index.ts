@@ -21,8 +21,6 @@ export default class ReactSerializer {
       ${stateHooks}
       return ${vdom};
     }`;
-    //console.log(this.comp);
-    //console.log(component);
     return component;
   }
 

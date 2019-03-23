@@ -5,7 +5,7 @@ import Parser from "../../lib/parser";
 import ReactSerializer from "../../lib/serializer/react";
 
 async function getNativeReact(fixture: string) {
-  const ExpectedClass = await import(`../fixtures/components/${fixture}.tsx`);
+  const { default: ExpectedClass } = await import(`${__dirname}/../fixtures/components/${fixture}.tsx`);
   return Enzyme.mount(<ExpectedClass />);
 }
 
@@ -14,9 +14,6 @@ async function getSerializedReact(fixture: string) {
   const component = new Parser(vueFileAsString).getComponent();
   const serializedClassString = new ReactSerializer(component).toString();
   const SerializedClass = eval(`(() => {const React = require("react");return ${serializedClassString};})()`);
-  console.log(SerializedClass);
-  console.log(SerializedClass.toString());
-  console.log(<SerializedClass />);
   return Enzyme.mount(<SerializedClass />);
 }
 
