@@ -14,6 +14,7 @@ export default class TemplateParser {
   parse(source: string): Template {
     const template = ComponentParser.template(source).trim();
     const root = this.parseContents(template);
+    console.log(root);
     return { root };
   }
 
@@ -37,7 +38,7 @@ export default class TemplateParser {
   }
 
   private handleChars(text): void {
-    this.generator.addTextToCurrent(text);
+    if (/\w/.test(text)) this.generator.addTextToCurrent(text);
   }
 
   private handleComment(text): void {

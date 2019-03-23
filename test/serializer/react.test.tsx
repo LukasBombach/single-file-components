@@ -33,7 +33,7 @@ function runTest({ file, name = undefined, skip = false, only = false }) {
 }
 
 describe("ReactSerializer", () => {
-  const tests = [{ file: "0-SingleHtmlTag" }];
+  const tests = [{ file: "0-SingleHtmlTag" }, { file: "1-SingleHtmlTagWithText" }, { file: "2-NestedHtml" }, { file: "3-HtmlWithAttributes" }, { file: "4-HtmlWithChildComponent" }];
 
   for (const test of tests) {
     runTest(test);
