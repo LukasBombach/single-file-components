@@ -10,6 +10,7 @@ export default class Script {
 
   private static parseContents(contents: string): ScriptModel {
     const exports = Script.requireFromString(contents);
+    if (!exports) return {};
     const { components, data, props } = exports;
     return { components, data, props };
   }

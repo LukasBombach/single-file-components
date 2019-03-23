@@ -17,11 +17,13 @@ export default class ReactSerializer {
 
   public toString(): string {
     const { name, props, stateHooks, vdom } = this.getTemplateVars();
-    return `function ${name} (${props}) {
+    const component = `function ${name} (${props}) {
       ${stateHooks}
       return ${vdom};
-    }
-    `;
+    }`;
+    //console.log(this.comp);
+    //console.log(component);
+    return component;
   }
 
   private getTemplateVars(): TemplateVars {
