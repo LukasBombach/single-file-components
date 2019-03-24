@@ -1,4 +1,4 @@
-import { mount } from "../utils/importVueAsReact";
+import { mount } from "../utils/importVueAndReact";
 
 function runTest({ file, name = undefined, skip = false, only = false }) {
   const testFn = only ? test.only : skip ? test.skip : test;

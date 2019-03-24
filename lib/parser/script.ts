@@ -9,6 +9,7 @@ export default class Script {
   }
 
   private static parseContents(contents: string): ScriptModel {
+    if (!contents) return {};
     const exports = Script.requireFromString(contents);
     if (!exports) return {};
     const { components, data, props } = exports;
@@ -16,6 +17,6 @@ export default class Script {
   }
 
   private static requireFromString(code: string, fileName = "requireFromString.vue"): any {
-    return requireFromString(`module.exports = ${code}`, fileName);
+    return requireFromString(code, fileName);
   }
 }

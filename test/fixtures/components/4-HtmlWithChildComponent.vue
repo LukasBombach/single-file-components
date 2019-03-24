@@ -6,9 +6,11 @@
 </template>
 
 <script>
-import ChildComponent from "./X-ChildComponent.vue";
+const { importVueAsComponent } = require("../../utils/importVueAndReact");
 
-export default {
+const ChildComponent = importVueAsComponent("./X-ChildComponent.vue");
+
+module.exports = {
   components: {
     ChildComponent
   }

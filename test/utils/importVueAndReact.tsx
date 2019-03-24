@@ -1,8 +1,14 @@
+import { readFileSync } from "fs";
 import { promises } from "fs";
 import * as React from "react";
 import * as Enzyme from "enzyme";
 import Parser from "../../lib/parser";
 import ReactSerializer from "../../lib/serializer/react";
+
+export function importVueAsComponent(path: string) {
+  const vueFileAsString = readFileSync(path, "utf8");
+  return new Parser(vueFileAsString).getComponent();
+}
 
 export async function importVueAsReact(path: string) {
   const vueFileAsString = await promises.readFile(path, "utf8");

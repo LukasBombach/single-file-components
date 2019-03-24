@@ -14,7 +14,7 @@ export default class TemplateParser {
   parse(source: string): Template {
     const template = ComponentParser.template(source).trim();
     const root = this.parseContents(template);
-    console.log(root);
+    //console.log(root);
     return { root };
   }
 
