@@ -27,10 +27,8 @@ export default class ComponentTranspiler extends Transpiler {
     }
     `; */
 
-    const script = await this.loadScript();
-    const exports = requireFromString(script, "x.js");
-    console.log(script);
-    console.log(require("util").inspect(exports, { depth: 10 }));
+    const script = await this.loadScript(); // 700ms
+    const exports = requireFromString(script); // 1ms
     console.log("data:", exports.default.data());
     return script;
 
