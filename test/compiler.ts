@@ -5,6 +5,9 @@ import memoryfs from "memory-fs";
 const getConfig = (fixture: string, options = {}) => ({
   context: __dirname,
   entry: fixture,
+  optimization: {
+    minimize: false
+  },
   output: {
     path: path.resolve(__dirname),
     filename: "bundle.js"
@@ -18,7 +21,7 @@ const getConfig = (fixture: string, options = {}) => ({
     rules: [
       {
         test: /\.vue$/,
-        use: { loader: "sfcLoader" }
+        loaders: ["sfcLoader"]
       },
       {
         test: /\.js$/,
@@ -39,8 +42,13 @@ export default (fixture: string) => {
   compiler.outputFileSystem = new memoryfs();
   return new Promise((resolve, reject) =>
     compiler.run((err, stats) => {
-      if (err || stats.hasErrors()) return reject(err || stats.compilation.errors);
-      resolve(stats.toJson().modules[0].source);
+      if (err || stats.hasErrors()) {
+        if (err) console.error(err);
+        if (stats.hasErrors()) console.error(stats.compilation.errors);
+        return reject(err || stats.compilation.errors);
+      }
+      const content = (compiler.outputFileSystem as memoryfs).readFileSync(path.resolve(__dirname, "bundle.js"));
+      resolve(content);
     })
   );
 };

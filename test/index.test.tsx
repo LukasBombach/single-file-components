@@ -21,7 +21,8 @@ describe("ReactSerializer", () => {
     { file: "1-SingleHtmlTagWithText" }, 
     { file: "2-NestedHtml" }, 
     { file: "3-HtmlWithAttributes" }, 
-    { file: "4-HtmlWithChildComponent" }
+    { file: "4-HtmlWithChildComponent", only: true },
+    { file: "../../dummy" },
   ];
 
   for (const test of tests) {

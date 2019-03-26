@@ -4,6 +4,7 @@ import compiler from "../compiler";
 
 export async function importFromCompiler(fileName: string) {
   const output = await compiler(`${__dirname}/../fixtures/components/${fileName}`);
+  console.log((output as Buffer).toString("utf8"));
   return eval(`(() => ${output})()`);
 }
 
