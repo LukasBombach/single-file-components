@@ -24,9 +24,13 @@ export default class ComponentTranspiler extends Transpiler {
         return vdom(templateVars);
       }
     }
-    `;
 
-    // console.log("component", content);
+    ${name}.defaultProps = {};
+
+    for (const key in script.props) {
+      ${name}.defaultProps[key] = script.props[key].default
+    }
+    `;
 
     return content;
   }
