@@ -3,9 +3,10 @@ import Enzyme from "enzyme";
 import compiler from "../compiler";
 
 export async function importFromCompiler(fileName: string) {
-  const output = await compiler(`${__dirname}/../fixtures/components/${fileName}`);
-  console.log((output as Buffer).toString("utf8"));
-  return eval(`(() => ${output})()`);
+  const outputBuffer = await compiler(`${__dirname}/../fixtures/components/${fileName}`);
+  const output = (outputBuffer as Buffer).toString("utf8");
+  // console.log(output);
+  return eval(output).default;
 }
 
 export async function importReact(fixture: string) {

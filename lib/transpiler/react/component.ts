@@ -6,8 +6,6 @@ import Transpiler from "./transpiler";
 
 export default class ComponentTranspiler extends Transpiler {
   async toString(): Promise<string> {
-    // const script = await this.getScript();
-    //const vdom = await this.getVDom();
     const name = this.getName();
     const scriptRequest = `!babel-loader!sfcLoader?type=script!${this.loader.resourcePath}`;
     const templateRequest = `!sfcLoader?type=template!${this.loader.resourcePath}`;
@@ -19,7 +17,8 @@ export default class ComponentTranspiler extends Transpiler {
     export default class ${name} extends React.Component {
 
       render() {
-        return vdom;
+        const templateVars = Object.assign({}, this.state, this.props);
+        return vdom(templateVars);
       }
     }
     `;
@@ -37,7 +36,6 @@ export default class ComponentTranspiler extends Transpiler {
   private async getScript(): Promise<ScriptModel> {
     const transpiledScript = await this.loadWith("babel-loader", "sfcLoader?type=script"); // 700ms
     const prependPaths = [this.loader.context + "/"];
-    console.log(this.loader.context);
     return requireFromString(transpiledScript, { prependPaths }).default; // 1ms
   }
 

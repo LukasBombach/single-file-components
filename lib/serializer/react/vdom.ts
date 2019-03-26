@@ -34,7 +34,14 @@ export default class VDom {
   }
 
   public toString(): string {
-    return this.serialize(this.template.root);
+    const x = `export default (templateVars) => {
+      Object.entries(templateVars).forEach(([key, value]) => {
+        Object.defineProperty(this, key, { value });
+      });
+      return ${this.serialize(this.template.root)};
+    }
+    `;
+    return x;
   }
 
   private serialize(el: Element): string {
