@@ -35,6 +35,7 @@ export default class VDom {
 
   public toString(): string {
     const x = `export default (templateVars) => {
+      console.log("hey", JSON.stringify(templateVars, null, 2))
       Object.entries(templateVars).forEach(([key, value]) => {
         Object.defineProperty(this, key, { value });
       });

@@ -6,8 +6,8 @@ const htmlTags = ["a", "abbr", "acronym", "address", "applet", "area", "article"
 export default function htmlElement(el: Element, { serialize }): string {
   const props = !el.props ? "{}" : serializeProps(el.props);
   const children = !el.children ? "undefined" : `[${el.children.map(c => serialize(c)).join(",")}]`;
-  //const name = htmlTags.indexOf(el.name) === -1 ? el.name : `"${el.name}"`;
-  const name = `"${el.name}"`;
+  const name = htmlTags.indexOf(el.name) === -1 ? el.name : `"${el.name}"`;
+  //const name = `"${el.name}"`;
   return `React.createElement(${name}, ${props}, ${children})`;
 }
 

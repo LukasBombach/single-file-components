@@ -17,7 +17,11 @@ export default class ComponentTranspiler extends Transpiler {
     export default class ${name} extends React.Component {
 
       render() {
-        const templateVars = Object.assign({}, this.state, this.props);
+        const state = this.state || {};
+        const props = this.props || {};
+        const components = script.components || {};
+        const templateVars = Object.assign({}, state, props, components);
+        console.log("state, props, components", state, props, components, "templateVars", templateVars);
         return vdom(templateVars);
       }
     }
