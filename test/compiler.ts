@@ -16,10 +16,18 @@ const getConfig = (fixture: string, options = {}) => ({
   },
   module: {
     rules: [
-      { test: /\.vue$/, use: "sfcLoader" },
       {
-        test: /\.(js|jsx)$/,
-        use: "babel-loader"
+        test: /\.vue$/,
+        use: { loader: "sfcLoader" }
+      },
+      {
+        test: /\.js$/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"]
+          }
+        }
       }
     ]
   }

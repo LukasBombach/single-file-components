@@ -24,8 +24,8 @@ export default class ComponentTranspiler extends Transpiler {
   }
 
   private async getScript(): Promise<ScriptModel> {
-    const transpileScript = await this.loadWith("babel-loader", "sfcLoader?type=script"); // 700ms
-    return requireFromString(transpileScript).default; // 1ms
+    const transpiledScript = await this.loadWith("babel-loader", "sfcLoader?type=script"); // 700ms
+    return requireFromString(transpiledScript).default; // 1ms
   }
 
   private async getVDom(): Promise<string> {

@@ -1,16 +1,14 @@
 <template>
   <div>
     Child Component Follows:
-    <child-component></child-component>
+    <ChildComponent></ChildComponent>
   </div>
 </template>
 
 <script>
-const { importVueAsComponent } = require("../../utils/importVueAndReact");
+import ChildComponent from "./X-ChildComponent.vue";
 
-const ChildComponent = importVueAsComponent("./X-ChildComponent.vue");
-
-module.exports = {
+export default {
   components: {
     ChildComponent
   }
