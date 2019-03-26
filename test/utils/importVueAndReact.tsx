@@ -1,30 +1,20 @@
-import { readFileSync } from "fs";
-import { promises } from "fs";
-import * as React from "react";
-import * as Enzyme from "enzyme";
-import Parser from "../../lib/parser";
-import ReactSerializer from "../../lib/serializer/react";
+import React from "react";
+import Enzyme from "enzyme";
+import compiler from "../compiler";
 
-export function importVueAsComponent(path: string) {
-  const vueFileAsString = readFileSync(path, "utf8");
-  return new Parser(vueFileAsString).getComponent();
-}
-
-export async function importVueAsReact(path: string) {
-  const vueFileAsString = await promises.readFile(path, "utf8");
-  const component = new Parser(vueFileAsString).getComponent();
-  const serializedClassString = new ReactSerializer(component).toString();
-  return eval(`(() => ${serializedClassString})()`);
+export async function importFromCompiler(fileName: string) {
+  const output = await compiler(`${__dirname}/../fixtures/components/${fileName}`);
+  return eval(`(() => ${output})()`);
 }
 
 export async function importReact(fixture: string) {
-  return (await import(`${__dirname}/../fixtures/components/${fixture}.tsx`)).default;
+  return (await import(`${__dirname}/../fixtures/components/${fixture}`)).default;
 }
 
-export async function mount(fixture: string) {
-  const SerializedClass = await importVueAsReact(`${__dirname}/../fixtures/components/${fixture}.vue`);
-  const ExpectedClass = await importReact(fixture);
+export default async function mount(fixture: string) {
+  const SerializedClass = await importFromCompiler(`${fixture}.vue`);
+  const ExpectedClass = await importReact(`${fixture}.tsx`);
   const serialized = Enzyme.mount(<SerializedClass />);
   const expected = Enzyme.mount(<ExpectedClass />);
-  return { serialized, expected };
+  return { SerializedClass, ExpectedClass, serialized, expected };
 }

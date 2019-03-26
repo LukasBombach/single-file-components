@@ -4,16 +4,13 @@ import camelCase from "camelcase";
 import ScriptModel from "../../model/script";
 import Transpiler from "./transpiler";
 
-// import React, { Component } from "react";
-// export default
-
 export default class ComponentTranspiler extends Transpiler {
   async toString(): Promise<string> {
     const script = await this.getScript();
     const vdom = await this.getVDom();
-    const name = this.getName(script.name);
+    const name = this.getName(script);
 
-    return `class ${name} extends Component {
+    return `class ${name} extends React.Component {
 
       render() {
         return ${vdom}
@@ -21,9 +18,9 @@ export default class ComponentTranspiler extends Transpiler {
     }`;
   }
 
-  private getName(name: string = undefined): string {
-    const basename = name ? name : path.basename(this.loader.resourcePath, ".vue");
-    return camelCase(basename, { pascalCase: true });
+  private getName(script: ScriptModel): string {
+    const basename = script && script.name ? script.name : path.basename(this.loader.resourcePath, ".vue");
+    return camelCase(basename, { pascalCase: true }).replace(/^\d+/, "");
   }
 
   private async getScript(): Promise<ScriptModel> {
