@@ -1,7 +1,8 @@
 import { Element, Props } from "../../model/template";
-import Component from "../../model/component";
+// import Component from "../../model/component";
+import Template from "../../model/template";
 import text from "./fragments/text";
-import component from "./fragments/component";
+// import component from "./fragments/component";
 import vFor from "./fragments/v-for";
 import htmlElement from "./fragments/htmlElement";
 
@@ -10,33 +11,32 @@ export interface Fragments {
 }
 
 export interface FragmentApi {
-  comp: Component;
   serialize: (el: Element) => string;
 }
 
 export default class VDom {
-  public comp: Component;
+  public template: Template;
   public api: FragmentApi;
   private fragments: Fragments = {
     text,
-    component,
+    //component,
     vFor,
     htmlElement
   };
 
-  constructor(comp: Component) {
+  constructor(template: Template) {
     const serialize = (el: Element) => this.serialize(el);
-    this.comp = comp;
-    this.api = { comp, serialize };
+    this.template = template;
+    this.api = { serialize };
   }
 
   public toString(): string {
-    return this.serialize(this.comp.template.root);
+    return this.serialize(this.template.root);
   }
 
   private serialize(el: Element): string {
     if (this.isText(el)) return this.fragment("text", el);
-    if (this.isComponent(el)) return this.fragment("component", el);
+    //if (this.isComponent(el)) return this.fragment("component", el);
     if (this.hasVFor(el)) return this.fragment("vFor", el);
     return this.fragment("htmlElement", el);
   }
@@ -49,9 +49,9 @@ export default class VDom {
     return el.type === "text";
   }
 
-  private isComponent(el: Element): boolean {
+  /* private isComponent(el: Element): boolean {
     return !!this.comp.script && this.comp.script.components && !!this.comp.script.components[el.name];
-  }
+  } */
 
   private hasVFor(el: Element): boolean {
     return el.props && "v-for" in el.props;

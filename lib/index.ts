@@ -21,15 +21,29 @@ const sfcLoader /* : loader.Loader */ = function(source: string) {
         callback(null, str);
       })
       .catch(err => {
+        console.log(err);
         callback(err);
       });
-  } else {
-    new Component(this, source)
+  } else if (type === "template") {
+    new Template(this, source)
       .toString()
       .then(str => {
         callback(null, str);
       })
       .catch(err => {
+        console.log(err);
+        callback(err);
+      });
+  } else {
+    // console.log(source);
+    new Component(this, source)
+      .toString()
+      .then(str => {
+        console.log(str);
+        callback(null, str);
+      })
+      .catch(err => {
+        console.log(err);
         callback(err);
       });
   }

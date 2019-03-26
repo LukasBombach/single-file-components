@@ -1,6 +1,7 @@
 import Component from "./component";
 
 export default interface Script {
+  name?: string;
   components?: Components;
   data?: () => Data;
   props?: Props;
