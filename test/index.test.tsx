@@ -22,7 +22,7 @@ describe("ReactSerializer", () => {
     { file: "2-NestedHtml" }, 
     { file: "3-HtmlWithAttributes" }, 
     { file: "4-HtmlWithChildComponent" },
-    { file: "../../dummy", skip: true },
+    // { file: "../../dummy" },
   ];
 
   for (const test of tests) {
