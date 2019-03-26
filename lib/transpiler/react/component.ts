@@ -21,7 +21,6 @@ export default class ComponentTranspiler extends Transpiler {
         const props = this.props || {};
         const components = script.components || {};
         const templateVars = Object.assign({}, state, props, components);
-        console.log("state, props, components", state, props, components, "templateVars", templateVars);
         return vdom(templateVars);
       }
     }

@@ -34,13 +34,14 @@ export default class VDom {
   }
 
   public toString(): string {
-    const x = `export default (templateVars) => {
-      console.log("hey", JSON.stringify(templateVars, null, 2))
+    const x = `const vDom = function (templateVars) {
       Object.entries(templateVars).forEach(([key, value]) => {
-        Object.defineProperty(this, key, { value });
+        console.log("defineProperty", key, { value })
+        Object.defineProperty(vDom, key, { value });
       });
       return ${this.serialize(this.template.root)};
     }
+    export default vDom;
     `;
     return x;
   }
