@@ -1,4 +1,4 @@
-import * as requireFromString from "require-from-string";
+import requireFromString from "require-from-string";
 import ScriptModel from "../model/script";
 import Component from "./component";
 

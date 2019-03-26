@@ -2,6 +2,7 @@
   "compilerOptions": {
     "module": "commonjs",
     "jsx": "react",
-    "lib": ["dom", "es2017", "es2015"]
+    "lib": ["dom", "es2017", "es2015"],
+    "esModuleInterop": true
   }
 }
