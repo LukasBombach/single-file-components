@@ -13,7 +13,7 @@ export default function htmlElement(el: Element, { serialize }): string {
 
 function serializeProps(props: Props): string {
   const propsAsStr = Object.entries(props)
-    .map(([key, val]) => serializePair(key, val))
+    .map(([key, val]) => serializePair(key, `scope.${val}`))
     .join(", ");
   return `{ ${propsAsStr} }`;
 }

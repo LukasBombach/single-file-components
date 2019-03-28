@@ -6,7 +6,6 @@ export default class TemplateTranspiler extends Transpiler {
   public async toString(): Promise<string> {
     const template = new TemplateParser().parse(this.source);
     const vdom = new VDom(template).toString();
-    //console.log("template", vdom);
     return vdom;
   }
 }

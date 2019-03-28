@@ -16,6 +16,11 @@ export default class ComponentTranspiler extends Transpiler {
 
     export default class ${name} extends React.Component {
 
+      constructor(props) {
+        super(props);
+        if (script.data) this.state = script.data();
+      }
+
       render() {
         const state = this.state || {};
         const props = this.props || {};

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <child-component :greeting="greeting"></child-component>
+    <ChildComponent :greeting="greeting"></ChildComponent>
   </div>
 </template>
 
