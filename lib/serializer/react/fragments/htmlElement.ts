@@ -13,11 +13,11 @@ export default function htmlElement(el: Element, { serialize }): string {
 
 function serializeProps(props: Props): string {
   const propsAsStr = Object.entries(props)
-    .map(([key, val]) => serializePair(key, `scope.${val}`))
+    .map(([key, val]) => serializePair(key, val))
     .join(", ");
   return `{ ${propsAsStr} }`;
 }
 
 function serializePair(key: string, val: string): string {
-  return key.charAt(0) === ":" ? `"${key.substring(1)}": ${val}` : `"${key}": "${val}"`;
+  return key.charAt(0) === ":" ? `"${key.substring(1)}": scope.${val}` : `"${key}": "${val}"`;
 }
