@@ -18,6 +18,7 @@ describe("ReactSerializer", () => {
   const only = true;
   const skip = true;
 
+  // prettier-ignore
   const tests = [
     { file: "0-SingleHtmlTag" },
     { file: "1-SingleHtmlTagWithText" },
@@ -25,8 +26,8 @@ describe("ReactSerializer", () => {
     { file: "3-HtmlWithAttributes" },
     { file: "4-HtmlWithChildComponent" },
     { file: "5-HtmlWithChildComponentAndProps" },
-    { file: "6-Props", props: { greeting: "hello" } }
-    // { file: "../../dummy" },
+    { file: "6-Props", props: { greeting: "hello" } },
+    { file: "7-Data" },
   ];
 
   for (const test of tests) {
