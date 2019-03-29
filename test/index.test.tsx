@@ -1,6 +1,6 @@
 import mount from "./utils/importVueAndReact";
 
-function runTest({ file, name = undefined, skip = false, only = false }) {
+function runTest({ file, name = undefined, skip = false, only = false, props = {} }) {
   // prettier-ignore
   const testFn = 
     only ? test.only : 
@@ -9,15 +9,13 @@ function runTest({ file, name = undefined, skip = false, only = false }) {
   const desc = name ? name : file;
 
   testFn(desc, async () => {
-    const { serialized, expected } = await mount(file);
+    const { serialized, expected } = await mount(file, props);
     expect(serialized.html()).toBe(expected.html());
   });
 }
 
 describe("ReactSerializer", () => {
-  // prettier-ignore
-
-  const only = true
+  const only = true;
   const skip = true;
 
   const tests = [
@@ -26,7 +24,8 @@ describe("ReactSerializer", () => {
     { file: "2-NestedHtml" },
     { file: "3-HtmlWithAttributes" },
     { file: "4-HtmlWithChildComponent" },
-    { file: "5-HtmlWithChildComponentAndProps" }
+    { file: "5-HtmlWithChildComponentAndProps" },
+    { file: "6-Props", props: { greeting: "hello" } }
     // { file: "../../dummy" },
   ];
 

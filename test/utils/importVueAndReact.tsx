@@ -13,10 +13,10 @@ export async function importReact(fixture: string) {
   return (await import(`${__dirname}/../fixtures/components/${fixture}`)).default;
 }
 
-export default async function mount(fixture: string) {
+export default async function mount(fixture: string, props = {}) {
   const SerializedClass = await importFromCompiler(`${fixture}.vue`);
   const ExpectedClass = await importReact(`${fixture}.tsx`);
-  const serialized = Enzyme.mount(<SerializedClass />);
-  const expected = Enzyme.mount(<ExpectedClass />);
+  const serialized = Enzyme.mount(<SerializedClass {...props} />);
+  const expected = Enzyme.mount(<ExpectedClass {...props} />);
   return { SerializedClass, ExpectedClass, serialized, expected };
 }
